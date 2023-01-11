@@ -1,0 +1,183 @@
+        {
+        "Mediumtype": "Film",
+        "bgsource": true,
+        "postersource": true,
+        "adult": false,
+        "backgroundPath": "/assets/img/films/wallpapers/Avatar.jpg",
+        "posterPath":"/assets/img/films/affiches/Avatar.jpg",
+        "backdrop_path": "/jlQJDD0L5ZojjlS0KYnApdO0n19.jpg",
+        "belongs_to_collection": {
+          "id": 87096,
+          "name": "Avatar - Saga",
+          "poster_path": "/gC3tW9a45RGOzzSh6wv91pFnmFr.jpg",
+          "backdrop_path": "/syGPZuzcHBBHMLiNDN0x0Tms4Fk.jpg"
+        },
+        "trailer": {
+          "iso_639_1": "fr",
+          "iso_3166_1": "FR",
+          "name": "Bande-annonce VF",
+          "key": "60tCdBxn3E0",
+          "published_at": "2009-08-25T16:26:03.000Z",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": true,
+          "id": "58bae86a925141608402691e"
+        },
+        "actors": [
+          {
+            "adult": false,
+            "gender": 2,
+            "id": 65731,
+            "known_for_department": "Acting",
+            "name": "Sam Worthington",
+            "original_name": "Sam Worthington",
+            "popularity": 17.481,
+            "profile_path": "/vM1WIfYQ1HUBtlVPwB9Hp9fLcn8.jpg",
+            "cast_id": 242,
+            "character": "Jake Sully",
+            "credit_id": "5602a8a7c3a3685532001c9a",
+            "order": 0
+          },
+          {
+            "adult": false,
+            "gender": 1,
+            "id": 8691,
+            "known_for_department": "Acting",
+            "name": "Zoe Saldana",
+            "original_name": "Zoe Saldana",
+            "popularity": 30.708,
+            "profile_path": "/iOVbUH20il632nj2v01NCtYYeSg.jpg",
+            "cast_id": 3,
+            "character": "Neytiri",
+            "credit_id": "52fe48009251416c750ac9cb",
+            "order": 1
+          },
+          {
+            "adult": false,
+            "gender": 1,
+            "id": 10205,
+            "known_for_department": "Acting",
+            "name": "Sigourney Weaver",
+            "original_name": "Sigourney Weaver",
+            "popularity": 23.655,
+            "profile_path": "/flfhep27iBxseZIlxOMHt6zJFX1.jpg",
+            "cast_id": 25,
+            "character": "Dr. Grace Augustine",
+            "credit_id": "52fe48009251416c750aca39",
+            "order": 2
+          },
+          {
+            "adult": false,
+            "gender": 2,
+            "id": 32747,
+            "known_for_department": "Acting",
+            "name": "Stephen Lang",
+            "original_name": "Stephen Lang",
+            "popularity": 23.717,
+            "profile_path": "/h7ZoTwpELoz1IlIgx0ujoA2p9Sp.jpg",
+            "cast_id": 4,
+            "character": "Colonel Miles Quaritch",
+            "credit_id": "52fe48009251416c750ac9cf",
+            "order": 3
+          },
+          {
+            "adult": false,
+            "gender": 1,
+            "id": 17647,
+            "known_for_department": "Acting",
+            "name": "Michelle Rodriguez",
+            "original_name": "Michelle Rodriguez",
+            "popularity": 17.473,
+            "profile_path": "/xSvkVrLz6xas1mCeOR9i4QtmhnQ.jpg",
+            "cast_id": 5,
+            "character": "Trudy Chacon",
+            "credit_id": "52fe48009251416c750ac9d3",
+            "order": 4
+          }
+        ],
+        "budget": 237000000,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 12,
+            "name": "Aventure"
+          },
+          {
+            "id": 14,
+            "name": "Fantastique"
+          },
+          {
+            "id": 878,
+            "name": "Science-Fiction"
+          }
+        ],
+        "homepage": "http://www.avatarmovie.com/index.html",
+        "id": 19995,
+        "imdb_id": "tt0499549",
+        "original_language": "en",
+        "original_title": "Avatar",
+        "overview": "Malgré sa paralysie, Jake Sully, un ancien marine immobilisé dans un fauteuil roulant, est resté un combattant au plus profond de son être. Il est recruté pour se rendre à des années-lumière de la Terre, sur Pandora, où de puissants groupes industriels exploitent un minerai rarissime destiné à résoudre la crise énergétique sur Terre. Parce que l'atmosphère de Pandora est toxique pour les humains, ceux-ci ont créé le Programme Avatar, qui permet à des \"pilotes\" humains de lier leur esprit à un avatar, un corps biologique commandé à distance, capable de survivre dans cette atmosphère létale. Ces avatars sont des hybrides créés génétiquement en croisant l'ADN humain avec celui des Na'vi, les autochtones de Pandora.",
+        "popularity": 368.609,
+        "poster_path": "/3npygfmEhqnmNTmDWhHLz1LPcbA.jpg",
+        "production_companies": [
+          {
+            "id": 444,
+            "logo_path": "/42UPdZl6B2cFXgNUASR8hSt9mpS.png",
+            "name": "Dune Entertainment",
+            "origin_country": "US"
+          },
+          {
+            "id": 574,
+            "logo_path": "/iB6GjNVHs5hOqcEYt2rcjBqIjki.png",
+            "name": "Lightstorm Entertainment",
+            "origin_country": "US"
+          },
+          {
+            "id": 25,
+            "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+            "name": "20th Century Fox",
+            "origin_country": "US"
+          },
+          {
+            "id": 290,
+            "logo_path": "/Q8mw2AOQQc8Qg0uNwLWq86DVZv.png",
+            "name": "Ingenious Media",
+            "origin_country": "GB"
+          }
+        ],
+        "production_countries": [
+          {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+          },
+          {
+            "iso_3166_1": "GB",
+            "name": "United Kingdom"
+          }
+        ],
+        "release_date": "2009-12-10",
+        "revenue": 2847246203,
+        "runtime": 166,
+        "spoken_languages": [
+          {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+          },
+          {
+            "english_name": "Spanish",
+            "iso_639_1": "es",
+            "name": "Español"
+          }
+        ],
+        "status": "Released",
+        "tagline": "Entrez dans le monde.",
+        "title": "Avatar",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 24818
+      }

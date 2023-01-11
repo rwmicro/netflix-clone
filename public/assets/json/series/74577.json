@@ -1,0 +1,209 @@
+{
+    "title" : "The End of the F***ing World",
+    "bgsource": false,
+    "postersource": false,
+    "backgroundPath": "/assets/img/films/wallpapers/.jpg",
+    "posterPath":"/assets/img/films/affiches/.jpg",
+    "Mediumtype":"Serie",
+    "adult": false,
+    "backdrop_path": "/nfWhNM5VVd9a5bEGobs83TWTuLM.jpg",
+    "created_by": [
+      {
+        "id": 1674284,
+        "credit_id": "5c451c6d0e0a264965c63b6f",
+        "name": "Jonathan Entwistle",
+        "gender": 2,
+        "profile_path": null
+      }
+    ],
+    "episode_run_time": [
+      21
+    ],
+    "first_air_date": "2017-10-24",
+    "genres": [
+      {
+        "id": 35,
+        "name": "Comédie"
+      },
+      {
+        "id": 18,
+        "name": "Drame"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ],
+    "homepage": "https://media.netflix.com/zh_cn/only-on-netflix/80175722",
+    "id": 74577,
+    "in_production": false,
+    "languages": [
+      "en"
+    ],
+    "last_air_date": "2019-11-07",
+    "last_episode_to_air": {
+      "air_date": "2019-11-07",
+      "episode_number": 8,
+      "id": 1971978,
+      "name": "Épisode 8",
+      "overview": "Voulant à tout prix effacer ses souvenirs de la soirée chez Clive, Alyssa disparaît soudainement et fait paniquer James.",
+      "production_code": "",
+      "runtime": 19,
+      "season_number": 2,
+      "show_id": 74577,
+      "still_path": "/e9KZY45uOlUtVGO3Ca261jPayFN.jpg",
+      "vote_average": 8.2,
+      "vote_count": 15
+    },
+    "name": "The End of the F***ing World",
+    "next_episode_to_air": null,
+    "networks": [
+      {
+        "id": 26,
+        "name": "Channel 4",
+        "logo_path": "/hbifXPpM55B1fL5wPo7t72vzN78.png",
+        "origin_country": "GB"
+      }
+    ],
+    "number_of_episodes": 16,
+    "number_of_seasons": 2,
+    "origin_country": [
+      "GB"
+    ],
+    "original_language": "en",
+    "original_name": "The End of the F***ing World",
+    "overview": "Un ado psychopathe en herbe et une rebelle en quête d'aventure embarquent pour un road trip d'enfer dans cette série à l'humour noir inspirée d'un roman graphique.",
+    "popularity": 41.603,
+    "poster_path": "/zEXHZU9gFTu7rPAJP8cNPjQyUhJ.jpg",
+    "production_companies": [
+      {
+        "id": 15788,
+        "logo_path": "/haOHry5U7AMG3YOsPub4Az7OW2y.png",
+        "name": "Clerkenwell Films",
+        "origin_country": "GB"
+      },
+      {
+        "id": 34313,
+        "logo_path": null,
+        "name": "Dominic Buchanan Productions",
+        "origin_country": ""
+      }
+    ],
+    "production_countries": [
+      {
+        "iso_3166_1": "GB",
+        "name": "United Kingdom"
+      }
+    ],
+    "seasons": [
+      {
+        "air_date": "2014-06-04",
+        "episode_count": 9,
+        "id": 135095,
+        "name": "Épisodes spéciaux",
+        "overview": "",
+        "poster_path": null,
+        "season_number": 0
+      },
+      {
+        "air_date": "2017-10-24",
+        "episode_count": 8,
+        "id": 94165,
+        "name": "Saison 1",
+        "overview": "Psychopathe âgé de 17 ans, James se lie d’amitié avec Alyssa, une adolescente rebelle. James, qui cherche à tuer quelque chose de plus gros qu’un animal, se donne pour mission de l’assassiner. Mais alors qu’ils se lancent dans un road trip à travers l’Angleterre, James commence à développer des sentiments pour la jeune femme après une série d’incidents.",
+        "poster_path": "/8tTSYOMRYROSVeLWSPhMoJ6Rr3j.jpg",
+        "season_number": 1
+      },
+      {
+        "air_date": "2019-11-04",
+        "episode_count": 8,
+        "id": 133793,
+        "name": "Saison 2",
+        "overview": "Deux ans après le road trip déjanté de James et Alyssa, une femme sort de prison. Obsédée par l'homme qu'ils ont tué, elle est déterminée à le venger.",
+        "poster_path": "/e00rak9Xp3DSp42hm7EK3omnhQS.jpg",
+        "season_number": 2
+      }
+    ],
+    "spoken_languages": [
+      {
+        "english_name": "English",
+        "iso_639_1": "en",
+        "name": "English"
+      }
+    ],
+    "status": "Ended",
+    "tagline": "Certaines histoires d'amour commencent à la fin.",
+    "type": "Scripted",
+    "vote_average": 8.153,
+    "vote_count": 2511,
+    "videos": {
+      "results": [
+        {
+          "iso_639_1": "fr",
+          "iso_3166_1": "FR",
+          "name": "THE END OF THE F***ING WORLD Bande Annonce VF (2018)",
+          "key": "iwvpyzTvycE",
+          "site": "YouTube",
+          "size": 1080,
+          "type": "Trailer",
+          "official": false,
+          "published_at": "2018-01-03T16:17:59.000Z",
+          "id": "5ed6c8338ddc34001fd944d0"
+        }
+      ]
+    },
+      "actors": [
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1379277,
+          "known_for_department": "Acting",
+          "name": "Alex Lawther",
+          "original_name": "Alex Lawther",
+          "popularity": 26.33,
+          "profile_path": "/q5QMUDGYSN82QmMyiOYhLuB8ISB.jpg",
+          "character": "James",
+          "credit_id": "59ef84979251412f6a00288a",
+          "order": 0
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 550552,
+          "known_for_department": "Acting",
+          "name": "Jessica Barden",
+          "original_name": "Jessica Barden",
+          "popularity": 11.77,
+          "profile_path": "/A4WddlGjgLxcQfrILXmfHeaBD9p.jpg",
+          "character": "Alyssa Foley",
+          "credit_id": "59ef84879251412f770027b8",
+          "order": 1
+        },
+        {
+          "adult": false,
+          "gender": 1,
+          "id": 1537686,
+          "known_for_department": "Acting",
+          "name": "Naomi Ackie",
+          "original_name": "Naomi Ackie",
+          "popularity": 21.909,
+          "profile_path": "/vVHuadobY2lFRSYFJJK91T0WbZ9.jpg",
+          "character": "Bonnie",
+          "credit_id": "5dc495f4470ead00138eaf52",
+          "order": 4
+        },
+        {
+          "adult": false,
+          "gender": 2,
+          "id": 1945738,
+          "known_for_department": "Acting",
+          "name": "Josh Dylan",
+          "original_name": "Josh Dylan",
+          "popularity": 4.36,
+          "profile_path": "/3JxYuaQF6RddYo6zcpf1UX9J5Ry.jpg",
+          "character": "Todd Alan King",
+          "credit_id": "5e250d8e5ed8e900136148e2",
+          "order": 5
+        }
+      ]
+  }

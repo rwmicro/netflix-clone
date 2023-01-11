@@ -1,0 +1,146 @@
+{
+  "postersource": true,
+"backgroundPath": "/assets/img/films/wallpapers/joker.jpg",
+"posterPath":"/assets/img/films/affiches/joker.jpg",
+"adult": false,
+  "backdrop_path": "/hO7KbdvGOtDdeg0W4Y5nKEHeDDh.jpg",
+  "belongs_to_collection": {
+    "id": 987044,
+    "name": "Joker Collection",
+    "poster_path": null,
+    "backdrop_path": "/k1YC7mFLvxX4bbD7P8lkcML0Jek.jpg"
+  },
+  "budget": 55000000,
+  "genres": [
+    { "id": 80, "name": "Crime" },
+    { "id": 53, "name": "Thriller" },
+    { "id": 18, "name": "Drama" }
+  ],
+  "homepage": "http://www.jokermovie.net/",
+  "id": 475557,
+  "imdb_id": "tt7286456",
+  "original_language": "en",
+  "original_title": "Joker",
+  "overview": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+  "popularity": 78.597,
+  "poster_path": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+  "production_companies": [
+    {
+      "id": 79,
+      "logo_path": "/tpFpsqbleCzEE2p5EgvUq6ozfCA.png",
+      "name": "Village Roadshow Pictures",
+      "origin_country": "US"
+    },
+    {
+      "id": 174,
+      "logo_path": "/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png",
+      "name": "Warner Bros. Pictures",
+      "origin_country": "US"
+    },
+    {
+      "id": 13240,
+      "logo_path": "/qDefkdnsYMSHpNa7QgBfB4c1GXD.png",
+      "name": "Bron Studios",
+      "origin_country": "CA"
+    },
+    {
+      "id": 83036,
+      "logo_path": null,
+      "name": "Joint Effort",
+      "origin_country": "US"
+    },
+    {
+      "id": 128064,
+      "logo_path": "/13F3Jf7EFAcREU0xzZqJnVnyGXu.png",
+      "name": "DC Films",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    { "iso_3166_1": "CA", "name": "Canada" },
+    { "iso_3166_1": "US", "name": "United States of America" }
+  ],
+  "release_date": "2019-10-01",
+  "revenue": 1074251311,
+  "runtime": 122,
+  "spoken_languages": [
+    { "english_name": "English", "iso_639_1": "en", "name": "English" }
+  ],
+  "status": "Released",
+  "tagline": "Put on a happy face.",
+  "title": "Joker",
+  "video": false,
+  "vote_average": 8.172,
+  "vote_count": 21731,
+  "actors": [
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 73421,
+      "known_for_department": "Acting",
+      "name": "Joaquin Phoenix",
+      "original_name": "Joaquin Phoenix",
+      "popularity": 23.37,
+      "profile_path": "/1UzIGSKFH0A9ouwnMwQQWUiqV2s.jpg",
+      "cast_id": 357,
+      "character": "Arthur Fleck / Joker",
+      "credit_id": "5e8593bd98f1f10014aacb71",
+      "order": 0
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 380,
+      "known_for_department": "Acting",
+      "name": "Robert De Niro",
+      "original_name": "Robert De Niro",
+      "popularity": 66.774,
+      "profile_path": "/cT8htcckIuyI1Lqwt1CvD02ynTh.jpg",
+      "cast_id": 16,
+      "character": "Murray Franklin",
+      "credit_id": "5b5242749251411f8600052d",
+      "order": 1
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 1545693,
+      "known_for_department": "Acting",
+      "name": "Zazie Beetz",
+      "original_name": "Zazie Beetz",
+      "popularity": 36.129,
+      "profile_path": "/ijrT4pvALvxU0gphea4YxDnDh6e.jpg",
+      "cast_id": 15,
+      "character": "Sophie Dumond",
+      "credit_id": "5b5122a00e0a262596006a4c",
+      "order": 2
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 4432,
+      "known_for_department": "Acting",
+      "name": "Frances Conroy",
+      "original_name": "Frances Conroy",
+      "popularity": 20.176,
+      "profile_path": "/aJRQAkO24L6bH8qkkE5Iv1nA3gf.jpg",
+      "cast_id": 17,
+      "character": "Penny Fleck",
+      "credit_id": "5b5636fcc3a3685c8e026bac",
+      "order": 3
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 16841,
+      "known_for_department": "Acting",
+      "name": "Brett Cullen",
+      "original_name": "Brett Cullen",
+      "popularity": 7.873,
+      "profile_path": "/4P6TsRcnr9MRbXlCdHitulGM5LT.jpg",
+      "cast_id": 35,
+      "character": "Thomas Wayne",
+      "credit_id": "5b9fecf0c3a3680441002ee1",
+      "order": 4
+    }]
+}

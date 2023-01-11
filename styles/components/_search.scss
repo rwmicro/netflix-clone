@@ -1,0 +1,33 @@
+.main-recherche{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+
+    h1{
+        font-family: "Bebas";
+        color: white;
+        font-size: 55px;
+        margin-bottom: 30px;
+    }    div{
+    input{
+        height: 50px;
+        width: 400px;
+        border: none;
+        padding: 6px;
+        font-size: 20px;
+        margin-left: 20%;
+        float: left;
+    }
+    button{
+        background: #e50914;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-family: "Helvetica";
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+    }}
+}

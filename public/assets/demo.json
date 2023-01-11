@@ -1,0 +1,8 @@
+https://api.themoviedb.org/3/tv/74577?api_key=bc697e83b8bb94f253e4d3246eb062e7&append_to_response=videos,credits&language=fr-FR
+
+"title": ""
+"bgsource": true,
+"postersource": true,
+"backgroundPath": "/assets/img/films/wallpapers/.jpg",
+"posterPath":"/assets/img/films/affiches/.jpg",
+"Mediumtype":"Serie",

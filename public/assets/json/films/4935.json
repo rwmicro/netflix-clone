@@ -1,0 +1,173 @@
+
+  {
+    "adult": false,
+    "backdrop_path": "/vwBa7djy1oxfxUjc7YtVgGNsjrT.jpg",
+    "actors": [
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 533325,
+        "known_for_department": "Acting",
+        "name": "Chieko Baisho",
+        "original_name": "Chieko Baisho",
+        "popularity": 7.619,
+        "profile_path": "/b8ANR4WfdUZtoU4ktlnMFzbq759.jpg",
+        "cast_id": 220,
+        "character": "Sophie (voice)",
+        "credit_id": "5dfef0f665686e001893f35f",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 12670,
+        "known_for_department": "Acting",
+        "name": "Takuya Kimura",
+        "original_name": "Takuya Kimura",
+        "popularity": 8.365,
+        "profile_path": "/rafirRSsSsZrSVV3znCUwwSGIGr.jpg",
+        "cast_id": 221,
+        "character": "Howl (voice)",
+        "credit_id": "5dfef1079824c80015e114c7",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 20338,
+        "known_for_department": "Acting",
+        "name": "Akihiro Miwa",
+        "original_name": "Akihiro Miwa",
+        "popularity": 4.612,
+        "profile_path": "/pCfBeLJigKnUWOAy7hsdBR7K0UV.jpg",
+        "cast_id": 222,
+        "character": "Witch of the Waste (voice)",
+        "credit_id": "5dfef125d1a8930012887548",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 19592,
+        "known_for_department": "Acting",
+        "name": "Tatsuya Gashūin",
+        "original_name": "Tatsuya Gashūin",
+        "popularity": 6.306,
+        "profile_path": "/jJufP3XhzvQxVrzBiBrJjRFN7Ib.jpg",
+        "cast_id": 223,
+        "character": "Calcifer (voice)",
+        "credit_id": "5dfef134d1a8930019893ef0",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 225730,
+        "known_for_department": "Acting",
+        "name": "Ryunosuke Kamiki",
+        "original_name": "Ryunosuke Kamiki",
+        "popularity": 9.468,
+        "profile_path": "/6MwcfIUraHuKOmwjT4gX8BBB2T6.jpg",
+        "cast_id": 224,
+        "character": "Markl (voice)",
+        "credit_id": "5dfef14726dac1001260dba7",
+        "order": 4
+      }
+    ],
+    "belongs_to_collection": null,
+    "budget": 24000000,
+    "genres": [
+      {
+        "id": 14,
+        "name": "Fantastique"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      },
+      {
+        "id": 12,
+        "name": "Aventure"
+      }
+    ],
+    "homepage": "",
+    "id": 4935,
+    "imdb_id": "tt0347149",
+    "original_language": "ja",
+    "original_title": "ハウルの動く城",
+    "overview": "La jeune Sophie, âgée de 18 ans, travaille sans relâche dans la boutique de chapelier que tenait son père avant de mourir. Lors de l’une de ses rares sorties en ville, elle fait la connaissance de Hauru le Magicien. Celui‐ci est extrêmement séduisant, mais n’a pas beaucoup de caractère… Se méprenant sur leur relation, une sorcière jette un épouvantable sort sur Sophie et la transforme en vieille femme de 90 ans. Accablée, Sophie s’enfuit et erre dans les terres désolées. Par hasard, elle pénètre dans le Château Ambulant de Hauru et, cachant sa véritable identité, s’y fait engager comme femme de ménage. Cette « vieille dame » aussi mystérieuse que dynamique va bientôt redonner une nouvelle vie à l’ancienne demeure. Plus énergique que jamais, Sophie accomplit des miracles. Quel fabuleux destin l’attend ? Et si son histoire avec Hauru n’en était qu’à son véritable commencement ?",
+    "popularity": 84.515,
+    "poster_path": "/45PVXJUYfH6yIINcQKelQ0SJPvh.jpg",
+    "production_companies": [
+      {
+        "id": 10342,
+        "logo_path": "/eS79pslnoKbWg7t3PMA9ayl0bGs.png",
+        "name": "Studio Ghibli",
+        "origin_country": "JP"
+      },
+      {
+        "id": 11200,
+        "logo_path": null,
+        "name": "Buena Vista Home Entertainment",
+        "origin_country": ""
+      },
+      {
+        "id": 2752,
+        "logo_path": null,
+        "name": "DENTSU Music And Entertainment",
+        "origin_country": "JP"
+      },
+      {
+        "id": 11847,
+        "logo_path": "/rZP0I1p3hZNUMNFPHUSal6rWThQ.png",
+        "name": "Mitsubishi",
+        "origin_country": "JP"
+      },
+      {
+        "id": 6755,
+        "logo_path": "/c0ENH8QeZLvCACpzCpwvYMy2SDr.png",
+        "name": "Nippon Television Network Corporation",
+        "origin_country": "JP"
+      },
+      {
+        "id": 1780,
+        "logo_path": "/2KJ1cSBOGABQotDWSRPNY4C9amg.png",
+        "name": "Tohokushinsha Film Corporation",
+        "origin_country": "JP"
+      },
+      {
+        "id": 1779,
+        "logo_path": "/41nGzTdCnORYZIZzaGZtfsBwQCl.png",
+        "name": "Tokuma Shoten",
+        "origin_country": "JP"
+      },
+      {
+        "id": 12518,
+        "logo_path": "/qJZAVb8vx6qFLQJ6cunRkVUJVdB.png",
+        "name": "d-rights",
+        "origin_country": "JP"
+      }
+    ],
+    "production_countries": [
+      {
+        "iso_3166_1": "JP",
+        "name": "Japan"
+      }
+    ],
+    "release_date": "2004-11-19",
+    "revenue": 236049757,
+    "runtime": 119,
+    "spoken_languages": [
+      {
+        "english_name": "Japanese",
+        "iso_639_1": "ja",
+        "name": "日本語"
+      }
+    ],
+    "status": "Released",
+    "tagline": "Ils y vivaient tous les deux.",
+    "title": "Le Château ambulant",
+    "video": false,
+    "vote_average": 8.4,
+    "vote_count": 7047
+  }

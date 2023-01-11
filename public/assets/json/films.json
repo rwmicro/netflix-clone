@@ -1,0 +1,149 @@
+[
+    {
+    "title" : "Avatar",
+    "id": 19995,
+    "poster_path": "/3npygfmEhqnmNTmDWhHLz1LPcbA.jpg",
+    "postersource": true,
+    "posterPath":"/assets/img/films/affiches/Avatar.jpg"
+  },
+  {
+    "title" : "L'Âge de glace : Les aventures de Buck Wild",
+    "id": 774825,
+    "poster_path": "/d9i6luKlPIY5RBt4U6eNvgWdGt7.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "id": 424694,
+    "poster_path": "/zpf6mrGZ0BbdsfzwUP0Nzp3hJEb.jpg",
+    "postersource": false
+  },{
+    "title": "Le Roi Lion",
+    "id": 420818,
+    "poster_path": "/7QqLsDKe3myax9mfQf5EvJ2qk6u.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Mon voisin Totoro",
+    "id": 8392,
+    "poster_path": "/eEpy8IiR8N0S6mgkdAjDCMlMYQO.jpg",
+    "postersource": false
+  },{
+    "title": "Le Voyage de Chihiro",
+    "id": 129,
+    "poster_path": "/12TAqK0AUgdcYE9ZYZ9r7ASbH5Q.jpg",
+    "postersource": false
+  },{
+    "title": "Minari",
+    "id": 615643,
+    "poster_path": "/4d201AGKOe7QnSTqROcoCcvznYG.jpg",
+    "postersource": false
+  },{
+    "title": "Mary",
+    "id": 400928,
+    "poster_path": "/wHyrEoiAjFQ6HigTSgoI20CrlTc.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Les étoiles vagabondes",
+    "id": 609797,
+    "poster_path": "/5jVvMU7QZgy6enb3yDTkyhjp7Ns.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Lion",
+    "id": 334543,
+    "poster_path": "/kIkf33jYUpENZOVm8aQjvRjxFhB.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Logan",
+    "id": 263115,
+    "poster_path": "/5HB2SsrYNARm4Kom7Amwyb93O4M.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Interstellar",
+    "id": 157336,
+    "poster_path": "/1pnigkWWy8W032o9TKDneBa3eVK.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Le Château ambulant",
+    "id": 4935,
+    "poster_path": "/45PVXJUYfH6yIINcQKelQ0SJPvh.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Joker",
+    "id": 475557,
+    "poster_path": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+    "postersource": false
+  },
+  {
+    "title": "A Star Is Born",
+    "id": 332562,
+    "poster_path": "/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg",
+    "postersource": true,
+    "posterPath":"/assets/img/films/affiches/a-star-is-born.jpg"
+  },
+  {
+    "title": "Comment c'est loin",
+    "id" : 366554,
+    "poster_path": "/9MPCy4iAwBzKsE5Wg7XI1wbaQPR.jpg",
+    "postersource": false
+  },
+  {
+    "title":"Wind River",
+    "id" : 395834,
+    "poster_path": "/8bXVTfPGlxBmz8p3QsHEdqDcZCC.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Black Panther",
+    "id": 284054,
+    "poster_path": "/g94IcdzPswTYl1ISdgn2EwvaZtt.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Venom",
+    "id": 335983,
+    "poster_path": "/vVusHIRlyyFVS42XnqZso2wGKr.jpg",
+    "postersource": false
+  },
+  {
+    "title":"Will Hunting",
+    "id": 489,
+    "poster_path": "/dMxqv6b08mQCikVPZL4UBl2MuHR.jpg",
+    "postersource": false
+  },{
+    "title":"Wonder Woman",
+    "id":297762,
+    "poster_path": "/oomdTdke7dqffdDoDV1fFBV4fJY.jpg",
+    "postersource": false
+  },
+  {
+    "title": "World War Z",
+    "id": 72190,
+    "poster_path": "/xqk3gTrNODmH90QEgeBgEIHN1Fu.jpg",
+    "postersource": false
+  },
+  {
+    "title": "X-Men : Dark Phoenix",
+    "id" :320288,
+    "poster_path": "/qjP5jjOp85gmEcGgHkN0i8gddUz.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Avengers : Infinity War",
+    "id":299536,
+    "poster_path": "/hSfuKPtyEryeFzapZ8UgZd4aESu.jpg",
+    "postersource": false
+  },
+  {
+    "title": "Avengers",
+    "id": 24428,
+    "poster_path": "/ntpxTsTg3BsIRkMkNLffNjwftUf.jpg",
+    "postersource": false
+  }
+]

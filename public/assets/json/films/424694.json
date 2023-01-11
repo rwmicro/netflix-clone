@@ -1,0 +1,165 @@
+
+  {
+    "adult": false,
+    "backdrop_path": "/jNUpYq2jRSwQM89vST9yQZelMSu.jpg",
+    "belongs_to_collection": null,
+    "actors": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 17838,
+        "known_for_department": "Acting",
+        "name": "Rami Malek",
+        "original_name": "Rami Malek",
+        "popularity": 18.18,
+        "profile_path": "/2OuFzCbMibXGouG79tG1U4BLPbe.jpg",
+        "cast_id": 1,
+        "character": "Freddie Mercury",
+        "credit_id": "581f2697c3a3685faa003fb0",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1220123,
+        "known_for_department": "Acting",
+        "name": "Gwilym Lee",
+        "original_name": "Gwilym Lee",
+        "popularity": 5.63,
+        "profile_path": "/bHSmjJLJyrg5Q0tC0W2FFreuOnO.jpg",
+        "cast_id": 3,
+        "character": "Brian May",
+        "credit_id": "599b3986c3a3681d4b003825",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1452045,
+        "known_for_department": "Acting",
+        "name": "Ben Hardy",
+        "original_name": "Ben Hardy",
+        "popularity": 11.979,
+        "profile_path": "/b20ijbr2tbqlGvqZgkCpNZ5AYvS.jpg",
+        "cast_id": 2,
+        "character": "Roger Taylor",
+        "credit_id": "599b397192514127930037ca",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 4787,
+        "known_for_department": "Acting",
+        "name": "Joseph Mazzello",
+        "original_name": "Joseph Mazzello",
+        "popularity": 7.407,
+        "profile_path": "/44gsv7TlXOOKDGg5aRtqxZjM9ae.jpg",
+        "cast_id": 4,
+        "character": "John Deacon",
+        "credit_id": "599b3fbd9251412793003f28",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 86232,
+        "known_for_department": "Acting",
+        "name": "Lucy Boynton",
+        "original_name": "Lucy Boynton",
+        "popularity": 16.701,
+        "profile_path": "/9ef0EcePIN0iTH4J2he4NLVwlQL.jpg",
+        "cast_id": 5,
+        "character": "Mary Austin",
+        "credit_id": "5a29d184925141033611defd",
+        "order": 4
+      }
+    ],
+    "budget": 52000000,
+    "genres": [
+      {
+        "id": 10402,
+        "name": "Musique"
+      },
+      {
+        "id": 18,
+        "name": "Drame"
+      },
+      {
+        "id": 36,
+        "name": "Histoire"
+      }
+    ],
+    "homepage": "http://bohemianrhapsody.com",
+    "id": 424694,
+    "imdb_id": "tt1727824",
+    "original_language": "en",
+    "original_title": "Bohemian Rhapsody",
+    "overview": "Le parcours de Queen et son leader Freddie Mercury, de la formation du groupe à son apparition au concert Live Aid en 1985.",
+    "popularity": 69.666,
+    "poster_path": "/zpf6mrGZ0BbdsfzwUP0Nzp3hJEb.jpg",
+    "production_companies": [
+      {
+        "id": 3281,
+        "logo_path": "/8tMybAieh64uzvm8knSjXOFX8Qc.png",
+        "name": "GK Films",
+        "origin_country": "GB"
+      },
+      {
+        "id": 508,
+        "logo_path": "/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png",
+        "name": "Regency Enterprises",
+        "origin_country": "US"
+      },
+      {
+        "id": 90995,
+        "logo_path": null,
+        "name": "Queen Films",
+        "origin_country": "GB"
+      },
+      {
+        "id": 11391,
+        "logo_path": null,
+        "name": "Tribeca Productions",
+        "origin_country": "US"
+      },
+      {
+        "id": 10104,
+        "logo_path": "/hNuGhsKVlmhnwSRcmOejDBDjh6w.png",
+        "name": "New Regency Pictures",
+        "origin_country": "US"
+      },
+      {
+        "id": 25,
+        "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+        "name": "20th Century Fox",
+        "origin_country": "US"
+      }
+    ],
+    "production_countries": [
+      {
+        "iso_3166_1": "GB",
+        "name": "United Kingdom"
+      },
+      {
+        "iso_3166_1": "US",
+        "name": "United States of America"
+      }
+    ],
+    "release_date": "2018-10-24",
+    "revenue": 894027543,
+    "runtime": 134,
+    "spoken_languages": [
+      {
+        "english_name": "English",
+        "iso_639_1": "en",
+        "name": "English"
+      }
+    ],
+    "status": "Released",
+    "tagline": "La seule chose plus extraordinaire que sa musique, c’est son histoire.",
+    "title": "Bohemian Rhapsody",
+    "video": false,
+    "vote_average": 8,
+    "vote_count": 14261
+  }

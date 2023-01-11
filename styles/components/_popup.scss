@@ -1,0 +1,46 @@
+.popup {
+  color: red;
+  z-index: 99;
+  .popup-bg {
+    background: #000;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    opacity: .8;
+  }
+  .popup-content {
+    background: black;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%;
+    line-height: 1.4;
+    border-radius: 3px;
+    max-width: 70%;
+    min-width: 300px;
+    width: 70%;
+    height: 80%;
+    z-index: 99;
+    top: 10%;
+  }
+  .close-popup {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    background: $color-1;
+    font-size: 22px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: -13px;
+    margin-right: -9px;
+    z-index: 99;
+  }
+  :root{
+    --plyr-color-main : $color-1;
+  }
+}

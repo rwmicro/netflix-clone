@@ -1,0 +1,142 @@
+{
+    "adult": false,
+    "backdrop_path": "/1TUg5pO1VZ4B0Q1amk3OlXvlpXV.jpg",
+    "bgsource": true,
+    "belongs_to_collection": {
+      "id": 762512,
+      "name": "Le Roi Lion (Reboot) - Saga",
+      "poster_path": "/dGpIRn4Nqi63JO1RlKxjcPbQSAw.jpg",
+      "backdrop_path": "/jIgM7YNVft0YGeXsqrh3oG5TWLx.jpg"
+    },
+    "actors": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 5294,
+        "known_for_department": "Acting",
+        "name": "Chiwetel Ejiofor",
+        "original_name": "Chiwetel Ejiofor",
+        "popularity": 10.402,
+        "profile_path": "/kq5DDnqqofoRI0t6ddtRlsJnNPT.jpg",
+        "cast_id": 17,
+        "character": "Scar (voice)",
+        "credit_id": "59890a509251414bfa006d1e",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 84292,
+        "known_for_department": "Acting",
+        "name": "John Oliver",
+        "original_name": "John Oliver",
+        "popularity": 2.644,
+        "profile_path": "/wI7LRInWUT3RgCByYx69wRMqgsy.jpg",
+        "cast_id": 14,
+        "character": "Zazu (voice)",
+        "credit_id": "59640ace9251410bfa103ac8",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 15152,
+        "known_for_department": "Acting",
+        "name": "James Earl Jones",
+        "original_name": "James Earl Jones",
+        "popularity": 11.09,
+        "profile_path": "/oqMPIsXrl9SZkRfIKN08eFROmH6.jpg",
+        "cast_id": 2,
+        "character": "Mufasa (voice)",
+        "credit_id": "58a7a1719251417ef40014ab",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 51878,
+        "known_for_department": "Acting",
+        "name": "John Kani",
+        "original_name": "John Kani",
+        "popularity": 6.48,
+        "profile_path": "/g7tqg3q128a5O2qXMCwVnXsow9I.jpg",
+        "cast_id": 18,
+        "character": "Rafiki (voice)",
+        "credit_id": "59890a689251414bd1006da5",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 1981,
+        "known_for_department": "Acting",
+        "name": "Alfre Woodard",
+        "original_name": "Alfre Woodard",
+        "popularity": 7.61,
+        "profile_path": "/70AVFDROBAeVhWDEMKWfXPpBVYq.jpg",
+        "cast_id": 16,
+        "character": "Sarabi (voice)",
+        "credit_id": "59890978c3a36875260061d1",
+        "order": 4
+      }
+    ],
+    "budget": 260000000,
+    "genres": [
+      {
+        "id": 12,
+        "name": "Aventure"
+      },
+      {
+        "id": 10751,
+        "name": "Familial"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      }
+    ],
+    "homepage": "https://movies.disney.com/the-lion-king-2019",
+    "id": 420818,
+    "imdb_id": "tt6105098",
+    "original_language": "en",
+    "original_title": "The Lion King",
+    "overview": "Au fond de la savane africaine, tous les animaux célèbrent la naissance de Simba, leur futur roi. Les mois passent. Simba idolâtre son père, le roi Mufasa, qui prend à cœur de lui faire comprendre les enjeux de sa royale destinée. Mais tout le monde ne semble pas de cet avis. Scar, le frère de Mufasa, l'ancien héritier du trône, a ses propres plans. La bataille pour la prise de contrôle de la Terre des Lions est ravagée par la trahison, la tragédie et le drame, ce qui finit par entraîner l'exil de Simba. Avec l'aide de deux nouveaux amis, Timon et Pumbaa, le jeune lion va devoir trouver comment grandir et reprendre ce qui lui revient de droit.",
+    "popularity": 133.427,
+    "poster_path": "/7QqLsDKe3myax9mfQf5EvJ2qk6u.jpg",
+    "production_companies": [
+      {
+        "id": 2,
+        "logo_path": "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+        "name": "Walt Disney Pictures",
+        "origin_country": "US"
+      },
+      {
+        "id": 7297,
+        "logo_path": "/l29JYQVZbTcjZXoz4CUYFpKRmM3.png",
+        "name": "Fairview Entertainment",
+        "origin_country": "US"
+      }
+    ],
+    "production_countries": [
+      {
+        "iso_3166_1": "US",
+        "name": "United States of America"
+      }
+    ],
+    "release_date": "2019-07-12",
+    "revenue": 1667635327,
+    "runtime": 118,
+    "spoken_languages": [
+      {
+        "english_name": "English",
+        "iso_639_1": "en",
+        "name": "English"
+      }
+    ],
+    "status": "Released",
+    "tagline": "Le roi est revenu.",
+    "title": "Le Roi Lion",
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 8222
+  }
