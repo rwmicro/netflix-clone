@@ -9,8 +9,8 @@ const Footer = () => {
   }
   return (
     <footer>
-      <div className="footer-start">
-        <ul className="ul-footer-start">
+      <div className="w-full bg-gray800 h-2 float-left">
+        <ul className="float-left m-56 ">
           <li>
             <Link href="/">Accueil</Link>
           </li>

@@ -1,4 +1,5 @@
 import "../styles/index.scss";
+import "../styles/input.css";
 import Head from 'next/head'
 import Script from 'next/script'
 

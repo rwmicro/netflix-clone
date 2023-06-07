@@ -4,11 +4,10 @@ import HeadTypes from "../components/HeadTypes";
 import Filmlist from "../components/Filmslist";
 import Footer from "../components/Footer";
 import ListeFilms from "../public/assets/json/films.json";
-import Head from 'next/head'
-import Avatar from '../public/assets/json/films/19995.json'
+import Head from "next/head";
+import Avatar from "../public/assets/json/films/475557.json";
 
-export default function Films(){
-  
+export default function Films() {
   var [Films, setFilms] = useState([]);
   var option = 0;
 
@@ -23,24 +22,24 @@ export default function Films(){
       );
     }
   }, [option]);
-  
+
   const choixOption = () => {
     option = document.getElementById("choix-films").value;
   };
 
   return (
     <>
-    <Head>
-      <title>Rigflix | Films</title>
-    </Head>
+      <Head>
+        <title>Rigflix | Films</title>
+      </Head>
       <Header />
       <HeadTypes medium={Avatar} />
       <label>Genres :</label>
       <Filmlist Films={Films} />
       <Footer />
-
-    </>)
-};
+    </>
+  );
+}
 
 /*
 <select name="choix-films" id="choix-films" onClick={choixOption}>
