@@ -1,45 +1,68 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Logo from "../public/assets/img/tools/logo.png";
-
+import Image from "next/image";
+import user_pic from "public/assets/img/tools/profile.webp";
+import logo from "public/assets/img/tools/logo_netflix.png";
 export default function Header() {
-  const url = useRouter();
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />;
+
   return (
     <>
-      <header className={url.pathname === "/" ? "float-left" : "header"}>
-        <div className="relative pt-10">
-          <Link href="/" className="block w-40">
-            <img src="/assets/img/tools/logo.png" alt="logo" />
-          </Link>
-          <nav className="flex gap-36 ml-20">
-            <Link href="/" className=" w-8">
-              <img src="/assets/img/tools/logo-maison.png" alt="Accueil" />
-              Accueil
-            </Link>
-            <Link href="/Films" className="">
-              <img
-                src="/assets/img/tools/logo-film.png"
-                alt="Films"
-                className="w-8"
-              ></img>
-              Films
-            </Link>
-            <Link href="/Series" legacyBehavior>
-              <a>
-                <img
-                  src="/assets/img/tools/logo-serie.png"
-                  alt="Series"
-                  className="w-8"
-                ></img>
-                Series
+      <header className="float-left h-10 w-full">
+        <div className="mt-5 flex justify-between">
+          <Image
+            src={logo}
+            width={150}
+            height={50}
+            alt="logo"
+            className="ml-20"
+          />
+          <ul className="ml-96 mt-7">
+            <li className="inline-block">
+              <Link
+                href=""
+                className="text-white font-opensans text-2xl font-normal mr-20"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="inline-block">
+              <a
+                href=""
+                className="font-opensans text-2xl font-normal text-white mr-20"
+              >
+                Movies
               </a>
-            </Link>
-          </nav>
+            </li>
+            <li className="inline-block">
+              <Link
+                href=""
+                className="font-opensans text-2xl font-normal text-white mr-20"
+              >
+                Series
+              </Link>
+            </li>
+          </ul>
+          <Link href="">
+            <span className="material-symbols-outlined">search</span>
+            <Image
+              src="/public/assets/img/tools/logo_netfilx.png"
+              width={50}
+              height={50}
+              alt="search"
+            />
+          </Link>
           <Link
-            href="/Login"
-            className="absolute right-10 text-white p-3 rounded-md text- bg-red-600"
+            href=""
+            className="border-redflix border-2 mr-20 rounded-full w-14 h-14 mt-4"
           >
-            S'identifier
+            <Image
+              src={user_pic}
+              alt="user"
+              className="rounded-full w-full h-full"
+            />
           </Link>
         </div>
       </header>

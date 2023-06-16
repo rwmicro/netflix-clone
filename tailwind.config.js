@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         redflix: "#FF0000",
       },
+      fontFamily: {
+        opensans: ['"Open Sans"'],
+      },
     },
   },
   plugins: [],

@@ -84,24 +84,24 @@ export default function Signup() {
           <ul>
             <li className="inline-block mr-20 mt-7 ml-40">
               <a
-                className="inline-block text-white font-semibold hover:border-b"
-                href=""
+                className="inline-block text-white text-xl font-semibold hover:border-b"
+                href="/"
               >
                 Main
               </a>
             </li>
             <li className="inline-block mr-20 mt-7 ml-20">
               <a
-                className="inline-block text-white font-semibold hover:border-b"
-                href=""
+                className="inline-block text-white font-semibold text-xl hover:border-b"
+                href="/films"
               >
                 Films
               </a>
             </li>
             <li className="inline-block mr-20 mt-7 ml-20">
               <a
-                className="inline-block text-white font-semibold hover:border-b"
-                href=""
+                className="inline-block text-white font-semibold text-xl hover:border-b"
+                href="/series"
               >
                 Series
               </a>

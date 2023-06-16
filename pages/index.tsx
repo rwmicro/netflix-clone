@@ -11,11 +11,9 @@ export default function Accueil() {
       </Head>
       <Header />
       <div
-        className="accueil"
+        className="w-full bg-black h-screen"
         style={{
-          backgroundImage: background,
           backgroundSize: "cover",
-          height: 1920,
         }}
       >
         <Search />
