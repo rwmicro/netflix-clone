@@ -34,12 +34,12 @@ export default function Films() {
       </Head>
       <Header />
       <HeadTypes medium={Avatar} />
+      <Filmlist Films={Films} />
     </>
   );
 }
 
 /*
-<Filmlist Films={Films} />
 <Footer />
 <select name="choix-films" id="choix-films" onClick={choixOption}>
         <option value="" defaultValue>

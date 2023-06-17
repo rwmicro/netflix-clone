@@ -43,7 +43,7 @@ export default function HeadFilms({ medium }) {
           >
             Watch now
           </Link>
-          <h1 className="text-3xl font-semibold mt-5">Overview</h1>
+          <h1 className="text-3xl font-semibold mt-20">Overview</h1>
           <div className="inline-flex mt-4">
             <Image
               className="w-72 rounded-lg mr-5"

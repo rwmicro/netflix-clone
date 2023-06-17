@@ -28,9 +28,7 @@ const Footer = () => {
           <ul>
             <img src="/assets/img/tools/bitcoin.png"></img>
             <li>
-              Donation Bitcoin :{" "}
-              <a href="/bitcoin:">
-              </a>
+              Donation Bitcoin : <a href="/bitcoin:"></a>
             </li>
           </ul>
         </div>
@@ -40,8 +38,8 @@ const Footer = () => {
       </div>
       <div className="footer-end">
         <h5>
-          Rigflix © 2020 - {anneeactuelle} - Aucun medias ne sont uploadés sur ce
-          site.
+          Rigflix © 2020 - {anneeactuelle} - Aucun medias ne sont uploadés sur
+          ce site.
         </h5>
         <p className="p-header-end">
           <span className="fab fa-cc-visa" aria-hidden="true"></span>
