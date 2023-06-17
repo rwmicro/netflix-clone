@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "headlessui": "^0.0.0",
+    "heroicons": "^2.0.18",
     "next": "13.0.6",
     "plyr-react": "^5.1.2",
     "prop-types": "^15.8.1",

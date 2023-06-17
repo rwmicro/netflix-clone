@@ -11,13 +11,13 @@ export default function Accueil() {
       </Head>
       <Header />
       <div
-        className="w-full bg-black h-screen"
+        className="w-full h-screen"
         style={{
           backgroundSize: "cover",
+          backgroundImage: `url(${background.src})`,
         }}
-      >
-        <Search />
-      </div>
+      ></div>
+      <Search />
     </>
   );
 }
