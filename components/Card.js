@@ -2,13 +2,15 @@ import Link from "next/link";
 
 var posterFilm = "https://image.tmdb.org/t/p/original";
 
-const Card = ({ film }) => {
+export default function Card({ film }) {
+
   return (
     <>
       <Link
         href={{
-          pathname: "/Films/[film]",
-          query: { film: film.title },
+          pathname: "/movies/[film]",
+          query: { film: film['id']
+   },
         }}
         className="w-42 "
       >
@@ -24,4 +26,3 @@ const Card = ({ film }) => {
   );
 };
 
-export default Card;

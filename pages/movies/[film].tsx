@@ -6,26 +6,57 @@ import Films from '../../public/assets/json/films.json'
 
 export default function PageFilm({film}){
 
+  interface Genre{
+    id: Number;
+    name: String;
+  }
+  
+  type Film = {
+    adult: Boolean;
+    backdrop_path: String;
+    belongs_to_collection: Object;
+    budget: Number;
+    genres: Array<Genre>;
+    homepage: String;
+    id: Number;
+    imdb_id: String;
+    original_language: String;
+    original_title: String;
+    overview: String;
+    poster_path: String;
+    production_companies: null;
+    production_countries: null;
+    release_date: String;
+    revenue: Number;
+    runtime: Number;
+    spoken_languages: null;
+    status: String;
+    tagline: String;
+    title: String;
+    video: Boolean;
+    vote_average: Number;
+    vote_count: Number;
+  }
+
+
+
   const lienimage = "https://image.tmdb.org/t/p/original";
 
-  var temps = film.runtime * 0.016667;
-  var heure = temps.toString().slice(0, 1);
-  var minutes = (parseInt(temps.toString().slice(2, 4)) * 0.6).toString().slice(0, 2);
+
   console.log(film)
-    return (
+
+  if(!film) return (<></>);
+
+  return (
     <>
     <Header/>
       <div className="page-film">
         <div
           className="div-bg"
           style={
-            film.bgsource
-              ? {
-                backgroundImage:"url('" + film.backgroundPath + "')",
-                }
-              : {
+              {
                   backgroundImage:
-                    "url('" + lienimage + film.backdrop_path + "')",
+                    "url('" + lienimage + film['backdrop_path'] + "')",
                 }
           }
         >
@@ -83,20 +114,9 @@ export default function PageFilm({film}){
   );
 };
 
-export async function getStaticPaths() {
-  const paths = Films.map(element => {
-    const film = element.title
-    return {params: {film}};
-  });
-  return {paths, fallback: true};
-}
+/*
+  var temps = film.runtime * 0.016667;
+  var heure = temps.toString().slice(0, 1);
+  var minutes = (parseInt(temps.toString().slice(2, 4)) * 0.6).toString().slice(0, 2);
 
-export async function getStaticProps({params}) {
-  
-  const element = params.film;
-  const filmGen = Films.find(current => current.title === element) || {notfound: true};
-  const imp = await import ('../../public/assets/json/films/'+ filmGen.id + '.json');
-  const film = JSON.parse(JSON.stringify(imp))
-
-  return {props: {film}};
-}
+*/

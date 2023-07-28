@@ -1,31 +1,62 @@
-import { useState, useEffect } from "react";
+import Head from "next/head";
 import Header from "../components/Header";
 import HeadTypes from "../components/HeadTypes";
 import Filmlist from "../components/Filmslist";
 import Footer from "../components/Footer";
-import ListeFilms from "../public/assets/json/films.json";
-import Head from "next/head";
-import Avatar from "../public/assets/json/films/475557.json";
+import { useState, useEffect, Suspense } from "react";
+import { getFilmsList,getFilm } from "../ts/datas";
+
+interface Genre{
+  id: Number;
+  name: String;
+}
+
+type Film = {
+  adult: Boolean;
+  backdrop_path: String;
+  belongs_to_collection: Object;
+  budget: Number;
+  genres: Array<Genre>;
+  homepage: String;
+  id: Number;
+  imdb_id: String;
+  original_language: String;
+  original_title: String;
+  overview: String;
+  poster_path: String;
+  production_companies: null;
+  production_countries: null;
+  release_date: String;
+  revenue: Number;
+  runtime: Number;
+  spoken_languages: null;
+  status: String;
+  tagline: String;
+  title: String;
+  video: Boolean;
+  vote_average: Number;
+  vote_count: Number;
+}
 
 export default function Films() {
-  var [Films, setFilms] = useState([]);
-  var option = 0;
 
-  useEffect(() => {
-    {
-      setFilms(
-        option !== 0
-          ? ListeFilms.map((film) =>
-              parseInt(option) === film.genres[0].id ? film : "ate"
-            )
-          : ListeFilms
-      );
-    }
-  }, [option]);
+  const filmsPromise: Promise<Array<Film>> = getFilmsList();
+  const filmPromise:Promise<Film> = getFilm("76600");
 
-  const choixOption = () => {
-    option = document.getElementById("choix-films").value;
-  };
+  var [films, setFilms] = useState<Array<Film>>({ results: [] });
+  const [film, setFilm] = useState<Film>();
+
+  useEffect(() => { 
+    
+    filmsPromise.then(function (result) {
+      return setFilms(result);
+    });
+
+    filmPromise.then(function (result) {
+      return setFilm(result);
+    });
+
+  }, []);
 
   return (
     <>
@@ -33,31 +64,11 @@ export default function Films() {
         <title>Rigflix | Films</title>
       </Head>
       <Header />
-      <HeadTypes medium={Avatar} />
-      <Filmlist Films={Films} />
+      <HeadTypes medium={film} />
+      <Suspense fallback={<div>Loading...</div>}>
+      <Filmlist Films={films.results} />
+        </Suspense>
+      <Footer />
     </>
   );
 }
-
-/*
-<Footer />
-<select name="choix-films" id="choix-films" onClick={choixOption}>
-        <option value="" defaultValue>
-          Tous
-        </option>
-        {ListeFilms.map((film) => (
-          <option value={film.genres[0].id} key={film.genres[0].id}>
-            {film.genres[0].name}
-          </option>
-        ))}
-      </select>
-
-
-
-  
-
-     
-
-    </>
-  );
-  */

@@ -2,14 +2,14 @@ import Link from "next/link";
 import NavLink from "next/link";
 import Image from "next/image";
 import user_pic from "public/assets/img/tools/frog.png";
-import logo from "public/assets/img/tools/logo_netflix.png";
+import logo from "public/assets/img/tools/logo.png";
 import search_image from "public/assets/img/tools/search.svg";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -21,58 +21,51 @@ export default function Header() {
         <div className="mt-5 flex justify-between">
           <Image
             src={logo}
-            width={150}
+            width={200}
             height={50}
             alt="logo"
-            className="ml-20"
+            className="ml-20 -mt-3"
           />
-          <ul className="ml-82 mt-8">
-            <li className="inline-block">
+          <div className="ml-82 mt-8 flex">
               <Link
                 className={
                   router.pathname == "/"
-                    ? "text-white text-2xl font-bold mr-20 border-b border-redflix "
-                    : "text-white text-2xl font-bold mr-20"
+                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
+                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
                 }
                 href="/"
               >
                 Home
               </Link>
-            </li>
-            <li className="inline-block">
               <Link
                 className={
                   router.pathname == "/movies"
-                    ? "text-white text-2xl font-bold mr-20 border-b border-redflix"
-                    : "text-white text-2xl font-bold mr-20"
+                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
+                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
                 }
                 href="/movies"
               >
                 Movies
               </Link>
-            </li>
-            <li className="inline-block">
               <Link
                 className={
                   router.pathname == "/series"
-                    ? "text-white text-2xl font-bold mr-20 border-b border-redflix"
-                    : "text-white text-2xl font-bold mr-20"
+                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
+                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
                 }
                 href="/series"
               >
                 Series
               </Link>
-            </li>
-          </ul>
-          <div className="flex  mt-8 mr-24 w-42">
-            <Link className="w-7 mr-12 -mt-2" href="">
+          </div>
+          <div className="flex gap-12 h-12 mt-7 mr-24">
+            <Link className="w-7" href="">
               <Image
                 src={search_image}
                 className="w-full h-full"
                 alt="search"
               />
             </Link>
-
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="inline-flex">

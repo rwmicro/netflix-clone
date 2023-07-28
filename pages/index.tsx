@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import Search from "../components/Search";
-import background from "../public/assets/img/tools/index.jpg";
 import Head from "next/head";
+import Header from "../components/Header";
+import background from "../public/assets/img/tools/index.jpg";
+import Search from "../components/Search";
 
 export default function Accueil() {
   return (
@@ -16,8 +16,9 @@ export default function Accueil() {
           backgroundSize: "cover",
           backgroundImage: `url(${background.src})`,
         }}
-      ></div>
+      >
       <Search />
+      </div>
     </>
   );
 }
