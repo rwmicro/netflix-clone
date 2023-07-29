@@ -8,15 +8,14 @@ export default function Card({ film }) {
     <>
       <Link
         href={{
-          pathname: "/movies/[film]",
-          query: { film: film['id']
-   },
+          pathname: "/movies/[movie]",
+          query: { movie: film.id},
         }}
         className="w-42 "
       >
         <img
           src={
-            film.postersource ? film.posterPath : posterFilm + film.poster_path
+            posterFilm + film.poster_path
           }
           alt={film.title}
           className="w-full h-full rounded-sm"
@@ -25,4 +24,3 @@ export default function Card({ film }) {
     </>
   );
 };
-

@@ -5,38 +5,7 @@ import Filmlist from "../components/Filmslist";
 import Footer from "../components/Footer";
 import { useState, useEffect, Suspense } from "react";
 import { getFilmsList,getFilm } from "../ts/datas";
-
-interface Genre{
-  id: Number;
-  name: String;
-}
-
-type Film = {
-  adult: Boolean;
-  backdrop_path: String;
-  belongs_to_collection: Object;
-  budget: Number;
-  genres: Array<Genre>;
-  homepage: String;
-  id: Number;
-  imdb_id: String;
-  original_language: String;
-  original_title: String;
-  overview: String;
-  poster_path: String;
-  production_companies: null;
-  production_countries: null;
-  release_date: String;
-  revenue: Number;
-  runtime: Number;
-  spoken_languages: null;
-  status: String;
-  tagline: String;
-  title: String;
-  video: Boolean;
-  vote_average: Number;
-  vote_count: Number;
-}
+import { Film } from "../ts/Types";
 
 export default function Films() {
 

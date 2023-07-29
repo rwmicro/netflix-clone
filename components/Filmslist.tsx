@@ -1,6 +1,7 @@
 /*import React, { useEffect, useState } from "react";
 import axios from "axios";*/
 import Card from "./Card";
+import { Film } from "./HeadTypes";
 
 export default function Filmslist({ Films }) {
   return (
@@ -23,8 +24,8 @@ export default function Filmslist({ Films }) {
             </button>
           </div>
           <div className="grid grid-cols-10 gap-4 mt-14 align-middle w-11/12">
-            {Films.map((film) =>
-              film ? <Card key={film.id} film={film} /> : ""
+            {Films.map((film:Film) =>
+              film ? <Card key={film.id.toString()} film={film} /> : ""
             )}
           </div>
         </div>
