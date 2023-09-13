@@ -4,16 +4,16 @@ type Genre ={
   }
   
 export type Film = {
-    adult: Boolean;
+    adult: null;
     backdrop_path: String;
-    belongs_to_collection: Object;
+    belongs_to_collection: null;
     budget: Number;
     genres: Array<Genre>;
-    homepage: String;
+    homepage: null;
     id: Number;
     imdb_id: String;
-    original_language: String;
-    original_title: String;
+    original_language: null;
+    original_title: null;
     overview: String;
     poster_path: String;
     production_companies: null;
@@ -22,20 +22,24 @@ export type Film = {
     revenue: Number;
     runtime: Number;
     spoken_languages: null;
-    status: String;
-    tagline: String;
+    status: null;
+    tagline: null;
     title: String;
-    video: Boolean;
+    video: null;
     vote_average: number;
     vote_count: Number;
   }
-  
 export type ImageTMDB = {
-    id: Number;
+    logos: null;
     backdrops: Array<Object>;
     posters: Array<Object>;
   }
-
 export type FilmPoster = {
-
+  id: Number;
+  poster_path: String;
+}
+export type Actors = {
+  id: Number;
+  cast: Array<Object>;
+  crew: null;
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import TextField from "@mui/material/TextField";
-import List from "./List";
 
 function Search() {
   const [inputText, setInputText] = useState("");
@@ -14,7 +13,6 @@ function Search() {
     <>
       <div className="main">
         <div className="search"></div>
-        <List input={inputText} />
       </div>
 
       <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -mt-44 w-auto">

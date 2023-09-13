@@ -5,9 +5,10 @@ import user_pic from "public/assets/img/tools/frog.png";
 import logo from "public/assets/img/tools/logo.png";
 import search_image from "public/assets/img/tools/search.svg";
 import { useRouter } from "next/router";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Head from "next/head";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -17,46 +18,42 @@ export default function Header() {
   const router = useRouter();
   return (
     <>
-      <header className="float-left h-10 w-full">
-        <div className="mt-5 flex justify-between">
-          <Image
-            src={logo}
-            width={200}
-            height={50}
-            alt="logo"
-            className="ml-20 -mt-3"
-          />
-          <div className="ml-82 mt-8 flex">
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <header className="w-full">
+        <div
+          className="mt-1 flex justify-between"
+          style={{ fontFamily: "Inter" }}
+        >
+          <div className="flex">
+            <Link href="/" className="ml-20 -mt-3">
+              <Image src={logo} width={200} height={50} alt="logo" />
+            </Link>
+            <div className="mt-8 ml-20 flex gap-5 text-white text-2xl font-medium ">
               <Link
-                className={
-                  router.pathname == "/"
-                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
-                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
-                }
+                className={router.pathname == "/" ? "underline underline-offset-8 decoration-redflix" : ""}
                 href="/"
               >
                 Home
               </Link>
               <Link
-                className={
-                  router.pathname == "/movies"
-                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
-                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
-                }
+                className={router.pathname == "/movies" ? "underline underline-offset-8 decoration-redflix" : ""}
                 href="/movies"
               >
                 Movies
               </Link>
               <Link
-                className={
-                  router.pathname == "/series"
-                    ? "text-white text-2xl font-bold mr-20 underline underline-offset-8 decoration-redflix"
-                    : "text-white text-2xl font-bold mr-20 hover:underline underline-offset-8 decoration-redflix"
-                }
+                className={router.pathname == "/series" ? "underline underline-offset-8 decoration-redflix" : ""}
                 href="/series"
               >
                 Series
               </Link>
+            </div>
           </div>
           <div className="flex gap-12 h-12 mt-7 mr-24">
             <Link className="w-7" href="">
@@ -95,7 +92,7 @@ export default function Header() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#"
+                          href="/profile"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
@@ -110,7 +107,7 @@ export default function Header() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#"
+                          href="/"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
