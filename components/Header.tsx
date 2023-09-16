@@ -43,7 +43,7 @@ export default function Header() {
             <Link href="/" className="-mt-3 w-fit h-fit">
               <Image src={logo} width={130} height={70} alt="logo" />
             </Link>
-            <div className="mt-4 ml-10 flex gap-5 text-white text-md">
+            <div className="mt-4 ml-10 flex gap-5 text-white text-md font-light">
               <Link
                 className={
                   router.pathname == "/"

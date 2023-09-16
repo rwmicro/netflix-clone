@@ -22,8 +22,8 @@ export default function Films() {
       <Suspense fallback={<Loading />}>
         <HeadTypes medium={film} />
         <Filmlist />
-      </Suspense>
       <Footer />
+      </Suspense>
     </>
   );
 }
