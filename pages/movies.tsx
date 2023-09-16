@@ -6,6 +6,7 @@ import { Film } from "../ts/Types";
 import { getFilm } from "../ts/datas";
 import { Suspense, useEffect, useState } from "react";
 import Loading from "../components/Loading";
+import Pop from "../components/pop";
 
 export default function Films() {
   const [film, setFilm] = useState<Film>();
@@ -22,6 +23,7 @@ export default function Films() {
       <Suspense fallback={<Loading />}>
         <HeadTypes medium={film} />
         <Filmlist />
+        <Pop />
       <Footer />
       </Suspense>
     </>

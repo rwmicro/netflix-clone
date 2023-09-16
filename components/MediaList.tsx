@@ -48,7 +48,6 @@ export default function MediaList() {
   }, []);
 
   if (loading) return <Loading />;
-  console.log(action);
   return (
     <>
       <div className="text-white overflow-clip -mt-28">

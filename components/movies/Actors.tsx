@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function ActorsComponents({ actors }) {
-  console.log(actors)
   var lienimage = "https://image.tmdb.org/t/p/w342";
   return (
     <>    

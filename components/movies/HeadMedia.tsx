@@ -9,21 +9,8 @@ import Loading from "../Loading";
 const ORIGINAL_LINK = "https://image.tmdb.org/t/p/original";
 
 export default function HeadMedia({film}){
-console.log(film)
 const postersPromise: Promise<ImageTMDB>  = getData(film['id'].toString());
 var [posters, setPosters] = useState<ImageTMDB>();
-
-useEffect(() => { 
-  postersPromise.then(results => setPosters(results));
-
-let removeElement = ""
-const _document = document
-const documents = [
-  _document && _document.getElementsByClassName("ytp-chrome-top ytp-show-cards-title")[0],
-];
-documents.forEach(d => { d && d.remove(); })
-webView.evaluateJavaScript(removeElement)
-}, []);
 
 if(!posters) return <Loading />;
 

@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Header from "../../../components/Header";
-import HeadTypes from "../../../components/HeadTypes";
-import Filmlist from "../../../components/MediaList";
-import Footer from "../../../components/Footer";
+import Header from "../components/Header";
+import HeadTypes from "../components/HeadTypes";
+import Filmlist from "../components/MediaList";
+import Footer from "../components/Footer";
 import { useState, useEffect, Suspense } from "react";
-import { getGenreMovies,getFilm } from "../../../ts/datas";
-import { Film, FilmPoster } from "../../../ts/Types";
+import { getGenreMovies,getFilm } from "../ts/datas";
+import { Film, FilmPoster } from "../ts/Types";
 import { useRouter } from "next/router";
-import Loading from "../../../components/Loading";
+import Loading from "../components/Loading";
 
 export default function Genres() {
   

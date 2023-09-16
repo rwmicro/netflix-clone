@@ -62,15 +62,15 @@ const HeadFilms = ({ medium }) => {
               Films
             </span>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <Link
               href={"https://www.imdb.com/title/" + film.imdb_id}
               target="_blank"
-              className="-mt-1 w-16"
+              className="w-16"
             >
               <Image
                 src={IMDB}
-                alt="Picture of the author"
+                alt="IMDB"
                 width={60}
                 height={50}
               />

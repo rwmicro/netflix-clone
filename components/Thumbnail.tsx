@@ -11,8 +11,8 @@ export default function Thumbnail({ Medium }) {
     <>
       <Link
         href={{
-          pathname: "/movies/[movie]",
-          query: { movie: Medium.id.toString() },
+          pathname: "/watch/[watch]",
+          query: { watch: Medium.id.toString() },
         }}
         className="h-fit w-fit cursor-pointer z-100"
       >
