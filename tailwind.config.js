@@ -4,8 +4,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
+    "./node_modules/flowbite/**/*.js",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -18,5 +17,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+        plugins: [
+    ]
 };

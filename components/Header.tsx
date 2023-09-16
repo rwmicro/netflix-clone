@@ -8,62 +8,84 @@ import { useRouter } from "next/router";
 import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Head from "next/head";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 250 ||
+    document.documentElement.scrollTop > 250
+  ) {
+    document.getElementById("header").style.position = "fixed";
+    document.getElementById("header").style.transition = "all 0.5s ease";
+    document.getElementById("header").style.backgroundColor = "#141414";
+  } else {
+    document.getElementById("header").style.position = "absolute";
+    document.getElementById("header").style.transition = "all 0.5s ease";
+    document.getElementById("header").style.backgroundColor = "";
+  }
+}
+
 export default function Header() {
+  useEffect(() => {
+    window.onscroll = function () {
+      scrollFunction();
+    };
+  }, []);
   const router = useRouter();
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <header className="w-full">
-        <div
-          className="mt-1 flex justify-between"
-          style={{ fontFamily: "Inter" }}
-        >
-          <div className="flex">
-            <Link href="/" className="ml-20 -mt-3">
-              <Image src={logo} width={200} height={50} alt="logo" />
+      <header id="header" className="w-full z-[999999] absolute">
+        <div className="flex justify-between">
+          <div className="flex relative left-16 lg:left-20 xl:left-24">
+            <Link href="/" className="-mt-3 w-fit h-fit">
+              <Image src={logo} width={130} height={70} alt="logo" />
             </Link>
-            <div className="mt-8 ml-20 flex gap-5 text-white text-2xl font-medium ">
+            <div className="mt-4 ml-10 flex gap-5 text-white text-md">
               <Link
-                className={router.pathname == "/" ? "underline underline-offset-8 decoration-redflix" : ""}
+                className={
+                  router.pathname == "/"
+                    ? "underline underline-offset-8 decoration-redflix"
+                    : ""
+                }
                 href="/"
               >
                 Home
               </Link>
               <Link
-                className={router.pathname == "/movies" ? "underline underline-offset-8 decoration-redflix" : ""}
+                className={
+                  router.pathname == "/movies"
+                    ? "underline underline-offset-8 decoration-redflix"
+                    : ""
+                }
                 href="/movies"
               >
                 Movies
               </Link>
               <Link
-                className={router.pathname == "/series" ? "underline underline-offset-8 decoration-redflix" : ""}
+                className={
+                  router.pathname == "/series"
+                    ? "underline underline-offset-8 decoration-redflix"
+                    : ""
+                }
                 href="/series"
               >
                 Series
               </Link>
             </div>
           </div>
-          <div className="flex gap-12 h-12 mt-7 mr-24">
-            <Link className="w-7" href="">
+          <div className="flex gap-12 align-middle justify-center mt-3.5 mr-24">
+            <Link className="w-5 h-5 mt-2" href="">
               <Image
                 src={search_image}
                 className="w-full h-full"
                 alt="search"
               />
             </Link>
-            <Menu as="div" className="relative inline-block text-left">
+
+            <Menu as="div" className="relative inline-block text-left w-6">
               <div>
                 <Menu.Button className="inline-flex">
                   <Image

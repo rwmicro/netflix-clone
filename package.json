@@ -1,5 +1,5 @@
 {
-  "name": "rigflix",
+  "name": "netflix-clone",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "headlessui": "^0.0.0",
     "heroicons": "^2.0.18",
-    "next": "13.0.6",
+    "next": "^13.4.19",
     "plyr-react": "^5.1.2",
     "prop-types": "^15.8.1",
     "react": "18.2.0",

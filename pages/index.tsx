@@ -7,16 +7,15 @@ export default function Accueil() {
   return (
     <>
       <Head>
-        <title>Rigflix | Accueil</title>
+        <title>Netflix</title>
       </Head>
-      <Header />
       <div
-        className="w-full h-screen"
+        className="w-full h-screen bg-cover absolute top-0 left-0"
         style={{
-          backgroundSize: "cover",
           backgroundImage: `url(${background.src})`,
         }}
       >
+        <Header />
       <Search />
       </div>
     </>

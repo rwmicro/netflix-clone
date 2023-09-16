@@ -1,80 +1,170 @@
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Film } from "../ts/Types";
-import IMDB from 'public/assets/img/tools/imdb.svg';
+import IMDB from "public/assets/img/tools/imdb.svg";
 import { useRouter } from "next/router";
 import Loading from "./Loading";
-import media from 'public/assets/img/tools/media.png'
-import N from 'public/assets/img/tools/N.png'
-import ReactPlayer from "react-player/lazy";
+import media from "public/assets/img/tools/media.png";
+import infos from "../public/assets/img/tools/informations.png";
+import N from "public/assets/img/tools/N.png";
+import Header from "./Header";
 
+import mutedImage from "public/assets/img/tools/muted.png";
+import unmuted from "../public/assets/img/tools/unmuted.png";
 
-export default function HeadFilms({medium}){
-  const film:Film = medium;
-  if(!film) return <Loading />;
+import ReactPlayer from "react-player/youtube";
+
+const HeadFilms = ({ medium }) => {
+  const film: Film = medium;
+  if (!film) return <Loading />;
 
   const router = useRouter();
   const query = router.query;
-  
-  function setWallpaper(){
-    if(router.pathname == "/movies"){
-      const filmHeader =  require("public/assets/img/films/wallpapers/joker.jpg");
+
+  const wallpaper = useMemo(() => {
+    if (router.pathname == "/movies") {
+      const filmHeader = require("public/assets/img/films/wallpapers/joker.jpg");
       return filmHeader.default.src;
-    } 
-    if(query.wallpaper) return query.wallpaper;
-  }
-  
-  const wallpaper = setWallpaper()
-  
+    }
+    if (query.wallpaper) return query.wallpaper;
+  }, [router.pathname, query.wallpaper]);
+
   const POSTER = "https://image.tmdb.org/t/p/original/";
-  
-  const background = wallpaper ? wallpaper : POSTER + film['backdrop_path'];
+  const background = wallpaper || POSTER + film["backdrop_path"];
+
+  const [muted, setMuted] = useState(true);
 
   return (
     <>
+      <Header />
       <div
-        className="h-[85vh] w-full" >
-          <div className="absolute -top-7 left-0 flex align-center justify-center w-full h-screen -z-50">
-<iframe width="1920" height="1080" className="brightness-75"
-src="https://www.youtube.com/embed/zAGVQLHvwOY?autoplay=1&mute=1&loop=0&fs=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
->
-</iframe>
-</div>
-        <div className="absolute bottom-44 left-20 w-3/4 text-white">
-          <div className="flex mb-36"><Image className="w-8" src={N} alt="N logo"/><span className="text-3xl font-thin mt-2.5 ml-2 ">Films</span></div>
-          <div className="flex gap-2">
-          <Link href={"https://www.imdb.com/title/" + film.imdb_id} target="_blank" className="-mt-1 w-16">
-            <Image src={IMDB} alt="Picture of the author" width={60} height={50} />
-          </Link>
-            <span className="text-sm font-semibold">{film['vote_average']}</span>
-            <span className="text-sm font-semibold">•</span>
-            <span className="text-sm font-semibold">{film['runtime']}min</span>
-            <span className="text-sm font-semibold">•</span>
-            <span className="text-sm font-semibold">{film['release_date'].split('-',1)}</span>
+        className="h-[98vh] w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat z-[-1] mask"
+        style={{
+          backgroundImage: `url(${background})`,
+        }}
+      >
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=zAGVQLHvwOY"
+          width=""
+          height="1080px"
+          playing
+          muted={muted}
+          loop
+          style={{ marginTop: "-30px" }}
+        />
+      </div>
+      <div className="h-[98vh] w-full">
+        <div className="absolute bottom-44 w-3/4 text-white lg:bottom-36 left-16 lg:left-20 xl:left-24">
+          <div className="flex mb-4">
+            <Image className="w-8" src={N} alt="N logo" />
+            <span className="text-3xl font-thin mt-2.5 ml-2 lg:text-2xl xl:text-3xl">
+              Films
+            </span>
           </div>
-          <h1 className="text-6xl font-bold mt-1">{film['title']}</h1>
-          <p className="w-1/3 mb-8 mt-3">{film ? film['overview'] : ""}</p>
-          <Link
-            href={{
-              pathname: "/movies/[movie]",
-              query: { movie: film['id'].toString()},
-            }}
-            as={`/movies/${film['title']}`}
-            className="flex w-44 rounded-full bg-white text-black font-semibold p-3 text-xl hover:bg-slate-200"
-          >
-           <Image src={media} className="w-5 mr-2" alt='media'/> Watch now
-          </Link>
-          <div className='flex gap-2 mt-4 text-neutral-500'>
-            {film['genres'].map((genre) => (  
-              <span className="text-sm font-semibold">• {genre['name']} </span>
+          <div className="flex gap-2">
+            <Link
+              href={"https://www.imdb.com/title/" + film.imdb_id}
+              target="_blank"
+              className="-mt-1 w-16"
+            >
+              <Image
+                src={IMDB}
+                alt="Picture of the author"
+                width={60}
+                height={50}
+              />
+            </Link>
+            <span className="text-sm font-semibold">
+              {film["vote_average"]}
+            </span>
+            <span className="text-sm font-semibold">•</span>
+            <span className="text-sm font-semibold">{film["runtime"]}min</span>
+            <span className="text-sm font-semibold">•</span>
+            <span className="text-sm font-semibold">
+              {film["release_date"].split("-", 1)}
+            </span>
+          </div>
+          <h1 className="text-6xl font-bold mt-1 lg:text-4xl xl:text-5xl">
+            {film["title"]}
+          </h1>
+          <p className="w-1/3 mb-8 mt-3 text-sm lg:text-base xl:text-lg">
+            {film ? film["overview"] : ""}
+          </p>
+          <div className="flex gap-2">
+            <Link
+              href={{
+                pathname: "/movies/[movie]",
+                query: { movie: film["id"].toString() },
+              }}
+              as={`/movies/${film["title"]}`}
+              className="flex align-center justify-center w-44 rounded-md bg-white text-black font-semibold p-3 text-xl hover:bg-slate-200"
+            >
+              <Image src={media} className="w-7 h-7 mr-2" alt="media" />
+              <span>Watch now</span>
+            </Link>
+            <Link
+              href={{
+                pathname: "/movies/[movie]",
+                query: { movie: film["id"].toString() },
+              }}
+              as={`/movies/${film["title"]}`}
+              className="flex align-center justify-center w-44 rounded-md text-white bg-[#1C1917] font-semibold p-3 text-xl hover:brightness-[.90]"
+            >
+              <Image
+                src={infos}
+                width={40}
+                height={40}
+                className="w-7 h-7 mr-2"
+                alt="media"
+              />
+              <span>More infos</span>
+            </Link>
+          </div>
+          <div className="flex gap-2 mt-4 text-neutral-400">
+            {film["genres"].map((genre) => (
+              <span className="text-sm font-semibold">• {genre["name"]} </span>
             ))}
             <span className="text-sm font-semibold">•</span>
           </div>
         </div>
-        <div className="absolute bottom-20 right-0 bg-white/20 rounded-l-md text-2xl p-3 pr-8 text-inherit font-semibold">
-          <h1>16+</h1>
+        <div className="absolute bottom-20 right-0 flex gap-3 items-center">
+          <button
+            className="h-fit w-fit border-2 rounded-full p-3"
+            onClick={() => setMuted(!muted)}
+          >
+            {!muted && (
+              <Image
+                src={unmuted}
+                alt="unmuted"
+                width={40}
+                height={40}
+                className="rounded-full h-6 w-6"
+              />
+            )}
+            {muted && (
+              <Image
+                src={mutedImage}
+                alt="muted"
+                width={40}
+                height={40}
+                className="rounded-full h-6 w-6"
+              />
+            )}
+          </button>
+          <h1 className="bg-black/50 border-l-4 text-2xl p-3 pr-8 text-white font-normal lg:text-xl xl:text-2xl">
+            16+
+          </h1>
         </div>
-        </div>
+      </div>
     </>
   );
-}
+};
+
+export default React.memo(HeadFilms);
+
+/*
+      <div className="absolute -top-7 left-0 flex align-center justify-center w-full h-screen -z-50">
+
+        </div>
+        */

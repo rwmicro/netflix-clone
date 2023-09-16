@@ -26,12 +26,12 @@ function Search() {
           <input
             type="search"
             placeholder="Type your search ..."
-            className="rounded-l-full p-4 text-black pl-5 w-96 bg-white block
+            className="rounded-l-md p-4 text-black pl-5 w-96 bg-white block
           focus:border-redflix"
           ></input>
           <button
             type="submit"
-            className="text-white bg-redflix p-4 rounded-r-full font-bold w-44 hover:bg-red-700"
+            className="text-white bg-redflix p-4 rounded-r-md font-bold w-44 hover:bg-red-700"
           >
             Rechercher
           </button>
