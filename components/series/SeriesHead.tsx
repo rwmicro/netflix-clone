@@ -68,12 +68,7 @@ const HeadFilms = ({ medium }) => {
               target="_blank"
               className="w-16"
             >
-              <Image
-                src={IMDB}
-                alt="IMDB"
-                width={60}
-                height={50}
-              />
+              <Image src={IMDB} alt="IMDB" width={60} height={50} />
             </Link>
             <span className="text-sm font-semibold">
               {film["vote_average"]}
@@ -94,10 +89,10 @@ const HeadFilms = ({ medium }) => {
           <div className="flex gap-2">
             <Link
               href={{
-                pathname: "/series/[serie]",
-                query: { serie: film["id"].toString() },
+                pathname: "/watch/[watch]",
+                query: { watch: film["id"].toString() },
               }}
-              as={`/series/${film["name"]}`}
+              as={`/watch/${film["name"]}`}
               className="flex align-center justify-center w-44 rounded-md bg-white text-black font-semibold p-3 text-xl hover:bg-slate-200"
             >
               <Image src={media} className="w-7 h-7 mr-2" alt="media" />
@@ -105,7 +100,7 @@ const HeadFilms = ({ medium }) => {
             </Link>
             <Link
               href={{
-                pathname: "/series/[serie]",
+                pathname: "/series",
                 query: { serie: film["id"].toString() },
               }}
               as={`/series/${film["name"]}`}

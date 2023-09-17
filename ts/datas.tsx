@@ -32,7 +32,7 @@ export async function getPopular(): Promise<Array<FilmPoster[]>> {
   return data.map((d) => d.results);
 }
 
-export async function getMedia(media:string, filmID: string): Promise<Film> {
+export async function getMedia(media:string, filmID: string): Promise<any> {
   const url = `https://api.themoviedb.org/3/${media}/${filmID}?append_to_response=images`;
   return fetchFromAPI(url);
 }
@@ -63,8 +63,8 @@ export async function getVideos(media:string,filmID: string | string[]): Promise
   return fetchFromAPI(url);
 }
 
-export async function getSimilarFilms(media:string, filmID: string | string[]): Promise<Array<any[]>> {
-  const url = `https://api.themoviedb.org/3/${media}/${filmID}/similar?language=en-US`;
+export async function getSimilarMedia(media:string, filmID: string | string[]): Promise<Array<any[]>> {
+  const url = `https://api.themoviedb.org/3/${media}/${filmID}/recommendations?language=en-US&page=1`;
   return fetchFromAPI(url);
 }
 

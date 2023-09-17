@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
-import { getMedia, getSimilarFilms, getVideos } from "../ts/datas";
+import { getMedia, getSimilarMedia, getVideos } from "../ts/datas";
 import { useRouter } from "next/router";
 import { Film, Actors } from "../ts/Types";
 import Loading from "../components/Loading";
@@ -26,12 +26,14 @@ export default function Pop() {
   const [similar, setSimilar] = useState<Array<any>>();
   const [muted, setMuted] = useState(true);
   const [show, setShow] = useState(true);
+  const [background, setBackground] = useState(null);
+  const [trailer, setTrailer] = useState(false);
 
   useEffect(() => {
     if (movieID) {
       Promise.all([
         getMedia("movie",movieID.toString()),
-        getSimilarFilms("movie",movieID),
+        getSimilarMedia("movie",movieID),
         getVideos("movie",movieID),
       ])
         .then(([filmData, similarData, videoData]) => {
@@ -45,13 +47,17 @@ export default function Pop() {
     }
   }, [movieID]);
 
-  const POSTER = "https://image.tmdb.org/t/p/original/";
 
   if (!film || !similar) return <Loading />;
-  console.log(video);
-  const BACKGROUND = POSTER + film["backdrop_path"];
-  const URL = "https://www.youtube.com/watch?v=" + video["results"][0]["key"];
 
+  const POSTER = "https://image.tmdb.org/t/p/original";
+  {
+    video &&
+      video["results"].map((video) => {
+        if(video.type === "Trailer") setBackground("https://www.youtube.com/watch?v=" + video.key), setTrailer(true);
+      });
+      if(!trailer) setBackground( POSTER + film["backdrop_path"]);
+  }
   if(show) return (
     <>
       <div
@@ -61,18 +67,18 @@ export default function Pop() {
         <div
           className="h-[60vh] w-full bg-cover bg-center bg-no-repeat z-[-1] mask relative"
           style={{
-            backgroundImage: `url(${BACKGROUND})`,
+            backgroundImage: `url(${background})`,
           }}
         >
-          <ReactPlayer
-            url={URL}
+         {trailer && <ReactPlayer
+            url={background}
             width="1000px"
             height="600px"
             playing
             muted={true}
             loop
             style={{ marginTop: "-50px" }}
-          />
+          />}
           <button
             className="h-fit w-fit border-2 rounded-full p-2 absolute bottom-14 right-14 bg-zinc-900/50 "
             onClick={() => setMuted(!muted)}
@@ -146,7 +152,7 @@ export default function Pop() {
           </div>
           <div className="flex flex-col gap-2 p-10">
             <h1 className="text-2xl text-white mb-5 font-semibold">
-              Similar titles
+            Recommendations
             </h1>
             <div className="grid grid-cols-3 gap-5">
               {similar.results.slice(0, 9).map((movie) => (
