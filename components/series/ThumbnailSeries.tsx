@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import play from "../public/assets/img/tools/media.png";
-import downarrow from "../public/assets/img/tools/down-arrow.png";
+import play from "public/assets/img/tools/media.png";
+import downarrow from "public/assets/img/tools/down-arrow.png";
 
 var posterFilm = "https://image.tmdb.org/t/p/w500";
 
 export default function Thumbnail({ Medium }) {
+
+  console.log(Medium);
   return (
     <>
       <Link
@@ -39,8 +41,8 @@ export default function Thumbnail({ Medium }) {
             </Link>
             <Link
               href={{
-                pathname: "/movies",
-                query: { movie: Medium.id.toString() },
+                pathname: "/series",
+                query: { serie: Medium.id.toString() },
               }}
               className="p-1.5 bg-zinc-800 border-2 border-zinc-600 rounded-full"
               scroll={false}
@@ -55,13 +57,13 @@ export default function Thumbnail({ Medium }) {
             </Link>
           </div>
           <p className="text-sm font-semibold">{Medium["media_type"]}</p>
-          <h1 className="text-xl font-semibold">{Medium["title"]}</h1>
+          <h1 className="text-xl font-semibold">{Medium["name"]}</h1>
           <div className="flex align-middle gap-2 text-xs">
             <p className="text-green-500">
               Recommended at {Medium["vote_average"] * 10}%
             </p>
             <span className="uppercase">{Medium["original_language"]}</span>
-            <span>{Medium["release_date"].split("-", 1)}</span>
+            <span>{Medium["first_air_date"] && Medium["first_air_date"].split("-", 1) || "Release soon"}</span>
           </div>
         </div>
       </Link>

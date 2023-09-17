@@ -1,15 +1,18 @@
 import { useEffect } from "react";
 import { FilmPoster } from "../ts/Types";
 import Thumbnail from "./Thumbnail";
+import ThumbnailSeries from "./series/ThumbnailSeries";
 
 interface ThumbnailHandlerProps {
   title: string;
   datas: Array<Array<FilmPoster>>;
+  type: string;
 }
 
 const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
   title,
   datas,
+  type
 }) => {
   useEffect(() => {
     const containers = document.querySelectorAll(".thumbnail_container a");
@@ -44,7 +47,6 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       });
     };
   }, []);
-
   return (
     <>
       <h1 className="text-3xl font-semibold tracking-wide mt-10 mb-3 ">
@@ -52,9 +54,12 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       </h1>
       <div className="flex w-max gap-2 thumbnail_container">
         {datas.map((element) =>
-          element.map((medium) => (
-            <Thumbnail key={medium.id.toString()} Medium={medium} />
-          ))
+          element.map((medium) => {
+            if(type === "tv"){
+              return <ThumbnailSeries key={medium.id.toString()} Medium={medium} />
+            }
+            return <Thumbnail key={medium.id.toString()} Medium={medium} />
+} )
         )}
       </div>
     </>

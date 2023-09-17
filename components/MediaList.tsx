@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
-import { getTopRated, getGenreMovies } from "../ts/datas";
+import { getTopRated, getGenres } from "../ts/datas";
 import { FilmPoster } from "../ts/Types";
 import ThumbnailHandler from "./ThumbnailHandler";
 
-export default function MediaList() {
+export default function MediaList({ type}) {
   const [topRated, setTopRated] = useState<Array<Array<FilmPoster>>>(null);
   const [action, setAction] = useState<Array<Array<FilmPoster>>>(null);
   const [animation, setAnimation] = useState<Array<Array<FilmPoster>>>(null);
@@ -16,12 +16,12 @@ export default function MediaList() {
 
   useEffect(() => {
     Promise.all([
-      getTopRated(),
-      getGenreMovies("18"),
-      getGenreMovies("28"),
-      getGenreMovies("16"),
-      getGenreMovies("35"),
-      getGenreMovies("99"),
+      getTopRated(type),
+      getGenres(type,"18"),
+      getGenres(type,"28"),
+      getGenres(type,"16"),
+      getGenres(type,"35"),
+      getGenres(type,"99"),
     ])
       .then(
         ([
@@ -52,12 +52,12 @@ export default function MediaList() {
     <>
       <div className="text-white overflow-clip -mt-28">
         <div className="ml-20 pb-20">
-          <ThumbnailHandler title={"Top Rated"} datas={topRated} />
-          <ThumbnailHandler title={"Action"} datas={action} />
-          <ThumbnailHandler title={"Animation"} datas={animation} />
-          <ThumbnailHandler title={"Comedy"} datas={comedy} />
-          <ThumbnailHandler title={"Drama"} datas={drama} />
-          <ThumbnailHandler title={"Documentary"} datas={documentary} />
+          <ThumbnailHandler title={"Top Rated"} datas={topRated} type={type} />
+          <ThumbnailHandler title={"Action"} datas={action} type={type}/>
+          <ThumbnailHandler title={"Animation"} datas={animation} type={type}/>
+          <ThumbnailHandler title={"Comedy"} datas={comedy} type={type}/>
+          <ThumbnailHandler title={"Drama"} datas={drama} type={type}/>
+          <ThumbnailHandler title={"Documentary"} datas={documentary} type={type}/>
         </div>
       </div>
     </>

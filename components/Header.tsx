@@ -37,7 +37,7 @@ export default function Header() {
   const router = useRouter();
   return (
     <>
-      <header id="header" className="w-full z-[999999] absolute">
+      <header id="header" className="w-full z-[998] absolute">
         <div className="flex justify-between">
           <div className="flex relative left-16 lg:left-20 xl:left-24">
             <Link href="/" className="-mt-3 w-fit h-fit">

@@ -14,14 +14,14 @@ const fetchFromAPI = async (url: string) => {
   return res.json();
 };
 
-export async function getTopRated(): Promise<Array<FilmPoster[]>> {
-  const urls = [`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`];
+export async function getTopRated(media:string): Promise<Array<FilmPoster[]>> {
+  const urls = [`https://api.themoviedb.org/3/${media}/top_rated?language=en-US&page=1`];
   const data = await Promise.all(urls.map(fetchFromAPI));
   return data.map((d) => d.results);
 }
 
-export async function getGenreMovies(genre: string): Promise<Array<FilmPoster[]>> {
-  const urls = [`https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`];
+export async function getGenres(media:string,genre: string): Promise<Array<FilmPoster[]>> {
+  const urls = [`https://api.themoviedb.org/3/discover/${media}?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`];
   const data = await Promise.all(urls.map(fetchFromAPI));
   return data.map((d) => d.results);
 }
@@ -32,8 +32,8 @@ export async function getPopular(): Promise<Array<FilmPoster[]>> {
   return data.map((d) => d.results);
 }
 
-export async function getFilm(filmID: string): Promise<Film> {
-  const url = `https://api.themoviedb.org/3/movie/${filmID}?append_to_response=images`;
+export async function getMedia(media:string, filmID: string): Promise<Film> {
+  const url = `https://api.themoviedb.org/3/${media}/${filmID}?append_to_response=images`;
   return fetchFromAPI(url);
 }
 
@@ -53,12 +53,22 @@ export async function get(genre: string): Promise<Array<FilmPoster[]>> {
   return data.map((d) => d.results);
 }
 
-export async function getActors(filmID: number): Promise<Actors> {
+export async function getActors(filmID: string): Promise<Actors> {
   const url = `https://api.themoviedb.org/3/movie/${filmID}/credits?language=en-US`;
   return fetchFromAPI(url);
 }
 
-export async function getVideos(filmID: string): Promise<Array<FilmPoster[]>> {
-  const url = `https://api.themoviedb.org/3/movie/${filmID}/videos?language=en-US`;
+export async function getVideos(media:string,filmID: string | string[]): Promise<Array<any[]>> {
+  const url = `https://api.themoviedb.org/3/${media}/${filmID}/videos?language=en-US`;
+  return fetchFromAPI(url);
+}
+
+export async function getSimilarFilms(media:string, filmID: string | string[]): Promise<Array<any[]>> {
+  const url = `https://api.themoviedb.org/3/${media}/${filmID}/similar?language=en-US`;
+  return fetchFromAPI(url);
+}
+
+export async function getSeason(serieID:string,season:string): Promise<Array<any[]>> {
+  const url = `https://api.themoviedb.org/3/tv/${serieID}/season/${season}?language=en-US`;
   return fetchFromAPI(url);
 }
