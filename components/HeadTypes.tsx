@@ -31,6 +31,7 @@ const HeadFilms = ({ medium }) => {
   }, [router.pathname, query.wallpaper]);
 
   const POSTER = "https://image.tmdb.org/t/p/original/";
+  
   const background = wallpaper || POSTER + film["backdrop_path"];
 
   const [muted, setMuted] = useState(true);

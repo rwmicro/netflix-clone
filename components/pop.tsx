@@ -17,15 +17,13 @@ import Link from "next/link";
 import mutedImage from "public/assets/img/tools/muted.png";
 import unmuted from "../public/assets/img/tools/unmuted.png";
 
-export default function Pop() {
-  const router = useRouter();
-  const { movie: movieID } = router.query;
+export default function Pop({movieID}) {
+
 
   const [film, setFilm] = useState<Film>();
   const [video, setVideo] = useState<Array<any>>();
   const [similar, setSimilar] = useState<Array<any>>();
   const [muted, setMuted] = useState(true);
-  const [show, setShow] = useState(true);
   const [background, setBackground] = useState(null);
   const [trailer, setTrailer] = useState(false);
 
@@ -48,17 +46,32 @@ export default function Pop() {
   }, [movieID]);
 
 
-  if (!film || !similar) return <Loading />;
 
   const POSTER = "https://image.tmdb.org/t/p/original";
-  {
-    video &&
-      video["results"].map((video) => {
-        if(video.type === "Trailer") setBackground("https://www.youtube.com/watch?v=" + video.key), setTrailer(true);
-      });
-      if(!trailer) setBackground( POSTER + film["backdrop_path"]);
-  }
-  if(show) return (
+  const THUMBNAIL = "https://image.tmdb.org/t/p/w500";
+
+  useEffect(() => {
+    let foundTrailer = false;
+  
+    if (video) {
+      for (const v of video["results"]) {
+        if (v.type === "Trailer") {
+          setBackground("https://www.youtube.com/watch?v=" + v.key);
+          setTrailer(true);
+          foundTrailer = true;
+          break;
+        }
+      }
+    }
+  
+    if (!foundTrailer && film) {
+      setBackground(POSTER + film["backdrop_path"]);
+    }
+  }, [video, film, trailer]);
+  
+  if (!film || !similar) return <Loading />;
+
+return (
     <>
       <div
         className="fixed top-10 w-2/4 left-1/2 -translate-x-1/2 rounded-md overflow-hidden overflow-y-scroll max-h-full z-[999]"
@@ -108,8 +121,8 @@ export default function Pop() {
             <h1 className="text-6xl text-white mb-10">{film.title}</h1>
             <Link
               href={{
-                pathname: "/movies/[movie]",
-                query: { movie: film["id"].toString() },
+                pathname: "/watch/[watch]",
+                query: { watch: film["id"].toString() },
               }}
               as={`/movies/${film["title"]}`}
               className="flex align-center justify-center w-44 rounded-md bg-white text-black font-semibold p-3 text-xl hover:bg-slate-200"
@@ -154,8 +167,8 @@ export default function Pop() {
             <h1 className="text-2xl text-white mb-5 font-semibold">
             Recommendations
             </h1>
-            <div className="grid grid-cols-3 gap-5">
-              {similar.results.slice(0, 9).map((movie) => (
+            <div className="grid grid-cols-3 gap-5 mb-20">
+              {similar['results'].slice(0, 9).map((movie) => (
                 <Link
                   className="flex flex-col gap-2 bg-neutral-800 rounded-md overflow-hidden h-96"
                   href={{
@@ -164,7 +177,7 @@ export default function Pop() {
                   }}
                 >
                   <Image
-                    src={POSTER + movie["backdrop_path"]}
+                    src={THUMBNAIL + movie["backdrop_path"]}
                     alt="poster"
                     width={250}
                     height={100}
@@ -190,7 +203,6 @@ export default function Pop() {
           </div>
         </div>
       </div>
-      <div className="fixed top-0 w-screen left-0 h-screen z-[998] bg-black/80" onClick={() => router.beforePopState}></div>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function Thumbnail({ Medium }) {
         className="h-fit w-fit cursor-pointer z-100"
       >
         <Image
-          src={posterFilm + Medium.backdrop_path}
+          src={posterFilm + Medium.backdrop_path || undefined}
           className="h-40 w-72 rounded-t-md shadow-md"
           width={600}
           height={300}

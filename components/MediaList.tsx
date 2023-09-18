@@ -18,7 +18,7 @@ export default function MediaList({ type}) {
     Promise.all([
       getTopRated(type),
       getGenres(type,"18"),
-      getGenres(type,"10759"),
+      getGenres(type,type === "movie" ? "28" : "10759"),
       getGenres(type,"16"),
       getGenres(type,"35"),
       getGenres(type,"99"),

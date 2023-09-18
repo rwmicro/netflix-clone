@@ -77,7 +77,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex gap-12 align-middle justify-center mt-3.5 mr-24">
-            <Link className="w-5 h-5 mt-2" href="">
+            <Link className="w-5 h-5 mt-2 hidden" href="">
               <Image
                 src={search_image}
                 className="w-full h-full"

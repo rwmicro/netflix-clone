@@ -7,8 +7,11 @@ import { getMedia } from "../ts/datas";
 import { Suspense, useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import Pop from "../components/series/pop";
+import { useRouter } from "next/router";
 
 export default function Films() {
+  const router = useRouter();
+  const { serie: movieID } = router.query;
   const [film, setFilm] = useState<Film>();
   useEffect(() => {
     const filmPromise: Promise<Film> = getMedia("tv","60574");
@@ -23,9 +26,16 @@ export default function Films() {
       <Suspense fallback={<Loading />}>
         <SeriesHead medium={film} />
         <SeriesList type='tv'/>
-        <Pop />
       <Footer />
-      </Suspense>
+      {movieID && (
+        <div
+        className="fixed top-0 w-screen left-0 h-screen z-[998] bg-black/80"
+        onClick={() => router.push('/series','/series',{scroll: false})}
+        >
+            <Pop movieID={movieID} />
+          </div>
+        )}
+        </Suspense>
     </>
   );
 }

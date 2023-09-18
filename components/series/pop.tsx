@@ -1,8 +1,6 @@
-import Header from "../Header";
 import { useEffect, useState } from "react";
 import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
 import { useRouter } from "next/router";
-import { Film, Actors } from "../../ts/Types";
 import Loading from "../Loading";
 import ReactPlayer from "react-player";
 
@@ -18,15 +16,11 @@ import mutedImage from "public/assets/img/tools/muted.png";
 import unmuted from "public/assets/img/tools/unmuted.png";
 import Episodes from "./episodes";
 
-export default function Pop() {
-  const router = useRouter();
-  const { serie: movieID } = router.query;
-
+export default function Pop({movieID}) {
   const [film, setFilm] = useState<Array<any>>();
   const [video, setVideo] = useState<Array<any>>();
   const [similar, setSimilar] = useState<Array<any>>();
   const [muted, setMuted] = useState(true);
-  const [show, setShow] = useState(true);
   const [background, setBackground] = useState(null);
   const [trailer, setTrailer] = useState(false);
 
@@ -48,17 +42,29 @@ export default function Pop() {
     }
   }, [movieID]);
 
-  if (!film || !similar) return <Loading />;
-
   const POSTER = "https://image.tmdb.org/t/p/original";
-  {
-    video &&
-      video["results"].map((video) => {
-        if(video.type === "Trailer") setBackground("https://www.youtube.com/watch?v=" + video.key), setTrailer(true);
-      });
-      if(!background) setBackground( POSTER + film["backdrop_path"]);
-  }
-  if (show)
+  const THUMBNAIL = "https://image.tmdb.org/t/p/w500";
+
+  useEffect(() => {
+    let foundTrailer = false;
+  
+    if (video) {
+      for (const v of video["results"]) {
+        if (v.type === "Trailer") {
+          setBackground("https://www.youtube.com/watch?v=" + v.key);
+          setTrailer(true);
+          foundTrailer = true;
+          break;
+        }
+      }
+    }
+  
+    if (!foundTrailer && film) {
+      setBackground(POSTER + film["backdrop_path"]);
+    }
+  }, [video, film, trailer]);
+  
+  if (!film || !similar) return ;
     return (
       <>
         <div
@@ -77,7 +83,7 @@ export default function Pop() {
                 width="1000px"
                 height="600px"
                 playing
-                muted={true}
+                muted={true}results
                 loop
                 style={{ marginTop: "-50px" }}
               />
@@ -109,7 +115,7 @@ export default function Pop() {
           <div className="-mt-36">
             <div className="p-10 pt-0">
               <h1 className="text-6xl text-white mb-10 font-bold">
-                {film.name}
+                {film['name']}
               </h1>
               <Link
                 href={{
@@ -134,7 +140,7 @@ export default function Pop() {
                     <Image src={dolby} className="w-7 h-7 mr-2" alt="spatial" />
                     <Image src={ad} className="w-7 h-7 mr-2" alt="ad" />
                   </div>
-                  <h2 className="mt-1">{film.overview}</h2>
+                  <h2 className="mt-1">{film['overview']}</h2>
                 </div>
                 <div className="flex flex-col gap-2 w-1/3">
                   <span className="text-neutral-400 font-normal">
@@ -165,7 +171,7 @@ export default function Pop() {
                 Recommendations
               </h1>
               <div className="grid grid-cols-3 gap-5">
-                {similar.results.slice(0, 9).map((movie) => (
+                {similar['results'].slice(0, 9).map((movie) => (
                   <Link
                     className="flex flex-col gap-2 bg-neutral-800 rounded-md overflow-hidden h-96"
                     href={{
@@ -174,7 +180,7 @@ export default function Pop() {
                     }}
                   >
                     <Image
-                      src={POSTER + movie["backdrop_path"]}
+                      src={THUMBNAIL + movie["backdrop_path"]}
                       alt="poster"
                       width={250}
                       height={100}
@@ -200,10 +206,6 @@ export default function Pop() {
             </div>
           </div>
         </div>
-        <div
-          className="fixed top-0 w-screen left-0 h-screen z-[998] bg-black/80"
-          onClick={() => router.beforePopState}
-        ></div>
       </>
     );
 }

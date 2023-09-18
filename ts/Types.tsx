@@ -16,11 +16,11 @@ export type Film = {
     original_title: null;
     overview: String;
     poster_path: String;
-    production_companies: null;
+    production_companies: Array<any>;
     production_countries: null;
     release_date: String;
     revenue: Number;
-    runtime: Number;
+    runtime: number;
     spoken_languages: null;
     status: null;
     tagline: null;

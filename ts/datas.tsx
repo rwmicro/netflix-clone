@@ -58,12 +58,12 @@ export async function getActors(filmID: string): Promise<Actors> {
   return fetchFromAPI(url);
 }
 
-export async function getVideos(media:string,filmID: string | string[]): Promise<Array<any[]>> {
+export async function getVideos(media:string,filmID: string | string[]): Promise<any[]> {
   const url = `https://api.themoviedb.org/3/${media}/${filmID}/videos?language=en-US`;
   return fetchFromAPI(url);
 }
 
-export async function getSimilarMedia(media:string, filmID: string | string[]): Promise<Array<any[]>> {
+export async function getSimilarMedia(media:string, filmID: string | string[]): Promise<Array<any>> {
   const url = `https://api.themoviedb.org/3/${media}/${filmID}/recommendations?language=en-US&page=1`;
   return fetchFromAPI(url);
 }
