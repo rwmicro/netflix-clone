@@ -1,10 +1,8 @@
 import { useState } from "react";
-// import TextField from "@mui/material/TextField";
 
 function Search() {
   const [inputText, setInputText] = useState("");
   let inputHandler = (e) => {
-    //convert input text to lower case
     var lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
@@ -45,15 +43,3 @@ function Search() {
 }
 
 export default Search;
-
-/*
-
- <TextField
-          id="outlined-basic"
-          onChange={inputHandler}
-          variant="outlined"
-          fullWidth
-          label="Search"
-        />
-      
-        */

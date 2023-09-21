@@ -1,4 +1,4 @@
-import { Film, FilmPoster, ImageTMDB, Actors } from "./Types";
+import { FilmPoster, ImageTMDB, Actors } from "./Types";
 
 const options = {
   method: "GET",

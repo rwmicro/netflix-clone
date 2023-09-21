@@ -1,13 +1,14 @@
 import Head from "next/head";
 import SeriesHead from "../components/series/SeriesHead";
-import SeriesList from "../components/MediaList";
-import Footer from "../components/Footer";
+import SeriesList from "../components/general/MediaList";
+import Footer from "../components/main/Footer";
 import { Film } from "../ts/Types";
 import { getMedia } from "../ts/datas";
 import { Suspense, useEffect, useState } from "react";
-import Loading from "../components/Loading";
+import Loading from "../components/main/Loading";
 import Pop from "../components/series/pop";
 import { useRouter } from "next/router";
+import Header from "../components/main/Header";
 
 export default function Films() {
   const router = useRouter();
@@ -16,14 +17,15 @@ export default function Films() {
   useEffect(() => {
     const filmPromise: Promise<Film> = getMedia("tv","60574");
     filmPromise.then((results) => setFilm(results));
-  }, []);
+  }, [])
 
   return (
     <>
       <Head>
-        <title>Netflix | Series</title>
+        <title>Netflix - Series</title>
       </Head>
       <Suspense fallback={<Loading />}>
+        <div className="hidden sm:block">
         <SeriesHead medium={film} />
         <SeriesList type='tv'/>
       <Footer />
@@ -35,7 +37,12 @@ export default function Films() {
             <Pop movieID={movieID} />
           </div>
         )}
+        </div>
         </Suspense>
+        <div className="min-h-screen w-full sm:hidden">
+        <Header />
+        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">Please view this site on a computer</p>
+      </div>
     </>
   );
 }

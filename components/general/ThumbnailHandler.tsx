@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { FilmPoster } from "../ts/Types";
+import { FilmPoster } from "../../ts/Types";
 import Thumbnail from "./Thumbnail";
-import ThumbnailSeries from "./series/ThumbnailSeries";
+import ThumbnailSeries from "../series/ThumbnailSeries";
 
 interface ThumbnailHandlerProps {
   title: string;

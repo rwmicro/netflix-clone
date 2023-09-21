@@ -14,17 +14,20 @@ function classNames(...classes: string[]) {
 }
 
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 250 ||
-    document.documentElement.scrollTop > 250
-  ) {
-    document.getElementById("header").style.position = "fixed";
-    document.getElementById("header").style.transition = "all 0.5s ease";
-    document.getElementById("header").style.backgroundColor = "#141414";
-  } else {
-    document.getElementById("header").style.position = "absolute";
-    document.getElementById("header").style.transition = "all 0.5s ease";
-    document.getElementById("header").style.backgroundColor = "";
+  if (document.getElementById("header")) {
+    if (
+      document.body.scrollTop > 250 ||
+      document.documentElement.scrollTop > 250
+    ) {
+      document.getElementById("header").style.position = "fixed";
+      document.getElementById("header").style.top = "0px";
+      document.getElementById("header").style.transition = "all 0.5s ease";
+      document.getElementById("header").style.backgroundColor = "#141414";
+    } else {
+      document.getElementById("header").style.position = "absolute";
+      document.getElementById("header").style.transition = "all 0.5s ease";
+      document.getElementById("header").style.backgroundColor = "";
+    }
   }
 }
 
@@ -37,7 +40,7 @@ export default function Header() {
   const router = useRouter();
   return (
     <>
-      <header id="header" className="w-full z-[998] absolute">
+      <header id="header" className="w-full z-[998] absolute top-0">
         <div className="flex justify-between">
           <div className="flex relative left-16 lg:left-20 xl:left-24">
             <Link href="/" className="-mt-3 w-fit h-fit">
@@ -114,7 +117,7 @@ export default function Header() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="/profile"
+                          href="/"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"

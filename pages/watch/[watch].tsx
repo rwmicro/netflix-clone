@@ -1,31 +1,32 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { FilmPoster } from "../../ts/Types";
-import ReactPlayer from "react-player";
-import { getVideos } from "../../ts/datas";
-import Loading from "../../components/Loading";
-
-import Image from "next/image";
+import Head from "next/head";
+import Header from "../../components/main/Header";
+import Link from "next/link";
 
 export default function PageFilm() {
-  const router = useRouter();
-
   return (
     <>
-      <div className="min-h-screen">
-        <button type="button"className="w-fit h-fit" onClick={() => router.back()}>
-          <Image src="" width={200} height={50} alt="" />
-        </button>
+    <Head>
+      <title>Netflix - Watch</title>
+    </Head>
+      <div className="min-h-screen w-full">
+        <Header />
+        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center">
+          The streaming of media without the permission of the owner is
+          forbidden.
+          <br /> If you need more information, please click{" "}
+          <Link
+            href={
+              "https://en.wikipedia.org/wiki/Protecting_Lawful_Streaming_Act"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            here
+          </Link>
+          .
+        </p>
       </div>
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=sODZLSHJm6Q"
-        width=""
-        height="932px"
-        playing
-        muted={true}
-        loop
-        controls
-      />
     </>
   );
 }
