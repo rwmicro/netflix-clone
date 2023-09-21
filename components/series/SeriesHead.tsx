@@ -24,7 +24,7 @@ const HeadFilms = ({ medium }) => {
 
   const wallpaper = useMemo(() => {
     if (router.pathname == "/series") {
-      const filmHeader = require("public/assets/img/series/head/peaky-blinders.jpg");
+      const filmHeader = require("/assets/img/series/head/peaky-blinders.jpg");
       return filmHeader.default.src;
     }
     if (query.wallpaper) return query.wallpaper;

@@ -8,7 +8,6 @@ var posterFilm = "https://image.tmdb.org/t/p/w500";
 
 export default function Thumbnail({ Medium }) {
 
-  console.log(Medium);
   return (
     <>
       <Link

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Header from "../components/main/Header";
-import background from "public/assets/img/tools/index.jpg";
 import Search from "../components/index/Search";
 
 export default function Accueil() {
@@ -12,7 +11,7 @@ export default function Accueil() {
       <div
         className="hidden sm:block w-full h-screen bg-cover absolute top-0 left-0"
         style={{
-          backgroundImage: `url(${background.src})`,
+          backgroundImage: `url('/assets/img/tools/index.jpg')`,
         }}
       >
         <Header />
