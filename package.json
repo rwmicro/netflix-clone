@@ -1,6 +1,6 @@
 {
   "name": "netflix-clone",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,20 +14,18 @@
     "headlessui": "^0.0.0",
     "heroicons": "^2.0.18",
     "next": "^13.4.19",
-    "plyr-react": "^5.1.2",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-player": "^2.12.0",
-    "sass": "^1.56.1",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.3.3",
     "typescript": "5.0.4"
   }
 }

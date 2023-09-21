@@ -1,17 +1,17 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Film } from "../ts/Types";
+import { Film } from "../../ts/Types";
 import IMDB from "public/assets/img/tools/imdb.svg";
 import { useRouter } from "next/router";
-import Loading from "./Loading";
+import Loading from "../main/Loading";
 import media from "public/assets/img/tools/media.png";
-import infos from "../public/assets/img/tools/informations.png";
+import infos from "public/assets/img/tools/informations.png";
 import N from "public/assets/img/tools/N.png";
-import Header from "./Header";
+import Header from "../main/Header";
 
 import mutedImage from "public/assets/img/tools/muted.png";
-import unmuted from "../public/assets/img/tools/unmuted.png";
+import unmuted from "public/assets/img/tools/unmuted.png";
 
 import ReactPlayer from "react-player/youtube";
 
@@ -31,7 +31,7 @@ const HeadFilms = ({ medium }) => {
   }, [router.pathname, query.wallpaper]);
 
   const POSTER = "https://image.tmdb.org/t/p/original/";
-  
+
   const background = wallpaper || POSTER + film["backdrop_path"];
 
   const [muted, setMuted] = useState(true);
@@ -40,20 +40,27 @@ const HeadFilms = ({ medium }) => {
     <>
       <Header />
       <div
-        className="h-[98vh] w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat z-[-1] mask"
+        className="h-[98vh] w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat z-[-1] mask overflow-hidden"
         style={{
           backgroundImage: `url(${background})`,
         }}
-      >
-        <ReactPlayer
+      >{document.body.clientWidth <= 1900 ||document.body.clientWidth >= 1950 ? <ReactPlayer
+          width="100%"
+          height="100%"
           url="https://www.youtube.com/watch?v=zAGVQLHvwOY"
-          width=""
-          height="1080px"
+          playing
+          muted={muted}
+          loop
+        /> : 
+        <ReactPlayer
+        width="1920px"
+        height="1080px"
+          url="https://www.youtube.com/watch?v=zAGVQLHvwOY"
           playing
           muted={muted}
           loop
           style={{ marginTop: "-30px" }}
-        />
+        />}
       </div>
       <div className="h-[98vh] w-full">
         <div className="absolute bottom-44 w-3/4 text-white lg:bottom-36 left-16 lg:left-20 xl:left-24">
@@ -69,12 +76,7 @@ const HeadFilms = ({ medium }) => {
               target="_blank"
               className="w-16"
             >
-              <Image
-                src={IMDB}
-                alt="IMDB"
-                width={60}
-                height={50}
-              />
+              <Image src={IMDB} alt="IMDB" width={60} height={50} />
             </Link>
             <span className="text-sm font-semibold">
               {film["vote_average"]}

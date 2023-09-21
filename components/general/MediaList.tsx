@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Loading from "./Loading";
-import { getTopRated, getGenres } from "../ts/datas";
-import { FilmPoster } from "../ts/Types";
+import Loading from "../main/Loading";
+import { getTopRated, getGenres } from "../../ts/datas";
+import { FilmPoster } from "../../ts/Types";
 import ThumbnailHandler from "./ThumbnailHandler";
 
 export default function MediaList({ type}) {

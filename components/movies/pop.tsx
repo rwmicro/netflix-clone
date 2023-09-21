@@ -1,9 +1,7 @@
-import Header from "../components/Header";
 import { useEffect, useState } from "react";
-import { getMedia, getSimilarMedia, getVideos } from "../ts/datas";
-import { useRouter } from "next/router";
-import { Film, Actors } from "../ts/Types";
-import Loading from "../components/Loading";
+import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
+import { Film, Actors } from "../../ts/Types";
+import Loading from "../main/Loading";
 import ReactPlayer from "react-player";
 
 import media from "public/assets/img/tools/media.png";
@@ -15,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import mutedImage from "public/assets/img/tools/muted.png";
-import unmuted from "../public/assets/img/tools/unmuted.png";
+import unmuted from "public/assets/img/tools/unmuted.png";
 
 export default function Pop({movieID}) {
 
@@ -74,7 +72,7 @@ export default function Pop({movieID}) {
 return (
     <>
       <div
-        className="fixed top-10 w-2/4 left-1/2 -translate-x-1/2 rounded-md overflow-hidden overflow-y-scroll max-h-full z-[999]"
+        className="fixed top-10 w-10/12 xl:w-2/4 left-1/2 -translate-x-1/2 rounded-md overflow-hidden overflow-y-scroll max-h-full z-[999]"
         style={{ backgroundColor: "#141414" }}
       >
         <div
@@ -85,8 +83,8 @@ return (
         >
          {trailer && <ReactPlayer
             url={background}
-            width="1000px"
-            height="600px"
+            width="100%"
+            height="100%"
             playing
             muted={true}
             loop
@@ -132,12 +130,17 @@ return (
             </Link>
             <div className="flex gap-2 justify-between">
               <div className="flex flex-col text-sm text-white mt-5 w-1/2 ">
-                <div className="flex gap-2 text-neutral-500 text-sm font-semibold items-center">
+                <div className="flex flex-col md:flex-row gap-2 text-neutral-500 text-sm font-semibold md:items-center">
+                <p className="text-green-500">
+                      Recommended at {(film["vote_average"] * 10).toFixed(1)}%
+                    </p>
                   <span>{film.release_date.split("-", 1)}</span>
                   <span>{film["runtime"]}min</span>
+                  <div className="flex">
                   <Image src={hd} className="w-7 h-7 mr-2" alt="hd" />
                   <Image src={dolby} className="w-7 h-7 mr-2" alt="spatial" />
                   <Image src={ad} className="w-7 h-7 mr-2" alt="ad" />
+                  </div>
                 </div>
                 <h2 className="mt-1">{film.overview}</h2>
               </div>

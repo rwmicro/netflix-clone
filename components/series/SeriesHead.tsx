@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Film } from "../../ts/Types";
 import IMDB from "public/assets/img/tools/imdb.svg";
 import { useRouter } from "next/router";
-import Loading from "../Loading";
+import Loading from "../main/Loading";
 import media from "public/assets/img/tools/media.png";
 import infos from "public/assets/img/tools/informations.png";
 import N from "public/assets/img/tools/N.png";
-import Header from "../Header";
+import Header from "../main/Header";
 
 import mutedImage from "public/assets/img/tools/muted.png";
 import unmuted from "public/assets/img/tools/unmuted.png";
@@ -24,7 +24,7 @@ const HeadFilms = ({ medium }) => {
 
   const wallpaper = useMemo(() => {
     if (router.pathname == "/series") {
-      const filmHeader = require("public/assets/img/films/wallpapers/joker.jpg");
+      const filmHeader = require("public/assets/img/series/head/peaky-blinders.jpg");
       return filmHeader.default.src;
     }
     if (query.wallpaper) return query.wallpaper;
@@ -39,20 +39,29 @@ const HeadFilms = ({ medium }) => {
     <>
       <Header />
       <div
-        className="h-[98vh] w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat z-[-1] mask"
+        className="h-[98vh] w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat z-[-1] mask overflow-hidden"
         style={{
           backgroundImage: `url(${background})`,
         }}
       >
-        <ReactPlayer
+      {document.body.clientWidth <= 1900 || document.body.clientWidth >= 1950 ? <ReactPlayer
           url="https://www.youtube.com/watch?v=uIJ07Wg5i0k"
-          width=""
-          height="1080px"
+          width="100%"
+          height="100%"
           playing
           muted={muted}
           loop
-          style={{ marginTop: "-30px" }}
         />
+        :
+        <ReactPlayer
+        width="1920px"
+        height="1080px"
+        url="https://www.youtube.com/watch?v=uIJ07Wg5i0k"
+        playing
+          muted={muted}
+          loop
+          style={{ marginTop: "-30px" }}
+        />}
       </div>
       <div className="h-[98vh] w-full">
         <div className="absolute bottom-44 w-3/4 text-white lg:bottom-36 left-16 lg:left-20 xl:left-24">
