@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/main/Header";
 import Search from "../components/index/Search";
-import background from '/assets/img/tools/index.jpg'
+import background from 'public/assets/img/tools/index.jpg'
 
 export default function Accueil() {
   return (
