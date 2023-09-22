@@ -10,10 +10,7 @@ export default function Accueil() {
         <title>Netflix</title>
       </Head>
       <div
-        className="hidden sm:block w-full h-screen bg-cover absolute top-0 left-0"
-        style={{
-          backgroundImage: `url(${background.src})`,
-        }}
+        className="hidden sm:block w-full h-screen bg-cover absolute top-0 left-0 index"
       >
         <Header />
       <Search />
