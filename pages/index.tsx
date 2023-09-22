@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/main/Header";
 import Search from "../components/index/Search";
-import background from 'public/assets/img/tools/index.jpg'
+import background from '../public/assets/img/tools/index.jpg'
 
 export default function Accueil() {
   return (
@@ -20,7 +20,7 @@ export default function Accueil() {
       </div>
       <div className="min-h-screen w-full sm:hidden">
         <Header />
-        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">Please view this site on a computer</p>
+        <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">Please view this site on a computer</p>
       </div>
     </>
   );

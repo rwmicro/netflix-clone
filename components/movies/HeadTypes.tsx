@@ -24,7 +24,7 @@ const HeadFilms = ({ medium }) => {
 
   const wallpaper = useMemo(() => {
     if (router.pathname == "/movies") {
-      const filmHeader = require("public/assets/img/films/wallpapers/joker.jpg");
+      const filmHeader = require("../../public/assets/img/films/wallpapers/joker.jpg");
       return filmHeader.default.src;
     }
     if (query.wallpaper) return query.wallpaper;
