@@ -15,7 +15,7 @@ export default function Films() {
   const { serie: movieID } = router.query;
   const [film, setFilm] = useState<Film>();
   useEffect(() => {
-    const filmPromise: Promise<Film> = getMedia("tv","60574");
+    const filmPromise: Promise<Film> = getMedia("tv","96677");
     filmPromise.then((results) => setFilm(results));
   }, [])
 
@@ -23,6 +23,7 @@ export default function Films() {
     <>
       <Head>
         <title>Netflix - Series</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Suspense fallback={<Loading />}>
         <div className="hidden sm:block">
@@ -41,8 +42,9 @@ export default function Films() {
         </Suspense>
         <div className="min-h-screen w-full sm:hidden">
         <Header />
-        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">Please view this site on a computer</p>
-      </div>
+        <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
+          Please view this site on a computer
+        </p>      </div>
     </>
   );
 }

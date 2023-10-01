@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
 import { Film, Actors } from "../../ts/Types";
-import Loading from "../main/Loading";
+import Loading from "../main/LoadingCircle";
 import ReactPlayer from "react-player";
 
 import media from "public/assets/img/tools/media.png";

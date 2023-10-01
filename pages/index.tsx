@@ -2,13 +2,15 @@ import Head from "next/head";
 import Header from "../components/main/Header";
 import Search from "../components/index/Search";
 
+import background from 'public/assets/img/tools/index.jpg'
+
 export default function Accueil() {
   return (
     <>
       <Head>
         <title>Netflix</title>
       </Head>
-      <div className="hidden sm:block w-full h-screen bg-cover absolute top-0 left-0 index">
+      <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{background: `url(${background.src})`}}>
         <Header />
         <Search />
       </div>

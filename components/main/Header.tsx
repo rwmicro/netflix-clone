@@ -3,6 +3,8 @@ import NavLink from "next/link";
 import Image from "next/image";
 import user_pic from "public/assets/img/tools/frog.png";
 import logo from "public/assets/img/tools/logo.png";
+import logoN from "public/assets/img/tools/N.png";
+
 import search_image from "public/assets/img/tools/search.svg";
 import { useRouter } from "next/router";
 import { Fragment, useEffect } from "react";
@@ -40,13 +42,19 @@ export default function Header() {
   const router = useRouter();
   return (
     <>
-      <header id="header" className="w-full z-[998] absolute top-0">
-        <div className="flex justify-between">
-          <div className="flex relative left-16 lg:left-20 xl:left-24">
-            <Link href="/" className="-mt-3 w-fit h-fit">
+      <header
+        id="header"
+        className="w-full z-[998] absolute top-0  flex items-center"
+      >
+        <div className="flex justify-around items-center sm:justify-between h-fit w-full">
+          <div className="flex items-center relative md:left-10 lg:left-20 xl:left-22">
+            <Link href="/" className="w-fit h-fit hidden sm:block">
               <Image src={logo} width={130} height={70} alt="logo" />
             </Link>
-            <div className="mt-4 ml-10 flex gap-5 text-white text-md font-light">
+            <Link href="/" className="sm:hidden">
+              <Image src={logoN} width={18} height={50} alt="logoN" />
+            </Link>
+            <div className="ml-10 flex gap-5 text-white text-md font-light">
               <Link
                 className={
                   router.pathname == "/"
@@ -79,7 +87,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
-          <div className="flex gap-12 align-middle justify-center mt-3.5 mr-24">
+          <div className="flex gap-12 align-middle justify-center mt-3.5 sm:mr-24">
             <Link className="w-5 h-5 mt-2 hidden" href="">
               <Image
                 src={search_image}

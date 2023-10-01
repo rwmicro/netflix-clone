@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Loading from "../main/Loading";
 import { getTopRated, getGenres } from "../../ts/datas";
 import { FilmPoster } from "../../ts/Types";
@@ -45,13 +45,16 @@ export default function MediaList({ type}) {
         console.error("An error occurred:", err);
         setLoading(false);
       });
-  }, []);
 
-  if (loading) return <Loading />;
+      
+  }, []);
+  if (loading){return <Loading/>}
+
   return (
     <>
-      <div className="text-white overflow-clip -mt-28">
-        <div className="ml-20 pb-20">
+    <Suspense fallback={<Loading />}>
+      <div className="text-white -mt-16 xl:-mt-28">
+        <div className="pb-20">
           <ThumbnailHandler title={"Top Rated"} datas={topRated} type={type} />
           <ThumbnailHandler title={"Action"} datas={action} type={type}/>
           <ThumbnailHandler title={"Animation"} datas={animation} type={type}/>
@@ -60,6 +63,7 @@ export default function MediaList({ type}) {
           <ThumbnailHandler title={"Documentary"} datas={documentary} type={type}/>
         </div>
       </div>
+      </Suspense>
     </>
   );
 }

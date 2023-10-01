@@ -15,11 +15,11 @@ export default function Thumbnail({ Medium }) {
           pathname: "/watch/[watch]",
           query: { watch: Medium.id.toString() },
         }}
-        className="h-fit w-fit cursor-pointer z-100"
+        className="h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
       >
         <Image
           src={posterFilm + Medium.backdrop_path}
-          className="h-40 w-72 rounded-t-md shadow-md"
+          className="h-32 w-56 xl:h-40 xl:w-72 shadow-md rounded-t-sm"
           width={600}
           height={300}
           alt={Medium.title}

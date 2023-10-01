@@ -3,7 +3,7 @@ import { getSeason } from "../../ts/datas";
 
 import Image from "next/image";
 import Link from "next/link";
-import Loading from "../main/Loading";
+import Loading from "../main/LoadingCircle";
 
 export default function Episodes({ medium }) {
   const [season, setSeason] = useState<Array<any>>();
