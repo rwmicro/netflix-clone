@@ -20,9 +20,6 @@ const HeadFilms = ({ medium }) => {
   const film: Film = medium;
   if (!film) return <Loading />;
 
-  const router = useRouter();
-  const query = router.query;
-
   const POSTER = "https://image.tmdb.org/t/p/original/";
 
   const [mutedState, setMuted] = useState(false);

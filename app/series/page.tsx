@@ -1,14 +1,14 @@
 import Head from "next/head";
-import SeriesHead from "../components/series/SeriesHead";
-import SeriesList from "../components/general/MediaList";
-import Footer from "../components/main/Footer";
-import { Film } from "../ts/Types";
-import { getMedia } from "../ts/datas";
+import SeriesHead from "../../components/series/SeriesHead";
+import SeriesList from "../../components/general/MediaList";
+import Footer from "../../components/main/Footer";
+import { Film } from "../../ts/Types";
+import { getMedia } from "../../ts/datas";
 import { Suspense, useEffect, useState } from "react";
-import Loading from "../components/main/Loading";
-import Pop from "../components/series/pop";
+import Loading from "../../components/main/Loading";
+import Pop from "../../components/series/pop";
 import { useRouter } from "next/router";
-import Header from "../components/main/Header";
+import Header from "../../components/main/Header";
 
 export default function Films() {
   const router = useRouter();

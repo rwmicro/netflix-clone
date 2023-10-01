@@ -14,8 +14,7 @@ export default function Thumbnail({ Medium }) {
           pathname: "/watch/[watch]",
           query: { watch: Medium.id.toString() },
         }}
-        className="slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
-      >
+        className="slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible">
         <Image
           src={posterFilm + Medium.backdrop_path || undefined}
           className="h-32 w-64 2xl:h-40 2xl:w-72 shadow-md rounded-t-sm"
@@ -24,14 +23,14 @@ export default function Thumbnail({ Medium }) {
           alt={Medium.title}
         />
         <div
-          className="hidden p-3 shadow-xl rounded-b-md w-full"
+          className="hidden p-3 shadow-xl rounded-b-md w-full z-[500]"
           style={{ backgroundColor: "#141414" }}
         >
           <div className="flex justify-between">
             <Link href="/">
               <Image
                 src={play}
-                className="h-8 w-8 p-1 bg-white rounded-full "
+                className="h-7 w-7 p-1 bg-white rounded-full "
                 width={40}
                 height={40}
                 alt="play"
@@ -42,7 +41,7 @@ export default function Thumbnail({ Medium }) {
                 pathname: "/movies",
                 query: { movie: Medium.id.toString() },
               }}
-              className="p-1.5 bg-zinc-800 border-2 border-zinc-600 rounded-full"
+              className="p-1 bg-zinc-800 border-2 border-zinc-600 rounded-full"
               scroll={false}
             >
               <Image
@@ -55,7 +54,7 @@ export default function Thumbnail({ Medium }) {
             </Link>
           </div>
           <p className="text-sm font-semibold">{Medium["media_type"]}</p>
-          <h1 className="text-xl font-semibold">{Medium["title"]}</h1>
+          <h1 className="text-md font-semibold">{Medium["title"]}</h1>
           <div className="flex align-middle gap-2 text-xs">
             <p className="text-green-500">
               Recommended at {Medium["vote_average"] * 10}%

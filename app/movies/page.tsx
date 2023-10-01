@@ -1,18 +1,21 @@
+"use client"
 import Head from "next/head";
-import HeadTypes from "../components/movies/HeadTypes";
-import Filmlist from "../components/general/MediaList";
-import Footer from "../components/main/Footer";
-import { Film } from "../ts/Types";
-import { getMedia } from "../ts/datas";
+import HeadTypes from "../../components/movies/HeadTypes";
+import Filmlist from "../../components/general/MediaList";
+import Footer from "../../components/main/Footer";
+import { Film } from "../../ts/Types";
+import { getMedia } from "../../ts/datas";
 import { Suspense, useEffect, useState } from "react";
-import Loading from "../components/main/LoadingCircle";
-import Pop from "../components/movies/pop";
-import { useRouter } from "next/router";
-import Header from "../components/main/Header";
+import Loading from "../../components/main/LoadingCircle";
+import Pop from "../../components/movies/pop";
+import Header from "../../components/main/Header";
+
+import { useSearchParams } from 'next/navigation'
 
 export default function Films() {
-  const router = useRouter();
-  const { movie: movieID } = router.query;
+  const searchParams = useSearchParams()
+
+  const movieID  = searchParams.get('movie');
   const [film, setFilm] = useState<Film>();
   useEffect(() => {
     const filmPromise: Promise<Film> = getMedia("movie", "19995");

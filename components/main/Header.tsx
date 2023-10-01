@@ -1,12 +1,14 @@
+"use client"
+
 import Link from "next/link";
-import NavLink from "next/link";
 import Image from "next/image";
 import user_pic from "public/assets/img/tools/frog.png";
 import logo from "public/assets/img/tools/logo.png";
 import logoN from "public/assets/img/tools/N.png";
+import { usePathname } from 'next/navigation'
 
 import search_image from "public/assets/img/tools/search.svg";
-import { useRouter } from "next/router";
+
 import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -39,7 +41,9 @@ export default function Header() {
       scrollFunction();
     };
   }, []);
-  const router = useRouter();
+
+  const pathname = usePathname()
+
   return (
     <>
       <header
@@ -54,10 +58,10 @@ export default function Header() {
             <Link href="/" className="sm:hidden">
               <Image src={logoN} width={18} height={50} alt="logoN" />
             </Link>
-            <div className="ml-10 flex gap-5 text-white text-md font-light">
+            <div className="ml-10 flex gap-5 text-white text-sm font-light">
               <Link
                 className={
-                  router.pathname == "/"
+                  pathname == "/"
                     ? "underline underline-offset-8 decoration-redflix"
                     : ""
                 }
@@ -67,7 +71,7 @@ export default function Header() {
               </Link>
               <Link
                 className={
-                  router.pathname == "/movies"
+                  pathname == "/movies"
                     ? "underline underline-offset-8 decoration-redflix"
                     : ""
                 }
@@ -77,7 +81,7 @@ export default function Header() {
               </Link>
               <Link
                 className={
-                  router.pathname == "/series"
+                  pathname == "/series"
                     ? "underline underline-offset-8 decoration-redflix"
                     : ""
                 }

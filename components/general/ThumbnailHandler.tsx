@@ -14,8 +14,7 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
   datas,
   type,
 }) => {
-  let tmp = 0
-
+  let tmp = 0;
 
   useEffect(() => {
     const containers = document.querySelectorAll(".thumbnail_container a");
@@ -76,14 +75,13 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
 
   const TABS = datas[0].length / 4;
 
-
   return (
     <>
       <h1 className="text-md xl:text-2xl font-semibold tracking-wide mt-8 xl:mt-12 mb-2 xl:mb-3 ml-10 xl:ml-20">
         {title}
       </h1>
       <div
-        className="flex w-fit overflow-x-scroll overflow-y-visible gap-2 no-scrollbar scroll-smooth thumbnail_container ml-10 xl:ml-20"
+        className="flex w-fit overflow-x-scroll relative gap-2 no-scrollbar scroll-smooth thumbnail_container ml-10 xl:ml-20"
         id="slides-container"
       >
         <button
