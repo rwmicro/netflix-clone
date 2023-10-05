@@ -3,7 +3,7 @@ import { getSeason } from "../../ts/datas";
 
 import Image from "next/image";
 import Link from "next/link";
-import Loading from "../main/LoadingCircle";
+import Loading from "../loading/LoadingCircle";
 
 export default function Episodes({ medium }) {
   const [season, setSeason] = useState<Array<any>>();
@@ -19,7 +19,7 @@ export default function Episodes({ medium }) {
           console.error("Error fetching data:", error);
         });
     }
-  }, [value]);
+  }, [medium,value]);
 
   const POSTER = "https://image.tmdb.org/t/p/original/";
 
@@ -57,8 +57,8 @@ export default function Episodes({ medium }) {
         <Suspense fallback={<Loading />}>
         {season && (
           <div className="flex flex-col">
-            {season["episodes"].map((episode) => (
-              <Link href='' className="flex gap-2 items-center border-b border-neutral-800 p-3 hover:bg-neutral-800 rounded-md overflow-hidden">
+            {season["episodes"].map((episode, key) => (
+              <Link href={'/watch/' + medium.name + '?episode=' + episode.name} key={key} className="flex gap-2 items-center border-b border-neutral-800 p-3 hover:bg-neutral-800 rounded-md overflow-hidden">
                 <span className="text-neutral-400 text-xl p-2">
                   {episode["episode_number"]}
                 </span>

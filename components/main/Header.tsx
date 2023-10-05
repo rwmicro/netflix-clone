@@ -48,7 +48,7 @@ export default function Header() {
     <>
       <header
         id="header"
-        className="w-full z-[998] absolute top-0  flex items-center"
+        className="w-full z-[998] absolute top-0 flex items-center"
       >
         <div className="flex justify-around items-center sm:justify-between h-fit w-full">
           <div className="flex items-center relative md:left-10 lg:left-20 xl:left-22">
@@ -58,7 +58,7 @@ export default function Header() {
             <Link href="/" className="sm:hidden">
               <Image src={logoN} width={18} height={50} alt="logoN" />
             </Link>
-            <div className="ml-10 flex gap-5 text-white text-sm font-light">
+            <div className="ml-10 flex gap-5 text-white text-sm">
               <Link
                 className={
                   pathname == "/"

@@ -46,24 +46,26 @@ body {
   background: #888;
 }
 
-.no-scrollbar::-webkit-scrollbar {
+.thumbnail_container::-webkit-scrollbar {
   display: none;
 }
-
-.slide {
-  flex: 1 0 15%;
+.thumbnail_container {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
-
-@media (max-width: 1024px) {
+.slide {
+  flex: 1 0 20%;
+}
+@media (min-width: 1536px) {
   
   .slide {
-    flex: 1 0 23.5%;
+    flex: 1 0 15%;
   }
-
-}@media (max-width: 1280px) {
+}
+@media (max-width: 1250px) {
   
   .slide {
-    flex: 1 0 18%;
+    flex: 1 0 26%;
   }
 /* Thumbnail */
 .show-thumbnail {

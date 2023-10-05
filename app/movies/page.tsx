@@ -1,55 +1,47 @@
-"use client"
-import Head from "next/head";
 import HeadTypes from "../../components/movies/HeadTypes";
 import Filmlist from "../../components/general/MediaList";
 import Footer from "../../components/main/Footer";
 import { Film } from "../../ts/Types";
-import { getMedia } from "../../ts/datas";
-import { Suspense, useEffect, useState } from "react";
-import Loading from "../../components/main/LoadingCircle";
+import { Suspense } from "react";
+import Loading from "../../components/loading/Loading";
 import Pop from "../../components/movies/pop";
 import Header from "../../components/main/Header";
 
-import { useSearchParams } from 'next/navigation'
+import { getMedia } from "../../ts/datas";
+import type { Metadata } from "next";
 
-export default function Films() {
-  const searchParams = useSearchParams()
+export const metadata: Metadata = {
+  title: "Movies - Netflix",
+  description: "Movie page of the Netflix Clone app made by Nebula Company.",
+};
 
-  const movieID  = searchParams.get('movie');
-  const [film, setFilm] = useState<Film>();
-  useEffect(() => {
-    const filmPromise: Promise<Film> = getMedia("movie", "19995");
-    filmPromise.then((results) => setFilm(results));
-  }, []);
+async function getDatas() {
+  const film: Film = await getMedia("movie", "19995");
+
+  return { film };
+}
+
+export default async function Films() {
+  const { film } = await getDatas();
 
   return (
     <>
-      <Head>
-        <title>Netflix - Films</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <Suspense fallback={<Loading />}>
-        <div className="hidden sm:block">
-          <HeadTypes medium={film} />
-          <Filmlist type="movie" />
-          <Footer />
-          {movieID && (
-            <div
-              className="fixed top-0 w-screen left-0 h-screen z-[998] bg-black/80"
-              onClick={() =>
-                router.push("/movies", "/movies", { scroll: false })
-              }
-            >
-              <Pop movieID={movieID} />
-            </div>
-          )}
+      <div>
+          <div className="hidden sm:block">
+        <Suspense fallback={<Loading />}>
+            <HeadTypes film={film} />
+            <Filmlist type="movie" />
+            <Pop />
+            <Footer />
+        </Suspense>
+          </div>
+        {/* Mobile */}
+        <div className="min-h-screen w-full sm:hidden">
+          <Header />
+          <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
+            Please view this site on a computer
+          </p>{" "}
         </div>
-      </Suspense>
-      <div className="min-h-screen w-full sm:hidden">
-        <Header />
-        <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
-          Please view this site on a computer
-        </p>{" "}
       </div>
     </>
   );

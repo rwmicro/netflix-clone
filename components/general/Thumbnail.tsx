@@ -9,25 +9,36 @@ var posterFilm = "https://image.tmdb.org/t/p/w500";
 export default function Thumbnail({ Medium }) {
   return (
     <>
-      <Link
-        href={{
-          pathname: "/watch/[watch]",
-          query: { watch: Medium.id.toString() },
-        }}
-        className="slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible">
-        <Image
-          src={posterFilm + Medium.backdrop_path || undefined}
-          className="h-32 w-64 2xl:h-40 2xl:w-72 shadow-md rounded-t-sm"
-          width={600}
-          height={300}
-          alt={Medium.title}
-        />
+      <div 
+          className="thumbnail slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
+      >
+        <Link
+          href={"/watch/" + Medium["id"].toString()}
+          as={`/watch/${Medium["title"]}`}
+        >
+          {(Medium["backdrop_path"] && (
+            <Image
+              src={posterFilm + Medium["backdrop_path"]}
+              className="xl:h-32 w-64 2xl:h-40 2xl:w-72 shadow-md rounded-t-sm"
+              width={600}
+              height={300}
+              alt={Medium.title}
+            />
+          )) || (
+            <div className="bg-neutral-900 h-32 w-64 2xl:h-40 2xl:w-72 flex items-center justify-center">
+              <p>Media error</p>
+            </div>
+          )}
+        </Link>
         <div
-          className="hidden p-3 shadow-xl rounded-b-md w-full z-[500]"
+          className="hidden p-3 shadow-xl rounded-b-md w-full z-[500] thumbnail_pop"
           style={{ backgroundColor: "#141414" }}
         >
           <div className="flex justify-between">
-            <Link href="/">
+            <Link
+              href={"/watch/" + Medium["id"].toString()}
+              as={`/watch/${Medium["title"]}`}
+            >
               <Image
                 src={play}
                 className="h-7 w-7 p-1 bg-white rounded-full "
@@ -37,10 +48,7 @@ export default function Thumbnail({ Medium }) {
               />
             </Link>
             <Link
-              href={{
-                pathname: "/movies",
-                query: { movie: Medium.id.toString() },
-              }}
+              href={"/movies?movie=" + Medium["id"].toString()}
               className="p-1 bg-zinc-800 border-2 border-zinc-600 rounded-full"
               scroll={false}
             >
@@ -60,10 +68,10 @@ export default function Thumbnail({ Medium }) {
               Recommended at {Medium["vote_average"] * 10}%
             </p>
             <span className="uppercase">{Medium["original_language"]}</span>
-            <span>{Medium["release_date"].split("-", 1)}</span>
+            <span>{Medium["release_date"].split("-")[0]}</span>
           </div>
         </div>
-      </Link>
+      </div>
     </>
   );
 }

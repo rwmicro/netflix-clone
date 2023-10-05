@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+"use client";
+import { Suspense, useEffect, useState } from "react";
 import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
 import ReactPlayer from "react-player";
 
@@ -13,8 +14,15 @@ import Link from "next/link";
 import mutedImage from "public/assets/img/tools/muted.png";
 import unmuted from "public/assets/img/tools/unmuted.png";
 import Episodes from "./episodes";
+import { useSearchParams } from "next/navigation";
 
-export default function Pop({ movieID }) {
+import { useRouter } from 'next/navigation';
+import LoadingPop from "../loading/LoadingPop";
+
+const POSTER = "https://image.tmdb.org/t/p/original";
+const THUMBNAIL = "https://image.tmdb.org/t/p/w500";
+
+export default function Pop() {
   const [film, setFilm] = useState<Array<any>>();
   const [video, setVideo] = useState<Array<any>>();
   const [similar, setSimilar] = useState<Array<any>>();
@@ -22,26 +30,33 @@ export default function Pop({ movieID }) {
   const [background, setBackground] = useState(null);
   const [trailer, setTrailer] = useState(false);
 
+  const searchParams = useSearchParams();
+  var movieID = searchParams.get("serie");
+
+  const router = useRouter();
+
   useEffect(() => {
+    async function fetchData() {
+      try {
+        const [filmData, similarData, videoData] = await Promise.all([
+          getMedia("tv", movieID.toString()),
+          getSimilarMedia("tv", movieID),
+          getVideos("tv", movieID),
+        ]);
+        setFilm(filmData);
+        setSimilar(similarData);
+        setVideo(videoData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+  
     if (movieID) {
-      Promise.all([
-        getMedia("tv", movieID.toString()),
-        getSimilarMedia("tv", movieID),
-        getVideos("tv", movieID),
-      ])
-        .then(([filmData, similarData, videoData]) => {
-          setFilm(filmData);
-          setSimilar(similarData);
-          setVideo(videoData);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+      fetchData();
     }
   }, [movieID]);
 
-  const POSTER = "https://image.tmdb.org/t/p/original";
-  const THUMBNAIL = "https://image.tmdb.org/t/p/w500";
+
 
   useEffect(() => {
     let foundTrailer = false;
@@ -62,10 +77,21 @@ export default function Pop({ movieID }) {
     }
   }, [video, film, trailer]);
 
-  if (!film || !similar) return;
+  if (!movieID || !film || !similar){
+    return null;
+  };
   return (
     <>
+    <Suspense fallback={<LoadingPop />}>
       <div
+        className="h-screen w-full bg-black/30 fixed top-0 left-0"
+        onClick={() => {
+          router.push("/series", {scroll: false});
+          movieID = null;
+        }}
+      ></div>
+      <div
+        id="pop"
         className="fixed top-10 w-10/12 xl:w-2/4 left-1/2 -translate-x-1/2 rounded-md overflow-hidden overflow-y-scroll max-h-full z-[999]"
         style={{ backgroundColor: "#141414" }}
       >
@@ -81,14 +107,16 @@ export default function Pop({ movieID }) {
               width="100%"
               height="100%"
               playing
-              muted={true}
+              muted={muted}
               results
               loop
               style={{ marginTop: "-50px" }}
             />
           )}
-          <button
-            className="h-fit w-fit border-2 rounded-full p-2 absolute bottom-14 right-14 bg-zinc-900/50"
+          
+        </div>
+        {trailer && <button
+            className="h-fit w-fit border-2 rounded-full p-2 absolute top-96 mt-5 right-14 bg-zinc-900/50"
             onClick={() => setMuted(!muted)}
           >
             {!muted && (
@@ -109,8 +137,7 @@ export default function Pop({ movieID }) {
                 className="rounded-full h-6 w-6"
               />
             )}
-          </button>
-        </div>
+          </button>}
         <div className="-mt-36">
           <div className="p-10 pt-0">
             <h1 className="text-6xl text-white mb-10 font-bold">
@@ -144,25 +171,27 @@ export default function Pop({ movieID }) {
                 <h2 className="mt-1">{film["overview"]}</h2>
               </div>
               <div className="flex flex-col gap-2 w-1/3">
-                <span className="text-neutral-400 font-normal">
-                  Production Companies :
+                <div className="text-neutral-400 font-normal">
+                  Production Companies :{' '}
                   {film["production_companies"] &&
-                    film["production_companies"].map((genre) => (
-                      <span className="text-sm font-normal text-white">
-                        {" "}
+                    film["production_companies"].map((genre,key:number) => (
+                      <>
+                      <div className="text-sm font-normal text-white inline-block" key={key}>
                         {genre["name"]},{" "}
-                      </span>
+                      </div>{" "}
+                      </>
                     ))}
-                </span>
-                <span className="text-neutral-400 font-normal">
-                  Genres :
-                  {film["genres"].map((genre) => (
-                    <span className="text-sm font-normal text-white">
-                      {" "}
+                </div>
+                <div className="text-neutral-400 font-normal">
+                  Genres :{' '}
+                  {film["genres"].map((genre,key:number) => (
+                    <>
+                    <div className="text-sm font-normal text-white inline-block" key={key}>
                       {genre["name"]},{" "}
-                    </span>
+                    </div>{" "}
+                    </>
                   ))}
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -171,22 +200,36 @@ export default function Pop({ movieID }) {
             <h1 className="text-4xl font-semibold text-white mb-8">
               Recommendations
             </h1>
-            <div className="grid grid-cols-3 gap-5">
-              {similar["results"].slice(0, 9).map((movie) => (
+            <div className="grid grid-cols-3 gap-5 pb-20">
+              {similar["results"].slice(0, 9).map((movie, key:number) => (
                 <Link
+                key={key}
                   className="flex flex-col gap-2 bg-neutral-800 rounded-md overflow-hidden h-96"
                   href={{
-                    pathname: "/movies",
-                    query: { movie: movie["id"].toString() },
+                    pathname: "/series",
+                    query: { serie: movie["id"].toString() },
                   }}
+                  onClick={() => {
+                    document.getElementById("pop").scroll({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  scroll={false}
                 >
-                  <Image
-                    src={THUMBNAIL + movie["backdrop_path"]}
-                    alt="poster"
-                    width={250}
-                    height={100}
-                    className="w-full hover:scale-105 transition-all duration-500 ease-in-out"
-                  />
+                  {(movie["backdrop_path"] && (
+                    <Image
+                      src={THUMBNAIL + movie["backdrop_path"]}
+                      alt="poster"
+                      width={250}
+                      height={100}
+                      className="w-full hover:scale-105 transition-all duration-500 ease-in-out"
+                    />
+                  )) || (
+                    <div className="bg-neutral-900 h-32 w-64 2xl:h-40 2xl:w-72 rounded-t-md text-white flex items-center justify-center">
+                      <p>Media error</p>
+                    </div>
+                  )}
                   <div className="p-2 text-white text-sm">
                     <span className="text-xl font-bold">{movie.name}</span>
                     <div className="flex gap-2 text-neutral-500 text-sm font-semibold items-center">
@@ -203,6 +246,7 @@ export default function Pop({ movieID }) {
           </div>
         </div>
       </div>
+      </Suspense>
     </>
   );
 }

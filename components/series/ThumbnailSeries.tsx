@@ -7,43 +7,47 @@ import downarrow from "public/assets/img/tools/down-arrow.png";
 var posterFilm = "https://image.tmdb.org/t/p/w500";
 
 export default function Thumbnail({ Medium }) {
-
   return (
     <>
+    <div
+        className="thumbnail slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
+>
       <Link
-        href={{
-          pathname: "/watch/[watch]",
-          query: { watch: Medium.id.toString() },
-        }}
-        className="h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
-      >
-        <Image
-          src={posterFilm + Medium.backdrop_path}
-          className="h-32 w-56 xl:h-40 xl:w-72 shadow-md rounded-t-sm"
-          width={600}
-          height={300}
-          alt={Medium.title}
-        />
+                href={'/watch/'+ Medium['id'].toString()}
+                as={`/watch/${Medium["name"]}`}
+        >
+          {(Medium["backdrop_path"] && (
+            <Image
+              src={posterFilm + Medium["backdrop_path"]}
+              className="xl:h-32 w-64 2xl:h-40 2xl:w-72 shadow-md rounded-t-sm"
+              width={600}
+              height={300}
+              alt={Medium.title}
+            />
+          )) || (
+            <div className="bg-neutral-900 h-32 w-64 2xl:h-40 2xl:w-72 flex items-center justify-center">
+              <p>Media error</p>
+            </div>
+          )}
+        </Link>
         <div
-          className="hidden p-3 shadow-xl rounded-b-md w-full"
+          className="hidden p-3 shadow-xl rounded-b-md w-full z-[500] thumbnail_pop"
           style={{ backgroundColor: "#141414" }}
         >
           <div className="flex justify-between">
-            <Link href="/">
+            <Link                 href={'/watch/'+ Medium['id'].toString()}
+                as={`/watch/${Medium["title"]}`}>
               <Image
                 src={play}
-                className="h-8 w-8 p-1 bg-white rounded-full "
+                className="h-7 w-7 p-1 bg-white rounded-full "
                 width={40}
                 height={40}
                 alt="play"
               />
             </Link>
             <Link
-              href={{
-                pathname: "/series",
-                query: { serie: Medium.id.toString() },
-              }}
-              className="p-1.5 bg-zinc-800 border-2 border-zinc-600 rounded-full"
+              href={"/series?serie=" + Medium.id.toString()}
+              className="p-1 bg-zinc-800 border-2 border-zinc-600 rounded-full"
               scroll={false}
             >
               <Image
@@ -62,10 +66,14 @@ export default function Thumbnail({ Medium }) {
               Recommended at {Medium["vote_average"] * 10}%
             </p>
             <span className="uppercase">{Medium["original_language"]}</span>
-            <span>{Medium["first_air_date"] && Medium["first_air_date"].split("-", 1) || "Release soon"}</span>
+            <span>
+              {(Medium["first_air_date"] &&
+                Medium["first_air_date"].split("-", 1)) ||
+                "Release soon"}
+            </span>
           </div>
         </div>
-      </Link>
+      </div>
     </>
   );
 }

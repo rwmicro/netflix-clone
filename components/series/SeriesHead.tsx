@@ -1,24 +1,18 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Film } from "../../ts/Types";
-import Loading from "../main/LoadingCircle";
+import Loading from "../loading/Loading";
 import media from "public/assets/img/tools/media.png";
 import infos from "public/assets/img/tools/informations.png";
 import Header from "../main/Header";
 
-import mutedImage from "public/assets/img/tools/muted.png";
-import unmuted from "public/assets/img/tools/unmuted.png";
+import Mute from "../general/MutedTrailer";
+import Image from "next/image";
 
 import background from "public/assets/img/series/header/background.jpeg";
 
-import ReactPlayer from "react-player/youtube";
+function HeadFilms({serie}){
 
-const HeadFilms = ({ medium }) => {
-  const film: Film = medium;
-  if (!film) return <Loading />;
-
-  const [muted, setMuted] = useState(true);
+  if (!serie) return <Loading />;
 
   return (
     <>
@@ -38,15 +32,12 @@ const HeadFilms = ({ medium }) => {
             alt="logo"
           />
           <p className="w-2/3 xl:w-2/4 mb-8 mt-3 text-sm lg:text-base xl:text-xl">
-            {film ? film["overview"] : ""}
+            {serie["overview"]}
           </p>
           <div className="flex gap-2">
             <Link
-              href={{
-                pathname: "/watch/[watch]",
-                query: { watch: film["id"].toString() },
-              }}
-              as={`/watch/${film["name"]}`}
+              href={"/watch/" + serie["id"].toString()}
+              as={`/watch/${serie["name"]}`}
               className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md bg-white text-black font-semibold xl:p-3 text-sm xl:text-xl hover:bg-slate-200"
             >
               <Image
@@ -57,13 +48,9 @@ const HeadFilms = ({ medium }) => {
               <span>Watch now</span>
             </Link>
             <Link
-              href={{
-                pathname: "/series",
-                query: { serie: film["id"].toString() },
-              }}
-              as={`/series/${film["name"]}`}
+              href={"/series?serie=" + serie["id"].toString()}
               className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md text-white bg-[#1C1917] font-semibold xl:p-3 text-sm xl:text-xl hover:brightness-[.90]"
-              >
+            >
               <Image
                 src={infos}
                 width={40}
@@ -75,36 +62,14 @@ const HeadFilms = ({ medium }) => {
             </Link>
           </div>
           <div className="flex gap-2 mt-4 xl:mt-6 text-neutral-400">
-            {film["genres"].map((genre) => (
-              <span className="text-sm font-semibold">• {genre["name"]} </span>
+            {serie["genres"].map((genre,key:number) => (
+              <div key={key} className="text-sm font-semibold">• {genre["name"]} </div>
             ))}
             <span className="text-sm font-semibold">•</span>
           </div>
         </div>
         <div className="absolute bottom-96 xl:bottom-72 right-0 flex gap-3 items-center">
-          <button
-            className="h-fit w-fit border xl:border-2 rounded-full p-1.5 xl:p-3"
-            onClick={() => setMuted(!muted)}
-          >
-            {!muted && (
-              <Image
-                src={unmuted}
-                alt="unmuted"
-                width={40}
-                height={40}
-                className="rounded-full w-5 h-5 xl:h-6 xl:w-6"
-              />
-            )}
-            {muted && (
-              <Image
-                src={mutedImage}
-                alt="muted"
-                width={40}
-                height={40}
-                className="rounded-full w-5 h-5 xl:h-6 xl:w-6"
-              />
-            )}
-          </button>
+          <Mute />
           <h1 className="bg-black/50 border-l-4 text-xl p-1.5 xl:p-3 pr-8 xl:pr-10 text-white font-normal lg:text-xl xl:text-2xl">
             16+
           </h1>

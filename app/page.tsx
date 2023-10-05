@@ -4,12 +4,15 @@ import Search from "../components/index/Search";
 
 import background from 'public/assets/img/tools/index.jpg'
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Netflix",
+  description: "Main page of the Netflix Clone app made by Nebula Company.",
+};
 export default function Accueil() {
   return (
     <>
-      <Head>
-        <title>Netflix</title>
-      </Head>
       <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{background: `url(${background.src})`}}>
         <Header />
         <Search />

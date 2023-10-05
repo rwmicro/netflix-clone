@@ -1,73 +1,52 @@
-import { useState, useEffect, Suspense } from "react";
-import Loading from "../main/Loading";
+import { Suspense } from "react";
+import Loading from "../loading/Loading";
 import { getTopRated, getGenres } from "../../ts/datas";
-import { FilmPoster } from "../../ts/Types";
 import ThumbnailHandler from "./ThumbnailHandler";
 
-export default function MediaList({ type}) {
-  const [topRated, setTopRated] = useState<Array<Array<FilmPoster>>>(null);
-  const [action, setAction] = useState<Array<Array<FilmPoster>>>(null);
-  const [animation, setAnimation] = useState<Array<Array<FilmPoster>>>(null);
-  const [comedy, setComedy] = useState<Array<Array<FilmPoster>>>(null);
-  const [documentary, setDocumentary] =
-    useState<Array<Array<FilmPoster>>>(null);
-  const [drama, setDrama] = useState<Array<Array<FilmPoster>>>(null);
-  const [loading, setLoading] = useState(true);
+async function getMedias(type: string) {
+  const topRated = await getTopRated(type);
+  const drama = await getGenres(type, "18");
+  const action = await getGenres(type, type === "movie" ? "28" : "10759");
+  const animation = await getGenres(type, "16");
+  const comedy = await getGenres(type, "35");
+  const documentary = await getGenres(type, "99");
+  return { topRated, drama, action, animation, comedy, documentary };
+}
 
-  useEffect(() => {
-    Promise.all([
-      getTopRated(type),
-      getGenres(type,"18"),
-      getGenres(type,type === "movie" ? "28" : "10759"),
-      getGenres(type,"16"),
-      getGenres(type,"35"),
-      getGenres(type,"99"),
-    ])
-      .then(
-        ([
-          topRatedData,
-          dramaData,
-          actionData,
-          animationData,
-          comedyData,
-          documentaryData,
-        ]) => {
-          setTopRated(topRatedData);
-          setDrama(dramaData);
-          setAction(actionData);
-          setAnimation(animationData);
-          setComedy(comedyData);
-          setDocumentary(documentaryData);
-          setLoading(false);
-        }
-      )
-      .catch((err) => {
-        console.error("An error occurred:", err);
-        setLoading(false);
-      });
-
-      
-  }, []);
-  if (loading){return <Loading/>}
+export async function MediaList({ type }) {
+  const { topRated, drama, action, animation, comedy, documentary } =
+    await getMedias(type);
 
   return (
     <>
-    <Suspense fallback={<Loading />}>
-      <div className="text-white -mt-16 xl:-mt-28">
-        <div className="pb-20">
-          <ThumbnailHandler title={"Top Rated"} datas={topRated} type={type} />
-          <ThumbnailHandler title={"Action"} datas={action} type={type}/>
-          <ThumbnailHandler title={"Animation"} datas={animation} type={type}/>
-          <ThumbnailHandler title={"Comedy"} datas={comedy} type={type}/>
-          <ThumbnailHandler title={"Drama"} datas={drama} type={type}/>
-          <ThumbnailHandler title={"Documentary"} datas={documentary} type={type}/>
-        </div>
+      <div>
+        <Suspense fallback={<Loading />}>
+          <div className="text-white -mt-16 xl:-mt-28">
+            <div className="pb-20">
+              <ThumbnailHandler
+                title={"Top Rated"}
+                datas={topRated}
+                type={type}
+              />
+              <ThumbnailHandler title={"Action"} datas={action} type={type} />
+              <ThumbnailHandler
+                title={"Animation"}
+                datas={animation}
+                type={type}
+              />
+              <ThumbnailHandler title={"Comedy"} datas={comedy} type={type} />
+              <ThumbnailHandler title={"Drama"} datas={drama} type={type} />
+              <ThumbnailHandler
+                title={"Documentary"}
+                datas={documentary}
+                type={type}
+              />
+            </div>
+          </div>
+        </Suspense>
       </div>
-      </Suspense>
     </>
   );
 }
 
-/*
-
-*/
+export default MediaList;

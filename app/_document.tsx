@@ -4,15 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link
-          rel="shortcut icon"
-          href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"
-        />
+<link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
       </Head>
       <body>
         <Main />

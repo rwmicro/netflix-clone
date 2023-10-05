@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { FilmPoster } from "../../ts/Types";
 import Thumbnail from "./Thumbnail";
@@ -14,14 +15,14 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
   datas,
   type,
 }) => {
-  let tmp = 0;
-
   useEffect(() => {
-    const containers = document.querySelectorAll(".thumbnail_container a");
+    const containers = document.querySelectorAll(
+      ".thumbnail_container .thumbnail"
+    );
 
     const handleMouseEnter = (e) => {
       const aElement = e.currentTarget;
-      const divElement = e.currentTarget.querySelector("div");
+      const divElement = e.currentTarget.querySelector(".thumbnail_pop");
       if (aElement && divElement) {
         aElement.classList.add("show-thumbnail");
         divElement.classList.add("show-details");
@@ -42,28 +43,38 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       container.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    const slidesContainer = document.getElementById("slides-container");
-    const slide = document.querySelector(".slide");
-    const nextButton = document.getElementById("slide-arrow-next");
-    const prevButton = document.getElementById("slide-arrow-prev");
+    const slidesContainer = document.querySelectorAll("#slides-container");
 
-    nextButton.addEventListener("click", (event) => {
+    slidesContainer.forEach((container) => {
+      const prevArrow = container.querySelector("#slide-arrow-prev");
+      prevArrow.addEventListener("click", () => prevButton(container));
+
+      const nextArrow = container.querySelector("#slide-arrow-next");
+      nextArrow.addEventListener("click", () => nextButton(container));
+    });
+
+    function nextButton(container) {
+      const slide = container.querySelector(".slide");
+      const prev = container.querySelector("#slide-arrow-prev");
       const slideWidth = slide.clientWidth;
-      if (slidesContainer.style.marginLeft != "0") {
-        slidesContainer.style.marginLeft = "0px";
-        slidesContainer.style.transition = "ease-in";
-        slidesContainer.style.transitionDuration = "400ms";
-        prevButton.style.display = "block";
+      if (container.style.marginLeft != "0") {
+        container.style.marginLeft = "0px";
+        container.style.transition = "ease-in";
+        container.style.transitionDuration = "400ms";
+        prev.style.display = "block";
       }
-      tmp++;
-      slidesContainer.scrollLeft += (slideWidth - 10) * 3;
-    });
-
-    prevButton.addEventListener("click", () => {
+      container.scrollLeft += (slideWidth - 10) * 3;
+    }
+    function prevButton(container) {
+      const slide = container.querySelector(".slide");
       const slideWidth = slide.clientWidth;
-      tmp--;
-      slidesContainer.scrollLeft -= (slideWidth - 10) * 3;
-    });
+      if (container.style.marginLeft != "0") {
+        container.style.marginLeft = "0px";
+        container.style.transition = "ease-in";
+        container.style.transitionDuration = "400ms";
+      }
+      container.scrollLeft -= (slideWidth - 10) * 3;
+    }
 
     return () => {
       containers.forEach((container) => {
@@ -77,15 +88,15 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
 
   return (
     <>
-      <h1 className="text-md xl:text-2xl font-semibold tracking-wide mt-8 xl:mt-12 mb-2 xl:mb-3 ml-10 xl:ml-20">
+      <h1 className="text-md xl:text-3xl tracking-wide mt-8 xl:mt-12 mb-2 xl:mb-3 ml-10 xl:ml-20">
         {title}
       </h1>
       <div
-        className="flex w-fit overflow-x-scroll relative gap-2 no-scrollbar scroll-smooth thumbnail_container ml-10 xl:ml-20"
+        className="flex w-fit overflow-x-scroll h-30 gap-2 scroll-smooth thumbnail_container ml-10 xl:ml-20"
         id="slides-container"
       >
         <button
-          className="absolute left-0 text-7xl hover:bg-black/30 h-32 xl:h-40 right-0 w-16 z-[101] hidden"
+          className="absolute left-0 text-7xl hover:bg-black/30 h-32 xl:h-40 w-16 z-[101] hidden"
           id="slide-arrow-prev"
         >
           &#8249;
@@ -103,7 +114,7 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
             <div
               key={index}
               className={`w-3 h-0.5  ${
-                index === tmp ? "bg-neutral-500" : "bg-neutral-700"
+                index === 0 ? "bg-neutral-500" : "bg-neutral-700"
               }`}
             ></div>
           ))}

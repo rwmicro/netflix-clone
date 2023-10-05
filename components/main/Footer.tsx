@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "public/assets/img/tools/logo.png";
-import { useEffect } from "react";
 
 export default function Footer() {
   return (
@@ -11,9 +10,9 @@ export default function Footer() {
           <div className="flex flex-col ">
             <Image alt="logo_footer" src={Logo} className="w-44 -ml-4" />
             <div className="text-white/40 font-thin text-sm flex gap-5">
-              <Link className='hover:text-white/30' href="/">Accueil</Link>
-              <Link href="/movies" className='hover:text-white/30'>Films</Link>
-              <Link href="/series"  className='hover:text-white/30'>Series</Link>
+              <Link scroll={true} className='hover:text-white/30' href="/">Accueil</Link>
+              <Link scroll={true} href="/movies" className='hover:text-white/30'>Films</Link>
+              <Link scroll={true} href="/series"  className='hover:text-white/30'>Series</Link>
             </div>
           </div>
           <h5 className="text-sm text-white/60 font-semibold mb-3 text-center">
