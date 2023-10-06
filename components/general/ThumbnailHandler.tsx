@@ -47,12 +47,11 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
 
     slidesContainer.forEach((container) => {
       const prevArrow = container.querySelector("#slide-arrow-prev");
-      prevArrow.addEventListener("click", () => prevButton(container));
+      prevArrow.addEventListener("click", () => {prevButton(container);});
 
       const nextArrow = container.querySelector("#slide-arrow-next");
-      nextArrow.addEventListener("click", () => nextButton(container));
+      nextArrow.addEventListener("click", () => {nextButton(container);});
     });
-
     function nextButton(container) {
       const slide = container.querySelector(".slide");
       const prev = container.querySelector("#slide-arrow-prev");
@@ -91,8 +90,9 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       <h1 className="text-md xl:text-3xl tracking-wide mt-8 xl:mt-12 mb-2 xl:mb-3 ml-10 xl:ml-20">
         {title}
       </h1>
+      <div className="test">
       <div
-        className="flex w-fit overflow-x-scroll h-30 gap-2 scroll-smooth thumbnail_container ml-10 xl:ml-20"
+        className="flex w-fit h-30 gap-2 scroll-smooth thumbnail_container ml-10 xl:ml-20"
         id="slides-container"
       >
         <button
@@ -130,7 +130,7 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
             return <Thumbnail key={medium.id.toString()} Medium={medium} />;
           })
         )}
-      </div>
+      </div></div>
     </>
   );
 };

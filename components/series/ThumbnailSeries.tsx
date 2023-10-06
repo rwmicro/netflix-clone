@@ -59,11 +59,10 @@ export default function Thumbnail({ Medium }) {
               />
             </Link>
           </div>
-          <p className="text-sm font-semibold">{Medium["media_type"]}</p>
           <h1 className="text-xl font-semibold">{Medium["name"]}</h1>
           <div className="flex align-middle gap-2 text-xs">
             <p className="text-green-500">
-              Recommended at {Medium["vote_average"] * 10}%
+            Recommended at {(Medium["vote_average"] * 10).toPrecision(4)}%
             </p>
             <span className="uppercase">{Medium["original_language"]}</span>
             <span>

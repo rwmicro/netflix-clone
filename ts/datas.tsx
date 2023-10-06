@@ -14,20 +14,20 @@ const fetchFromAPI = async (url: string) => {
   return res.json();
 };
 
+export async function getNowPlaying(media:string){
+  const urls = [`https://api.themoviedb.org/3/trending/${media}/day?language=en-US`];
+  const data = await Promise.all(urls.map(fetchFromAPI));
+  return data.map((d) => d.results);
+}
+
 export async function getTopRated(media:string) {
-  const urls = [`https://api.themoviedb.org/3/${media}/top_rated?language=en-US&page=1`];
+  const urls = [`https://api.themoviedb.org/3/${media}/top_rated?language=en-US&page=1&region=us`];
   const data = await Promise.all(urls.map(fetchFromAPI));
   return data.map((d) => d.results);
 }
 
 export async function getGenres(media:string,genre: string) {
-  const urls = [`https://api.themoviedb.org/3/discover/${media}?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre}`];
-  const data = await Promise.all(urls.map(fetchFromAPI));
-  return data.map((d) => d.results);
-}
-
-export async function getPopular(){
-  const urls = ["https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"];
+  const urls = [`https://api.themoviedb.org/3/discover/${media}?language=en-US&page=1&region=us&include_adult=false&language=en-US&include_video=false&sort_by=popularity.desc&with_genres=${genre}`];
   const data = await Promise.all(urls.map(fetchFromAPI));
   return data.map((d) => d.results);
 }

@@ -49,9 +49,9 @@ body {
 .thumbnail_container::-webkit-scrollbar {
   display: none;
 }
-.thumbnail_container {
-  overflow-x: hidden;
-  overflow-y: hidden;
+.test:hover .thumbnail_container {
+  overflow-x: scroll;
+  overflow: visible;
 }
 .slide {
   flex: 1 0 20%;
