@@ -9,9 +9,7 @@ var posterFilm = "https://image.tmdb.org/t/p/w500";
 export default function Thumbnail({ Medium }) {
   return (
     <>
-      <div 
-          className="thumbnail slide h-fit w-fit cursor-pointer z-100 rounded-sm overflow-hidden hover:overflow-visible"
-      >
+      <div className="thumbnail slide cursor-pointer rounded-sm overflow-hidden hover:overflow-visible">
         <Link
           href={"/watch/" + Medium["id"].toString()}
           as={`/watch/${Medium["title"]}`}

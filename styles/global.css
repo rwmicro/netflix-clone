@@ -49,9 +49,12 @@ body {
 .thumbnail_container::-webkit-scrollbar {
   display: none;
 }
-.test:hover .thumbnail_container {
-  overflow-x: scroll;
-  overflow: visible;
+.thumbnail_container{
+}
+.thumbnail:hover{
+  position: relative;
+  top: 0;
+  z-index: 999999;
 }
 .slide {
   flex: 1 0 20%;
