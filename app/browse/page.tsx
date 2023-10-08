@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Profiles from "public/assets/json/profiles/profiles.json";
+const Profiles = null
 
 export default function Browse() {
   return (
