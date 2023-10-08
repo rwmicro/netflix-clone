@@ -8,7 +8,7 @@ export default function Footer() {
       <footer className="w-full h-52 text-white">
         <div className="w-11/12 ml-20 relative flex flex-col justify-between h-full">
           <div className="flex flex-col ">
-            <Image alt="logo_footer" src={Logo} className="w-44 -ml-4" />
+            <Image alt="logo_footer" src={Logo} className="w-44 -ml-4 z-0" />
             <div className="text-white/40 font-thin text-sm flex gap-5">
               <Link scroll={true} className='hover:text-white/30' href="/">Accueil</Link>
               <Link scroll={true} href="/movies" className='hover:text-white/30'>Films</Link>

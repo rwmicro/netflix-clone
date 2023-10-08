@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { FilmPoster } from "../../ts/Types";
 import Thumbnail from "./Thumbnail";
 import ThumbnailSeries from "../series/ThumbnailSeries";
@@ -24,7 +24,6 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       const aElement = e.currentTarget;
       const divElement = e.currentTarget.querySelector(".thumbnail_pop");
       if (aElement && divElement) {
-        aElement.classList.add("show-thumbnail");
         divElement.classList.add("show-details");
       }
     };
@@ -44,7 +43,6 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
     });
 
     const slidesContainer = document.querySelectorAll("#slides-container");
-
     slidesContainer.forEach((container) => {
       const prevArrow = container.querySelector("#slide-arrow-prev");
       prevArrow.addEventListener("click", () => {
@@ -56,10 +54,12 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
         nextButton(container);
       });
     });
+
     function nextButton(container) {
       const slide = container.querySelector(".slide");
       const prev = container.querySelector("#slide-arrow-prev");
       const slideWidth = slide.clientWidth;
+      container.style.overflow = 'scroll'
       if (container.style.marginLeft != "0") {
         container.style.marginLeft = "0px";
         container.style.transition = "ease-in";
@@ -68,9 +68,11 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
       }
       container.scrollLeft += (slideWidth - 10) * 3;
     }
+
     function prevButton(container) {
       const slide = container.querySelector(".slide");
       const slideWidth = slide.clientWidth;
+      container.style.overflow = 'visible'
       if (container.style.marginLeft != "0") {
         container.style.marginLeft = "0px";
         container.style.transition = "ease-in";
@@ -95,22 +97,9 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
         {title}
       </h1>
       <div
-        className="flex w-fit h-30 gap-2 overflow-x-scroll overflow-y-visible scroll-smooth thumbnail_container ml-10 xl:ml-20"
+        className="thumbnail_container flex gap-2 w-fit h-30 scroll-smooth ml-10 xl:ml-20"
         id="slides-container"
       >
-        <button
-          className="absolute left-0 text-7xl hover:bg-black/30 h-32 xl:h-40 w-16 z-[101] hidden"
-          id="slide-arrow-prev"
-        >
-          &#8249;
-        </button>
-        <button
-          className="absolute text-7xl hover:bg-black/20 right-0 w-16 h-32 xl:h-40 brightness-90 z-[101]"
-          id="slide-arrow-next"
-        >
-          &#8250;
-        </button>
-
         <div className="absolute -mt-2 right-5 flex gap-0.5">
           {Array.from({ length: TABS }).map((_, index) => (
             <div
@@ -125,13 +114,23 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
         {datas.map((element) =>
           element.map((medium) => {
             if (type === "tv") {
-              return (
-                <ThumbnailSeries key={medium.id.toString()} Medium={medium} />
-              );
+              return <ThumbnailSeries Medium={medium} />;
             }
-            return <Thumbnail key={medium.id.toString()} Medium={medium} />;
+            return <Thumbnail Medium={medium} />;
           })
         )}
+        <button
+          className="absolute left-0 text-7xl hover:bg-black/30 h-32 xl:h-40 w-16 z-[101] hidden"
+          id="slide-arrow-prev"
+        >
+          &#8249;
+        </button>
+        <button
+          className="absolute text-7xl hover:bg-black/20 right-0 w-16 h-32 xl:h-40 brightness-90 z-[101]"
+          id="slide-arrow-next"
+        >
+          &#8250;
+        </button>
       </div>
     </>
   );

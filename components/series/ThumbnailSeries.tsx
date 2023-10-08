@@ -22,7 +22,7 @@ export default function Thumbnail({ Medium }) {
               className="xl:h-32 w-64 2xl:h-40 2xl:w-72 shadow-md rounded-t-sm"
               width={600}
               height={300}
-              alt={Medium.title}
+              alt={Medium.name}
             />
           )) || (
             <div className="bg-neutral-900 h-32 w-64 2xl:h-40 2xl:w-72 flex items-center justify-center">
