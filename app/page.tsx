@@ -15,8 +15,11 @@ export default function Accueil() {
         <Image
           src="/assets/img/tools/index.jpg"
           alt="background"
-          layout="fill"
+          width={1920}
+          height={1080} 
           className="object-center object-cover pointer-events-none"
+          quality={100}
+
 />
         <Header />
         <Search />

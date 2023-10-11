@@ -8,7 +8,6 @@ import Header from "../main/Header";
 import Mute from "../general/MutedTrailer";
 import Image from "next/image";
 
-
 function HeadFilms({ film }) {
   if (!film) return <Loading />;
 
@@ -16,14 +15,14 @@ function HeadFilms({ film }) {
     <>
       <Header />
 
-      <div
-        className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden"
-      >
+      <div className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden">
         <Image
           src="/assets/img/films/header/background.jpg"
           alt="background"
-          layout="fill"
+          width={1920}
+          height={1080}
           className="object-center object-cover pointer-events-none"
+          quality={100}
         />
         <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
           <Image
