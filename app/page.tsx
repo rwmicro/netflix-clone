@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "../components/main/Header";
 import Search from "../components/index/Search";
 
-import background from 'public/assets/img/tools/index.jpg'
+import background from '../public/assets/img/tools/index.jpg'
 
 import { Metadata } from "next";
 

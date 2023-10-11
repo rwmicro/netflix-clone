@@ -8,7 +8,7 @@ import Header from "../main/Header";
 import Mute from "../general/MutedTrailer";
 import Image from "next/image";
 
-import background from "public/assets/img/films/header/background.jpg";
+import background from "../../public/assets/img/films/header/background.jpg";
 
 function HeadFilms ({film}) {
 
@@ -21,7 +21,7 @@ function HeadFilms ({film}) {
       <div
         className="h-[75vh] xl:h-[90vh] w-full bg-cover bg-center bg-no-repeat mask overflow-hidden"
         style={{
-          backgroundImage: `url(${background.src})`,
+          background: `url(${background.src})`,
         }}
       >
         <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
