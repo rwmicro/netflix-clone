@@ -8,10 +8,8 @@ import Header from "../main/Header";
 import Mute from "../general/MutedTrailer";
 import Image from "next/image";
 
-import background from "../../public/assets/img/films/header/background.jpg";
 
-function HeadFilms ({film}) {
-
+function HeadFilms({ film }) {
   if (!film) return <Loading />;
 
   return (
@@ -19,11 +17,14 @@ function HeadFilms ({film}) {
       <Header />
 
       <div
-        className="h-[75vh] xl:h-[90vh] w-full bg-cover bg-center bg-no-repeat mask overflow-hidden"
-        style={{
-          background: `url(${background.src})`,
-        }}
+        className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden"
       >
+        <Image
+          src="/assets/img/films/header/background.jpg"
+          alt="background"
+          layout="fill"
+          className="object-center object-cover pointer-events-none"
+        />
         <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
           <Image
             src="/assets/img/films/header/logo.png"
@@ -37,7 +38,7 @@ function HeadFilms ({film}) {
           <div className="flex gap-2">
             <div>
               <Link
-                href={'/watch/'+ film['id'].toString()}
+                href={"/watch/" + film["id"].toString()}
                 as={`/watch/${film["title"]}`}
                 className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md bg-white text-black font-semibold xl:p-3 text-sm xl:text-xl hover:bg-slate-200"
               >
@@ -51,7 +52,7 @@ function HeadFilms ({film}) {
             </div>
             <div>
               <Link
-                href={'/movies?movie='+ film['id'].toString()}
+                href={"/movies?movie=" + film["id"].toString()}
                 className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md text-white bg-[#1C1917] font-semibold xl:p-3 text-sm xl:text-xl hover:brightness-[.90]"
               >
                 <Image
@@ -67,14 +68,16 @@ function HeadFilms ({film}) {
           </div>
           <div className="flex gap-2 mt-4 xl:mt-6 text-neutral-400">
             {film["genres"].map((genre, key) => (
-              <div key={key} className="text-sm font-semibold">• {genre["name"]} </div>
+              <div key={key} className="text-sm font-semibold">
+                • {genre["name"]}{" "}
+              </div>
             ))}
             <span className="text-sm font-semibold">•</span>
           </div>
         </div>
 
         <div className="absolute bottom-96 xl:bottom-72 right-0 flex gap-3 items-center">
-              <Mute />
+          <Mute />
           <h1 className="bg-black/50 border-l-4 text-xl p-1.5 xl:p-3 pr-8 xl:pr-10 text-white font-normal lg:text-xl xl:text-2xl">
             16+
           </h1>
@@ -82,11 +85,9 @@ function HeadFilms ({film}) {
       </div>
     </>
   );
-};
+}
 
 export default React.memo(HeadFilms);
-
-
 
 /*
         <Plyr

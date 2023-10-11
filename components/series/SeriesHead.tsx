@@ -19,11 +19,14 @@ function HeadFilms({serie}){
       <Header />
 
       <div
-        className="h-[75vh] xl:h-[90vh] w-full bg-cover bg-center bg-no-repeat  mask overflow-hidden"
-        style={{
-          backgroundImage: `url(${background.src})`,
-        }}
+        className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden relative"
       >
+        <Image
+          src="/assets/img/series/header/background.jpeg"
+          alt="background"
+          layout="fill"
+          className="object-center object-cover pointer-events-none"
+        />
         <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
           <Image
             src="/assets/img/series/header/logo.png"
