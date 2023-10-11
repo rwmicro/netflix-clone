@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
-      <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{backgroundImage: `url(${background})`}}>
+      <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{backgroundImage: `url(${background.src})`}}>
         <Header />
         <Search />
       </div>
