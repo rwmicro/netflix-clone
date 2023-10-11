@@ -2,7 +2,7 @@ function Search() {
   return (
     <>
       <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -mt-44">
-        <h1 className="text-white text-3xl 2xl:text-5xl font-bold ">
+        <h1 className="text-white text-center text-3xl 2xl:text-5xl font-bold ">
           Unlimited movies, TV shows, and more
         </h1>
         <h2 className="text-xl 2xl:text-2xl text-white mb-1 2xl:mb-3 2xl:mt-3 text-center">

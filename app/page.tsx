@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Header from "../components/main/Header";
 import Search from "../components/index/Search";
 
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
-      <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{background: `url(${background.src})`}}>
+      <div className="hidden sm:block w-full h-screen bg-cover bg-center bg-no-repeat absolute top-0 left-0" style={{backgroundImage: `url(${background})`}}>
         <Header />
         <Search />
       </div>
