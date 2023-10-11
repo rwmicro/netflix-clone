@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const Profiles = null
+import profilesJSON from '../../public/assets/json/profiles/profiles.json'
 
 export default function Browse() {
   return (
@@ -12,7 +11,7 @@ export default function Browse() {
             Who are you ?
           </h1>
           <div className="flex gap-5">
-            {Profiles.map((profile) => {
+            {profilesJSON.map((profile) => (
               <div className="flex flex-col items-center text-neutral-500 hover:text-white" key={profile.id}>
                 <Link href="/">
                   <Image
@@ -26,8 +25,8 @@ export default function Browse() {
                 <h1 className="mt-3 text-md xl:text-2xl font-normal">
                   {profile.name}
                 </h1>
-              </div>;
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>

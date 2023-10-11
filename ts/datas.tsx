@@ -72,3 +72,15 @@ export async function getSeason(serieID:string,season:string){
   const url = `https://api.themoviedb.org/3/tv/${serieID}/season/${season}?language=en-US`;
   return fetchFromAPI(url);
 }
+
+
+export async function getMedias(type: string) {
+  const topRated = await getTopRated(type);
+  const drama = await getGenres(type, "18");
+  const action = await getGenres(type, type === "movie" ? "28" : "10759");
+  const animation = await getGenres(type, "16");
+  const comedy = await getGenres(type, "35");
+  const documentary = await getGenres(type, "99");
+  const trends = await getNowPlaying(type)
+  return { topRated, drama, action, animation, comedy, documentary, trends };
+ }

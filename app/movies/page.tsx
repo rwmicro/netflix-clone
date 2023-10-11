@@ -1,11 +1,15 @@
 import HeadTypes from "../../components/movies/HeadTypes";
-import Filmlist from "../../components/general/MediaList";
 import Footer from "../../components/main/Footer";
 import { Film } from "../../ts/Types";
-import { Suspense } from "react";
 import Loading from "../../components/loading/Loading";
 import Pop from "../../components/movies/pop";
 import Header from "../../components/main/Header";
+
+import { Suspense } from "react";
+
+import MediaList from "../../components/general/MediaList";
+
+import { getMedias } from "../../ts/datas";
 
 import { getMedia } from "../../ts/datas";
 import type { Metadata } from "next";
@@ -21,8 +25,15 @@ async function getDatas() {
   return { film };
 }
 
+
 export default async function Films() {
+  
   const { film } = await getDatas();
+  const mediaData = await getMedias('movie');
+
+   if (!film) {
+    return <Loading />;
+ }
 
   return (
     <>
@@ -30,7 +41,7 @@ export default async function Films() {
           <div className="hidden sm:block">
         <Suspense fallback={<Loading />}>
             <HeadTypes film={film} />
-            <Filmlist type="movie" />
+            <MediaList type="movie" mediaData={mediaData} />
             <Pop />
             <Footer />
         </Suspense>

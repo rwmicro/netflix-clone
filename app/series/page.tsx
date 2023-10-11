@@ -9,6 +9,8 @@ import { getMedia } from "../../ts/datas";
 import type { Metadata } from "next";
 import SeriesHead from "../../components/series/SeriesHead";
 
+import { getMedias } from "../../ts/datas";
+
 export const metadata: Metadata = {
   title: "Series - Netflix",
   description: "Series page of the Netflix Clone app made by Nebula Company.",
@@ -21,6 +23,7 @@ async function getDatas() {
 }
 
 export default async function Series() {
+  const mediaData = await getMedias('movie');
   const { serie } = await getDatas();
 
   return (
@@ -28,7 +31,7 @@ export default async function Series() {
       <Suspense fallback={<Loading />}>
         <div className="hidden sm:block">
           <SeriesHead serie={serie} />
-          <SeriesList type="tv" />
+          <SeriesList type="tv" mediaData={mediaData} />
           <Pop />
           <Footer />
         </div>

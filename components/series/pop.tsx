@@ -1,7 +1,7 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 
 import media from "public/assets/img/tools/media.png";
 import hd from "public/assets/img/tools/hd.png";
