@@ -12,6 +12,7 @@ body {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
   background-color: #141414;
+  -webkit-text-size-adjust: none;
 }
 
 /* Thumbnail */
@@ -54,21 +55,17 @@ body {
   flex: 1 0 20%;
 }
 @media (min-width: 1536px) {
-  
   .slide {
     flex: 1 0 15%;
   }
 }
 @media (max-width: 1250px) {
-  
   .slide {
     flex: 1 0 26%;
   }
-.thumbnail:hover {
-  z-index: 5000;
-  scale: 1.2;
-  transition: all 0.3s ease-in-out;
-}
-
-
+  .thumbnail:hover {
+    z-index: 5000;
+    scale: 1.2;
+    transition: all 0.3s ease-in-out;
+  }
 }
