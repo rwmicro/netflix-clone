@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/
 
 # Install PM2 globally
 RUN npm install --global pm2
@@ -20,9 +20,9 @@ RUN npm run build
 
 # Expose the listening port
 EXPOSE 4403
+
 # Change ownership of directories
-RUN mkdir -p /usr/src/app/.next/cache/images && \
-    chown -R node:node /usr/src/app
+RUN chown -R node:node /usr/src/app
 # Run container as non-root (unprivileged) user
 # The node user is provided in the Node.js Alpine base image
 USER node
