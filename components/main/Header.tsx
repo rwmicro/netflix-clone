@@ -107,6 +107,7 @@ export default function Header() {
                     src={user_pic}
                     alt="user"
                     className="rounded-lg w-8 h-8"
+                   quality={100} 
                   />
                   <ChevronDownIcon
                     className="ml-1 mt-2 h-8 w-8 text-white z-20"
