@@ -19,8 +19,7 @@ function HeadFilms({ film }) {
         <Image
           src="/assets/img/films/header/background.jpg"
           alt="background"
-          width={1920}
-          height={1080}
+          fill
           className="object-center object-cover pointer-events-none"
           quality={100}
         />

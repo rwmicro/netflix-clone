@@ -8,8 +8,6 @@ import Header from "../main/Header";
 import Mute from "../general/MutedTrailer";
 import Image from "next/image";
 
-import background from "public/assets/img/series/header/background.jpeg";
-
 function HeadFilms({ serie }) {
   if (!serie) return <Loading />;
 
@@ -21,8 +19,7 @@ function HeadFilms({ serie }) {
         <Image
           src="/assets/img/series/header/background.jpeg"
           alt="background"
-          width={1920}
-          height={1080} 
+          fill
           className="object-center object-cover pointer-events-none"
           quality={100}
         />

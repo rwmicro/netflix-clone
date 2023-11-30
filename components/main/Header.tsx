@@ -106,10 +106,10 @@ export default function Header() {
                   <Image
                     src={user_pic}
                     alt="user"
-                    className="rounded-lg w-full h-full"
+                    className="rounded-lg w-8 h-8"
                   />
                   <ChevronDownIcon
-                    className="ml-1 mt-2 h-8 w-8 text-white"
+                    className="ml-1 mt-2 h-8 w-8 text-white z-20"
                     aria-hidden="true"
                   />
                 </Menu.Button>

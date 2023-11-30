@@ -23,7 +23,7 @@ async function getDatas() {
 }
 
 export default async function Series() {
-  const mediaData = await getMedias('movie');
+  const mediaData = await getMedias('tv');
   const { serie } = await getDatas();
 
   return (
