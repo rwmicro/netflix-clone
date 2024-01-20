@@ -1,7 +1,17 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "name": "User #1",
-        "imagePath": "public/assets/img/tools/profiles/pp.jpg"
+        "imagePath": "/assets/img/tools/profiles/pp_1.jpg"
+    },
+    {
+        "id": 1,
+        "name": "User #2",
+        "imagePath": "/assets/img/tools/profiles/pp_2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "User #3",
+        "imagePath": "/assets/img/tools/profiles/pp_3.jpg"
     }
 ]

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 import { FilmPoster } from "../../ts/Types";
 import Thumbnail from "./Thumbnail";
 import ThumbnailSeries from "../series/ThumbnailSeries";
@@ -15,6 +15,8 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
   datas,
   type,
 }) => {
+
+
   useEffect(() => {
     const containers = document.querySelectorAll(
       ".thumbnail_container .thumbnail"

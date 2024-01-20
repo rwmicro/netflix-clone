@@ -2,16 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import user_pic from "public/assets/img/tools/frog.png";
 import logo from "public/assets/img/tools/logo.png";
 import logoN from "public/assets/img/tools/N.png";
 import { usePathname } from 'next/navigation'
+import cookieCutter from '@boiseitguru/cookie-cutter'
+
 
 import search_image from "public/assets/img/tools/search.svg";
 
 import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
+
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -35,7 +38,11 @@ function scrollFunction() {
   }
 }
 
+
 export default function Header() {
+  const cookies = cookieCutter()
+  console.log(cookies.get('profile'))
+  
   useEffect(() => {
     window.onscroll = function () {
       scrollFunction();
@@ -43,7 +50,6 @@ export default function Header() {
   }, []);
 
   const pathname = usePathname()
-
   return (
     <>
       <header
@@ -52,10 +58,10 @@ export default function Header() {
       >
         <div className="flex justify-around items-center sm:justify-between h-fit w-full">
           <div className="flex items-center relative md:left-10 lg:left-20 xl:left-22">
-            <Link href="/" className="w-fit h-fit hidden sm:block">
+            <Link href="/home" className="w-fit h-fit hidden sm:block">
               <Image src={logo} width={130} height={70} alt="logo" />
             </Link>
-            <Link href="/" className="sm:hidden">
+            <Link href="/home" className="sm:hidden">
               <Image src={logoN} width={18} height={50} alt="logoN" />
             </Link>
             <div className="ml-10 flex gap-5 text-white text-sm">
@@ -65,7 +71,7 @@ export default function Header() {
                     ? "underline underline-offset-8 decoration-redflix"
                     : ""
                 }
-                href="/"
+                href="/home"
               >
                 Home
               </Link>
@@ -104,7 +110,9 @@ export default function Header() {
               <div>
                 <Menu.Button className="inline-flex">
                   <Image
-                    src={user_pic}
+                    src={cookies.get('profile') || "/assets/img/tools/profiles/pp_1.jpg"}
+                    width={50}
+                    height={50}
                     alt="user"
                     className="rounded-lg w-8 h-8"
                    quality={100} 
@@ -130,7 +138,7 @@ export default function Header() {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="/"
+                          href="#"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"

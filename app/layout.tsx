@@ -1,4 +1,5 @@
 import "styles/global.css";
+import { CookiesProvider } from "next-client-cookies/server";
 
 export default function RootLayout({
   children,
@@ -6,8 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <CookiesProvider>
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    </CookiesProvider>
   );
 }
