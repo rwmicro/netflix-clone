@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import profilesJSON from "../public/assets/json/profiles/profiles.json";
-import logo from "public/assets/img/tools/logo.png";
-import logoN from "public/assets/img/tools/N.png";
+import logo from "../public/assets/img/tools/logo.png";
+import logoN from "../public/assets/img/tools/N.png";
 
 import { useCookies } from "next-client-cookies";
 // import cookieCutter from "@boiseitguru/cookie-cutter";

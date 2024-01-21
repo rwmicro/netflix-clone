@@ -1,7 +1,7 @@
-import bg from "public/assets/img/tools/login.jpg";
+import bg from "../../public/assets/img/tools/login.jpg";
 import Link from "next/link";
 
-import logo from "public/assets/img/tools/logo.png";
+import logo from "../../public/assets/img/tools/logo.png";
 
 import Image from "next/image";
 

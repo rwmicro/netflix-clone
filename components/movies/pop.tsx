@@ -4,12 +4,12 @@ import { getMedia, getSimilarMedia, getVideos } from "../../ts/datas";
 import { Film } from "../../ts/Types";
 import ReactPlayer from "react-player/youtube";
 
-import media from "public/assets/img/tools/media.png";
-import hd from "public/assets/img/tools/hd.png";
-import ad from "public/assets/img/tools/ad.png";
-import dolby from "public/assets/img/tools/dolby.png";
-import mutedImage from "public/assets/img/tools/muted.png";
-import unmuted from "public/assets/img/tools/unmuted.png";
+import media from "../../public/assets/img/tools/media.png";
+import hd from "../../public/assets/img/tools/hd.png";
+import ad from "../../public/assets/img/tools/ad.png";
+import dolby from "../../public/assets/img/tools/dolby.png";
+import mutedImage from "../../public/assets/img/tools/muted.png";
+import unmuted from "../../public/assets/img/tools/unmuted.png";
 
 import Image from "next/image";
 import Link from "next/link";

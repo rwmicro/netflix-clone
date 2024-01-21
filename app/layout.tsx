@@ -1,4 +1,4 @@
-import "styles/global.css";
+import "../public/assets/styles/global.css";
 import { CookiesProvider } from "next-client-cookies/server";
 
 export default function RootLayout({

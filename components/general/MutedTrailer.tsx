@@ -1,6 +1,6 @@
 'use client'
-import mutedImage from "public/assets/img/tools/muted.png";
-import unmuted from "public/assets/img/tools/unmuted.png";
+import mutedImage from "../../public/assets/img/tools/muted.png";
+import unmuted from "../../public/assets/img/tools/unmuted.png";
 import Image from "next/image";
 import { useState } from "react";
 

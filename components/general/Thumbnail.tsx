@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import play from "public/assets/img/tools/media.png";
-import downarrow from "public/assets/img/tools/down-arrow.png";
+import play from "../../public/assets/img/tools/media.png";
+import downarrow from "../../public/assets/img/tools/down-arrow.png";
 
 var posterFilm = "https://image.tmdb.org/t/p/w500";
 

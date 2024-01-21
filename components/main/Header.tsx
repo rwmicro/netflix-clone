@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "public/assets/img/tools/logo.png";
-import logoN from "public/assets/img/tools/N.png";
+import logo from "../../public/assets/img/tools/logo.png";
+import logoN from "../../public/assets/img/tools/N.png";
 import { usePathname } from 'next/navigation'
 import cookieCutter from '@boiseitguru/cookie-cutter'
 
 
-import search_image from "public/assets/img/tools/search.svg";
+import search_image from "../../public/assets/img/tools/search.svg";
 
 import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Loading from "../loading/Loading";
-import media from "public/assets/img/tools/media.png";
-import infos from "public/assets/img/tools/informations.png";
+import media from "../../public/assets/img/tools/media.png";
+import infos from "../../public/assets/img/tools/informations.png";
 import Header from "../main/Header";
 
 import Mute from "../general/MutedTrailer";
