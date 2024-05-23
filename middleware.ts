@@ -13,13 +13,6 @@ export function middleware(req: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  if (url.pathname === "/") {
-    const profileCookie = req.cookies.get('profile');
-    if (profileCookie) {
-      return NextResponse.redirect(new URL('/home', req.url));
-    }
-  }
-
   return NextResponse.next();
 }
 
