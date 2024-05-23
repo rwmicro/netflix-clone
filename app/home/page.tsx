@@ -11,22 +11,16 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
-      <div className="hidden sm:block w-full h-screen absolute top-0 left-0" >
-      <Image
+      <div className="w-full h-screen absolute top-0 left-0">
+        <Image
           src="/assets/img/tools/index.jpg"
           alt="background"
           className="object-center object-cover pointer-events-none"
           quality={100}
           fill
-/>
+        />
         <Header />
         <Search />
-      </div>
-      <div className="min-h-screen w-full sm:hidden">
-        <Header />
-        <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
-          Please view this site on a computer
-        </p>
       </div>
     </>
   );

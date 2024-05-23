@@ -20,10 +20,10 @@ function HeadFilms({ film }) {
           src="/assets/img/films/header/background.jpg"
           alt="background"
           fill
-          className="object-center object-cover pointer-events-none"
+          className="object-cover pointer-events-none"
           quality={100}
         />
-        <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
+        <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white left-10 lg:left-20 xl:left-22">
           <Image
             src="/assets/img/films/header/logo.png"
             height={100}
@@ -86,21 +86,3 @@ function HeadFilms({ film }) {
 }
 
 export default React.memo(HeadFilms);
-
-/*
-        <Plyr
-          source={{
-            type: "video",
-            sources: [
-              {
-                src: videoId,
-                provider: provider,
-              },
-            ],
-          }}
-          options={videoOptions}
-        />
-      <div className="absolute -top-7 left-0 flex align-center justify-center w-full h-screen -z-50">
-
-        </div>
-        */

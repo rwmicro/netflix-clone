@@ -15,15 +15,15 @@ function HeadFilms({ serie }) {
     <>
       <Header />
 
-      <div className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden relative">
+      <div className="h-[75vh] xl:h-[90vh] w-full mask overflow-hidden">
         <Image
           src="/assets/img/series/header/background.jpeg"
           alt="background"
           fill
-          className="object-center object-cover pointer-events-none"
+          className="object-cover pointer-events-none"
           quality={100}
         />
-        <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white lg:bottom-36 left-10 lg:left-20 xl:left-22">
+        <div className="absolute bottom-1/3 2xl:top-96 w-3/4 text-white left-10 lg:left-20 xl:left-22">
           <Image
             src="/assets/img/series/header/logo.png"
             height={100}

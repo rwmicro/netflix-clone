@@ -25,35 +25,22 @@ async function getDatas() {
   return { film };
 }
 
-
 export default async function Films() {
-  
   const { film } = await getDatas();
-  const mediaData = await getMedias('movie');
+  const mediaData = await getMedias("movie");
 
-   if (!film) {
+  if (!film) {
     return <Loading />;
- }
+  }
 
   return (
     <>
-      <div>
-          <div className="hidden sm:block">
-        <Suspense fallback={<Loading />}>
-            <HeadTypes film={film} />
-            <MediaList type="movie" mediaData={mediaData} />
-            <Pop />
-            <Footer />
-        </Suspense>
-          </div>
-        {/* Mobile */}
-        <div className="min-h-screen w-full sm:hidden">
-          <Header />
-          <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
-            Please view this site on a computer
-          </p>{" "}
-        </div>
-      </div>
+      <Suspense fallback={<Loading />}>
+        <HeadTypes film={film} />
+        <MediaList type="movie" mediaData={mediaData} />
+        <Pop />
+        <Footer />
+      </Suspense>
     </>
   );
 }

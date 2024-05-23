@@ -3,7 +3,6 @@ import Footer from "../../components/main/Footer";
 import { Suspense } from "react";
 import Loading from "../../components/loading/Loading";
 import Pop from "../../components/series/pop";
-import Header from "../../components/main/Header";
 
 import { getMedia } from "../../ts/datas";
 import type { Metadata } from "next";
@@ -23,26 +22,19 @@ async function getDatas() {
 }
 
 export default async function Series() {
-  const mediaData = await getMedias('tv');
+  const mediaData = await getMedias("tv");
   const { serie } = await getDatas();
 
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className="hidden sm:block">
+        <div>
           <SeriesHead serie={serie} />
           <SeriesList type="tv" mediaData={mediaData} />
           <Pop />
           <Footer />
         </div>
       </Suspense>
-      {/* Mobile */}
-      <div className="min-h-screen w-full sm:hidden">
-        <Header />
-        <p className="absolute left-1/2 top-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">
-          Please view this site on a computer
-        </p>{" "}
-      </div>
     </>
   );
 }

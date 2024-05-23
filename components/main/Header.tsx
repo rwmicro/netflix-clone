@@ -1,20 +1,16 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/img/tools/logo.png";
 import logoN from "../../public/assets/img/tools/N.png";
-import { usePathname } from 'next/navigation'
-import cookieCutter from '@boiseitguru/cookie-cutter'
-
+import { usePathname } from "next/navigation";
 
 import search_image from "../../public/assets/img/tools/search.svg";
 
 import { Fragment, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-
-
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -38,18 +34,17 @@ function scrollFunction() {
   }
 }
 
-
 export default function Header() {
-  const cookies = cookieCutter()
-  console.log(cookies.get('profile'))
-  
   useEffect(() => {
     window.onscroll = function () {
       scrollFunction();
     };
   }, []);
 
-  const pathname = usePathname()
+  const pathname = usePathname();
+
+  const image_from_session = window.sessionStorage.getItem("profile");
+
   return (
     <>
       <header
@@ -110,12 +105,15 @@ export default function Header() {
               <div>
                 <Menu.Button className="inline-flex">
                   <Image
-                    src={cookies.get('profile') || "/assets/img/tools/profiles/pp_1.jpg"}
+                    src={
+                      image_from_session ||
+                      "/assets/img/tools/profiles/pp_1.jpg"
+                    }
                     width={50}
                     height={50}
                     alt="user"
                     className="rounded-lg w-8 h-8"
-                   quality={100} 
+                    quality={100}
                   />
                   <ChevronDownIcon
                     className="ml-1 mt-2 h-8 w-8 text-white z-20"
