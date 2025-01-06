@@ -105,7 +105,7 @@ const ThumbnailHandler: React.FC<ThumbnailHandlerProps> = ({
         <div className="absolute -mt-2 right-5 flex gap-0.5">
           {Array.from({ length: TABS }).map((_, index) => (
             <div
-              key={index}
+              key={index + '-tab'}
               className={`w-3 h-0.5  ${
                 index === 0 ? "bg-neutral-500" : "bg-neutral-700"
               }`}

@@ -3,14 +3,9 @@ import Footer from "../../components/main/Footer";
 import { Film } from "../../ts/Types";
 import Loading from "../../components/loading/Loading";
 import Pop from "../../components/movies/pop";
-import Header from "../../components/main/Header";
-
 import { Suspense } from "react";
-
 import MediaList from "../../components/general/MediaList";
-
 import { getMedias } from "../../ts/datas";
-
 import { getMedia } from "../../ts/datas";
 import type { Metadata } from "next";
 

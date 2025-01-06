@@ -33,17 +33,16 @@ function scrollFunction() {
     }
   }
 }
-
+let image_from_session = ''
 export default function Header() {
   useEffect(() => {
     window.onscroll = function () {
       scrollFunction();
+      image_from_session = window.sessionStorage.getItem("profile");
     };
   }, []);
 
   const pathname = usePathname();
-
-  const image_from_session = window.sessionStorage.getItem("profile");
 
   return (
     <>

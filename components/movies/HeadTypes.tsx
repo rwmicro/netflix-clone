@@ -38,7 +38,7 @@ function HeadFilms({ film }) {
               <Link
                 href={"/watch/" + film["id"].toString()}
                 as={`/watch/${film["title"]}`}
-                className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md bg-white text-black font-semibold xl:p-3 text-sm xl:text-xl hover:bg-slate-200"
+                className="flex align-center items-center justify-center h-10 xl:h-auto w-fit rounded-md bg-white text-black font-semibold xl:p-3 text-sm xl:text-xl hover:bg-slate-200"
               >
                 <Image
                   src={media}
@@ -51,7 +51,7 @@ function HeadFilms({ film }) {
             <div>
               <Link
                 href={"/movies?movie=" + film["id"].toString()}
-                className="flex align-center items-center justify-center h-10 xl:h-auto w-32 xl:w-44 rounded-md text-white bg-[#1C1917] font-semibold xl:p-3 text-sm xl:text-xl hover:brightness-[.90]"
+                className="flex align-center items-center justify-center h-10 xl:h-auto w-fit rounded-md text-white bg-[#1C1917] font-semibold xl:p-3 text-sm xl:text-xl hover:brightness-[.90]"
               >
                 <Image
                   src={infos}
