@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mask {
+  -webkit-mask-image: linear-gradient(#141414 80%, transparent);
+  mask-image: linear-gradient(#141414 80%, transparent);
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  background-color: #141414;
+  -webkit-text-size-adjust: none;
+}
+
+/* Thumbnail */
+.show-details {
+  position: fixed;
+  display: block;
+  z-index: 50;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #292929;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+#slides-container::-webkit-scrollbar {
+  display: none;
+}
+.thumbnail:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.3);
+}
+
+.slide {
+  flex: 1 0 20%;
+}
+@media (min-width: 1536px) {
+  .slide {
+    flex: 1 0 15%;
+  }
+}
+@media (max-width: 1250px) {
+  .slide {
+    flex: 1 0 26%;
+  }
+  .thumbnail:hover {
+    z-index: 5000;
+    scale: 1.2;
+    transition: all 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,31 @@
+[
+    {
+        "image":"/assets/img/films/genres/action.jpg",
+        "genre":"Action",
+        "id":28,
+        "idHeader":603692,
+        "wallpaper":"/assets/img/films/wallpapers/johnwick.jpg"
+
+    },
+    {
+        "image":"/assets/img/films/genres/animation.jpg",
+        "genre":"Animation",
+        "id":16,
+        "idHeader":301528,
+        "wallpaper":"/assets/img/films/wallpapers/toystory.jpg"
+    },
+    {
+        "image":"/assets/img/films/genres/comedy.jpg",
+        "genre":"Comedy",
+        "id":35,
+        "idHeader":346698
+    },
+    {
+        "image":"/assets/img/films/genres/thriller.jpg",
+        "genre":"Thriller",
+        "id":53,
+        "idHeader":11324,
+        "wallpaper":"/assets/img/films/wallpapers/shutter-island.jpg"
+
+    }
+]
